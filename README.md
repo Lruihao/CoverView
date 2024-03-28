@@ -26,7 +26,7 @@ You can get the access key from [Unsplash API](https://unsplash.com/developers),
 git clone https://github.com/Lruihao/CoverView.git
 cd CoverView/
 npm install
-npm run start
+npm start
 ```
 
 ## 👇 Contributing

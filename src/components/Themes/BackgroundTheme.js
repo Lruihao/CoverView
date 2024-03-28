@@ -44,7 +44,7 @@ const BackgroundTheme = ({ config }) => {
       url: image.urls.regular,
       name: image.user.name,
       avatar: image.user.profile_image.small,
-      profile: `${image.user.links.html}?utm_source=https://coverview.vercel.app&utm_medium=referral`,
+      profile: `${image.user.links.html}?utm_source=https://coverview.lruihao.cn&utm_medium=referral`,
       downloadLink: image.links.download_location,
     })
   }
@@ -83,7 +83,7 @@ const BackgroundTheme = ({ config }) => {
                         strokeLinejoin="round"
                         strokeWidth="2"
                         d="M6 18L18 6M6 6l12 12"
-                      ></path>
+                      />
                     </svg>
                   </button>
 
@@ -101,7 +101,7 @@ const BackgroundTheme = ({ config }) => {
                         </div>
                       ) : (
                         <div className="mr-2 items-center justify-center flex">
-                          <i className={`devicon-${icon.value}-plain text-white dev-icon text-3xl`}></i>
+                          <i className={`devicon-${icon.value}-plain text-white dev-icon text-3xl`} />
                         </div>
                       )}
                     </div>
@@ -127,7 +127,7 @@ const BackgroundTheme = ({ config }) => {
                     </a>
 
                     <a
-                      href="https://unsplash.com/?utm_source=https://coverview.vercel.app&utm_medium=referral"
+                      href="https://unsplash.com/?utm_source=https://coverview.lruihao.cn&utm_medium=referral"
                       className="text-sm text-white mx-2"
                     >
                       Unsplash
@@ -164,7 +164,7 @@ const BackgroundTheme = ({ config }) => {
                           strokeLinejoin="round"
                           strokeWidth="2"
                           d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                        ></path>
+                        />
                       </svg>
                     </button>
                   </form>

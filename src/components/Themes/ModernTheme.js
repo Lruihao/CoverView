@@ -16,7 +16,7 @@ const ModernTheme = ({ config }) => {
             </div>
           ) : (
             <div className=" rounded-full p-6 w-32 h-32 bg-white mx-auto items-center justify-center flex">
-              <i className={`devicon-${icon.value}-plain  p-4 dev-icon text-7xl`}></i>
+              <i className={`devicon-${icon.value}-plain  p-4 dev-icon text-7xl`} />
             </div>
           )}
 

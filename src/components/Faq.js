@@ -13,15 +13,15 @@ function Faq() {
 
         <div className="flex flex-wrap justify-center mt-20 font-Inter">
           <div className="md:w-5/12 m-4 ">
-            <p className="text-xl font-bold py-2">What is Coverview?</p>
+            <p className="text-xl font-bold py-2">What is CoverView?</p>
             <p className="text-lg text-gray-700">
-              Coverview is a tool to create cover images for your blogs quickly and easily.
+              CoverView is a tool to create cover images for your blogs quickly and easily.
             </p>
           </div>
 
           <div className="md:w-5/12 m-4">
-            <p className="text-xl font-bold py-2">Is Coverview free?</p>
-            <p className="text-lg text-gray-700">Yes! Coverview is absolutely free to use.</p>
+            <p className="text-xl font-bold py-2">Is CoverView free?</p>
+            <p className="text-lg text-gray-700">Yes! CoverView is absolutely free to use.</p>
           </div>
 
           <div className="md:w-5/12 m-4">
@@ -53,7 +53,7 @@ function Faq() {
           </div>
 
           <div className="md:w-5/12 m-4">
-            <p className="text-xl font-bold my-2">Why use Coverview?</p>
+            <p className="text-xl font-bold my-2">Why use CoverView?</p>
             <p className="text-lg text-gray-700">
               Because it's simple, quick and easy to use. Why spend hours designing when you can create cover images in
               seconds?

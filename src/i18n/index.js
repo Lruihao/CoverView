@@ -17,7 +17,8 @@ i18n
    * https://www.i18next.com/overview/configuration-options
    */
   .init({
-    debug: true,
+    debug: process.env.NODE_ENV === 'development',
+    // lng: 'zh-CN',
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false,
@@ -27,5 +28,10 @@ i18n
       'zh-CN': zhCN,
     },
   })
+
+i18n.on('languageChanged', (language) => {
+  console.log(language)
+  // document.title = i18n.t('document.title')
+})
 
 export default i18n

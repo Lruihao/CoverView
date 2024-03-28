@@ -44,7 +44,7 @@ const StylishTheme = ({ config }) => {
       url: image.urls.regular,
       name: image.user.name,
       avatar: image.user.profile_image.small,
-      profile: `${image.user.links.html}?utm_source=https://coverview.vercel.app&utm_medium=referral`,
+      profile: `${image.user.links.html}?utm_source=https://coverview.lruihao.cn&utm_medium=referral`,
       downloadLink: image.links.download_location,
     })
   }
@@ -72,7 +72,7 @@ const StylishTheme = ({ config }) => {
                   </div>
                 ) : (
                   <div className="mr-2 items-center justify-center flex">
-                    <i className={`devicon-${icon.value}-plain  dev-icon text-3xl`}></i>
+                    <i className={`devicon-${icon.value}-plain  dev-icon text-3xl`} />
                   </div>
                 )}
                 <h2 className="text-xl  font-semibold text-left ">{author}</h2>
@@ -98,7 +98,7 @@ const StylishTheme = ({ config }) => {
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
 
@@ -121,7 +121,7 @@ const StylishTheme = ({ config }) => {
                     </a>
 
                     <a
-                      href="https://unsplash.com/?utm_source=https://coverview.vercel.app&utm_medium=referral"
+                      href="https://unsplash.com/?utm_source=https://coverview.lruihao.cn&utm_medium=referral"
                       className="text-sm text-white mx-2"
                     >
                       Unsplash
@@ -153,7 +153,7 @@ const StylishTheme = ({ config }) => {
                         strokeLinejoin="round"
                         strokeWidth="2"
                         d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                 </form>

@@ -15,9 +15,9 @@ const PreviewTheme = ({ config }) => {
 
         <div className="w-10/12 group mx-auto mt-auto mb-0 shadow-lg  flex flex-col bg-white rounded-t-xl border-white">
           <div className="bg-gray-800 h-8 w-full p-2 flex items-center rounded-t-xl">
-            <div className="bg-red-400 h-3 w-3 rounded-full mx-1"></div>
-            <div className="bg-yellow-400 h-3 w-3 rounded-full mx-1"></div>
-            <div className="bg-green-400 h-3 w-3 rounded-full mx-1"></div>
+            <div className="bg-red-400 h-3 w-3 rounded-full mx-1" />
+            <div className="bg-yellow-400 h-3 w-3 rounded-full mx-1" />
+            <div className="bg-green-400 h-3 w-3 rounded-full mx-1" />
             <button onClick={() => setImage('')} className="ml-auto mr-4 cursor-pointer">
               <svg
                 className="group-hover:inline-block hidden w-4 h-4 text-white rounded-full z-10"
@@ -26,7 +26,7 @@ const PreviewTheme = ({ config }) => {
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>

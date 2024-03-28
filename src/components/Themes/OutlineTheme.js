@@ -19,7 +19,7 @@ const OutlineTheme = ({ config }) => {
             </div>
           ) : (
             <div className="  mr-auto ml-2 items-center justify-center flex">
-              <i className={`devicon-${icon.value}-plain text-white p-4 dev-icon text-8xl`}></i>
+              <i className={`devicon-${icon.value}-plain text-white p-4 dev-icon text-8xl`} />
             </div>
           )}
           <h1 className="text-3xl p-4 text-white md:text-5xl  font-bold ">{title}</h1>

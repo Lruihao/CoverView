@@ -44,5 +44,6 @@ module.exports = {
     'react/jsx-wrap-multilines': ['warn', { declaration: 'parens-new-line' }],
     'no-multiple-empty-lines': ['warn', { max: 2 }],
     'react/jsx-props-no-multi-spaces': 'warn',
+    'react/self-closing-comp': 'warn',
   },
 }
