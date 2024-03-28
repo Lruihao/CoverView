@@ -1,22 +1,19 @@
 import React from 'react';
-import logo from '../assets/icons/logo.png'
+// import { useTranslation } from 'react-i18next';
+import logo from '../assets/icons/logo.png';
 import { Link } from 'react-router-dom';
-import cover1 from '../assets/images/cover1.webp'
-import cover2 from '../assets/images/cover2.webp'
-import cover3 from '../assets/images/cover3.webp'
-import cover4 from '../assets/images/cover4.webp'
-
-
-
-import step1 from '../assets/images/step1.png'
-import step2 from '../assets/images/step2.png'
-
-import hashnodeLogo from '../assets/images/hashnode-logo.png'
-import devLogo from '../assets/images/dev-logo.png'
-
+import cover1 from '../assets/images/cover1.webp';
+import cover2 from '../assets/images/cover2.webp';
+import cover3 from '../assets/images/cover3.webp';
+import cover4 from '../assets/images/cover4.webp';
+import step1 from '../assets/images/step1.png';
+import step2 from '../assets/images/step2.png';
+import hashnodeLogo from '../assets/images/hashnode-logo.png';
+import devLogo from '../assets/images/dev-logo.png';
 import WallOfLove from './walloflove';
-const Home = () => {
 
+const Home = () => {
+  // const { t } = useTranslation();
 
     return (
         <div className="bg-gray-50">
