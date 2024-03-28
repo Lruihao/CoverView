@@ -27,7 +27,7 @@ const Home = () => {
                     <h1 className="font-semibold md:text-xl text-lg font-Inter">Coverview</h1>
                 </div>
 
-                <a href="https://github.com/rutikwankhade/CoverView" target="_blank" rel="noreferrer" className="hover:translate-x-2 duration-300 bg-gray-700 group rounded-xl md:px-4 text-white md:text-sm text-xs ml-auto mr-4 font-Inter font-semibold p-2">
+                <a href="https://github.com/Lruihao/CoverView" target="_blank" rel="noreferrer" className="hover:translate-x-2 duration-300 bg-gray-700 group rounded-xl md:px-4 text-white md:text-sm text-xs ml-auto mr-4 font-Inter font-semibold p-2">
                     <span className="text-sm">⭐ Star on Github</span>
                 </a>
             </div>
@@ -190,16 +190,16 @@ const Home = () => {
 
 
 
-            <footer className="bg-white p-10 flex md:flex-row flex-col font-Inter md:px-20 justify-center items-center">
+            <footer className="bg-white p-10 flex md:flex-row flex-col font-Inter md:px-20 md:gap-20 justify-center items-center">
                 <div className="md:w-1/2 flex flex-col">
-                    <span className="text-lg">Made with 💛 by <a href="https://twitter.com/WankhadeRutik" className="font-semibold" target="_blank" rel="noreferrer">Rutik Wankhade</a></span>
-                    <span className="text-lg font-Nunito">checkout <a href="https://rutikwankhade.dev" target="_blank" rel="noreferrer" className="text-purple-400 hover:text-pink-400">more cool stuff</a> I built</span>
+                    <span className="text-lg">Made with 💛 by <a href="https://github.com/Lruihao" className="font-semibold" target="_blank" rel="noreferrer">Lruihao</a></span>
+                    <span className="text-lg font-Nunito">Checkout <a href="https://lruihao.cn" target="_blank" rel="noreferrer" className="text-purple-400 hover:text-pink-400">more cool stuff</a> I built</span>
                 </div>
 
-                <div className="md:text-lg text-sm flex flex-wrap  ">
+                <div className="md:w-1/3 md:text-lg md:justify-end text-sm flex flex-wrap">
                     <Link to="/faq" className="m-2 hover:font-semibold">📌 How to use</Link>
-                    <a href="https://github.com/rutikwankhade/CoverView" target="_blank" rel="noreferrer" className="m-2 hover:font-semibold">⭐ Star on Github</a>
-                    <a href="https://www.buymeacoffee.com/rutikwankhade" target="_blank" rel="noreferrer" className="m-2 hover:font-semibold">🥤 Buy me a coffee</a>
+                    <a href="https://github.com/Lruihao/CoverView" target="_blank" rel="noreferrer" className="m-2 hover:font-semibold">⭐ Star on Github</a>
+                    <span className="text-sm">Thanks the original author <a href="https://twitter.com/WankhadeRutik" className="font-semibold" target="_blank" rel="noreferrer">Rutik Wankhade</a></span>
                 </div>
             </footer>
 

@@ -42,7 +42,10 @@ const Faq = () => {
 
                     <div className="md:w-5/12 m-4">
                         <p className="text-xl font-bold my-2">Want to support/sponsor the project?</p>
-                        <p className="text-lg text-gray-700">If coverview adds value in your life and you wish to support this project, you can <a href="https://github.com/sponsors/rutikwankhade" target="_blank" rel="noreferrer" className="font-semibold hover:underline">sponsor me on Github</a> or <a href="https://www.buymeacoffee.com/rutikwankhade" target="_blank" rel="noreferrer" className="hover:underline text-pink-400 font-semibold">buy me a coffee</a>.</p>
+                        <p className="text-lg text-gray-700">
+                          If coverview adds value in your life and you wish to support this project,
+                          you can sponsor me with <a href="https://lruihao.cn/images/wechatpay.jpg" target="_blank" rel="noreferrer" className="font-semibold text-green-400 hover:underline">WeChat</a>/
+                          <a href="https://lruihao.cn/images/alipay.jpg" target="_blank" rel="noreferrer" className="font-semibold text-blue-400 hover:underline">Alipay</a> or <a href="https://www.buymeacoffee.com/rutikwankhade" target="_blank" rel="noreferrer" className="hover:underline text-pink-400 font-semibold">buy Rutik Wankhade a coffee</a>.</p>
                     </div>
 
                 </div>
