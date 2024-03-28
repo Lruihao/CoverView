@@ -1,7 +1,9 @@
 const config = {
   translation: {
-    home: {}
-  }
+    home: {
+
+    },
+  },
 }
 
-export default config;
+export default config

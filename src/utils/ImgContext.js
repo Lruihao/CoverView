@@ -1,14 +1,11 @@
-import React, { createContext, useState } from "react";
-const ImgContext = createContext();
+import React, { createContext, useState } from 'react'
 
-const ImgProvider = ({ children }) => {
-  const [unsplashImage, setUnsplashImage] = useState();
-    
-  return (
-    <ImgContext.Provider value={{ unsplashImage, setUnsplashImage }}>
-      {children}
-    </ImgContext.Provider>
-  );
-};
+const ImgContext = createContext()
 
-export {ImgProvider, ImgContext}
+function ImgProvider({ children }) {
+  const [unsplashImage, setUnsplashImage] = useState()
+
+  return <ImgContext.Provider value={{ unsplashImage, setUnsplashImage }}>{children}</ImgContext.Provider>
+}
+
+export { ImgProvider, ImgContext }
