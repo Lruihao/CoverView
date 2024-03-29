@@ -102,7 +102,7 @@ const StylishTheme = ({ config }) => {
                   </svg>
                 </button>
 
-                <div className="absolute  bottom-4 right-4 opacity-80">
+                <div className="absolute bottom-8 right-4 opacity-80">
                   <div className=" group-hover:flex hidden items-center">
                     <span className="text-sm text-white mx-2">Photo by</span>
                     <a
