@@ -1,4 +1,5 @@
 const config = {
+  name: '简体中文',
   translation: {
     common: {
       howToUse: '如何使用',

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import SwitchLang from './SwitchLang'
 import { Link } from 'react-router-dom'
 import logo from '../assets/icons/logo.png'
 import cover1 from '../assets/images/cover1.webp'
@@ -24,13 +25,14 @@ function Home() {
           <h1 className="font-semibold md:text-xl text-lg font-Inter">CoverView</h1>
         </div>
         <a
-          className="hover:translate-x-2 duration-300 bg-gray-700 group rounded-xl md:px-4 text-white md:text-sm text-xs ml-auto mr-4 font-Inter font-semibold p-2"
+          className="hover:translate-x-2 duration-300 bg-gray-700 group rounded-xl md:px-4 text-white md:text-sm text-xs ml-auto mr-2 font-Inter font-semibold p-2"
           href="https://github.com/Lruihao/CoverView"
           rel="noreferrer"
           target="_blank"
         >
           <span className="text-sm">⭐ {t('common.star')}</span>
         </a>
+        <SwitchLang />
       </div>
 
       <div className="mx-auto md:px-20 py-6 flex flex-col items-center">
@@ -118,7 +120,7 @@ function Home() {
             </div>
             <img alt="preview" className="mt-2 rounded-lg shadow-sm" src={step1} />
           </div>
-          
+
           <div className="flex items-center font-bold text-3xl text-center mx-auto">➟➟➟➟➩</div>
 
           <div className="flex flex-col md:w-1/3 mx-10">

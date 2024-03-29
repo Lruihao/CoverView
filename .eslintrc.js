@@ -42,10 +42,12 @@ module.exports = {
     'react/jsx-max-props-per-line': ['warn', { maximum: 5, when: 'always' }],
     'react/jsx-first-prop-new-line': ['warn', 'multiline'],
     'react/jsx-wrap-multilines': ['warn', { declaration: 'parens-new-line' }],
-    'no-multiple-empty-lines': ['warn', { max: 2 }],
+    'no-multiple-empty-lines': ['warn', { max: 1 }],
     'react/jsx-props-no-multi-spaces': 'warn',
     'react/self-closing-comp': 'warn',
     'jsx-quotes': ['warn', 'prefer-double'],
     'react/jsx-sort-props': ['warn', { callbacksLast: true }],
+    'no-trailing-spaces': 'warn',
+    'no-multi-spaces': 'warn',
   },
 }

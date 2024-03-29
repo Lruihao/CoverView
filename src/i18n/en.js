@@ -1,4 +1,5 @@
 const config = {
+  name: 'English',
   translation: {
     common: {
       howToUse: 'How to use',

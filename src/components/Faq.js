@@ -29,7 +29,7 @@ function Faq() {
 
         {
           showMsg
-            ? (<div><h2 className="md:w-7/12 text-4xl border text-center mx-auto my-10 p-10 rounded-xl shadow-sm font-Nunito">{t('faq.tips.content')}</h2></div>) 
+            ? (<div><h2 className="md:w-7/12 text-4xl border text-center mx-auto my-10 p-10 rounded-xl shadow-sm font-Nunito">{t('faq.tips.content')}</h2></div>)
             : (<div />)
         }
       </div>

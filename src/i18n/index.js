@@ -29,9 +29,14 @@ i18n
     },
   })
 
-i18n.on('languageChanged', (language) => {
-  console.log(language)
-  // document.title = i18n.t('document.title')
+i18n.on('languageChanged', (lang) => {
+  // console.log(lang)
+  document.title = `CoverView - ${i18n.t('home.description')}`
 })
+
+export const languages = [
+  { code: 'en', name: en.name },
+  { code: 'zh-CN', name: zhCN.name },
+]
 
 export default i18n
