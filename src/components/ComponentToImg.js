@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 // import { exportComponentAsPNG } from "react-component-export-image";
 import './CoverImage.css'
 import domtoimage from 'dom-to-image'
@@ -6,6 +7,7 @@ import { ImgContext } from '../utils/ImgContext'
 import unsplash from '../utils/unsplashConfig'
 
 function ComponentToImg(props) {
+  const { t } = useTranslation()
   const [loading, setLoading] = useState(false)
 
   const { unsplashImage } = useContext(ImgContext)
@@ -87,7 +89,7 @@ function ComponentToImg(props) {
           )}
         </span>
 
-        <span className="mx-2">Download</span>
+        <span className="mx-2">{t('editor.downloadBtn')}</span>
       </button>
     </>
   )

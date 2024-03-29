@@ -66,6 +66,19 @@ const config = {
         content: '博客标题至少包含 8 个字，点击率提高 21%',
       },
     },
+    editor: {
+      title: '博客标题',
+      author: '作者',
+      icon: '图标',
+      custom: '自定义',
+      font: '字体',
+      color: '颜色',
+      pattern: '底纹图案',
+      platform: '平台',
+      resetBtn: '重置所有',
+      selectImgTips: '点击选择图片',
+      downloadBtn: '下载',
+    },
   },
 }
 

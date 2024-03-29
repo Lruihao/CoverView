@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react'
+import { useTranslation } from 'react-i18next'
 import unsplash from '../../utils/unsplashConfig'
 import { ImgContext } from '../../utils/ImgContext'
 
 const BackgroundTheme = ({ config }) => {
+  const { t } = useTranslation()
   const { title, author, font, icon, customIcon, platform, bgColor } = config
 
   // const [image, setImage] = useState({})
@@ -138,7 +140,7 @@ const BackgroundTheme = ({ config }) => {
             ) : (
               <div className="flex flex-col p-2  bg-white items-center justify-center">
                 <div className="flex items-center w-full px-6 ">
-                  <div className="text-lg font-semibold text-gray-700">Click on any image to select</div>
+                  <div className="text-lg font-semibold text-gray-700">{t('editor.selectImgTips')}</div>
                   <form
                     className=" ml-auto mr-2 w-1/2 flex bg-gray-50 rounded-full border mb-2"
                     onSubmit={(e) => handleSearchSubmit(e)}

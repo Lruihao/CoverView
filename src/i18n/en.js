@@ -65,6 +65,19 @@ const config = {
         content: 'Blog titles with a minimum of 8 words have 21% better click-through',
       },
     },
+    editor: {
+      title: 'Blog title',
+      author: 'Author',
+      icon: 'Icon',
+      custom: 'Custom',
+      font: 'Font',
+      color: 'Color',
+      pattern: 'Pattern',
+      platform: 'Platform',
+      resetBtn: 'Reset All',
+      selectImgTips: 'Click on any image to select',
+      downloadBtn: 'Download',
+    },
   },
 }
 

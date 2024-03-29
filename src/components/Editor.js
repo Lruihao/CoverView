@@ -1,4 +1,6 @@
 import React from 'react'
+// import { useTranslation } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import Select from 'react-select'
 import { Tab } from '@headlessui/react'
 import CoverImage from './CoverImage'
@@ -6,7 +8,6 @@ import ComponentToImg from './ComponentToImg'
 import RandomTheme from './RandomTheme'
 import { ImgProvider } from '../utils/ImgContext'
 import Header from './Header'
-
 import theme1 from '../assets/images/theme1.webp'
 import theme2 from '../assets/images/theme2.webp'
 import theme3 from '../assets/images/theme3.webp'
@@ -14,6 +15,7 @@ import theme4 from '../assets/images/theme4.webp'
 import theme5 from '../assets/images/theme5.webp'
 import theme6 from '../assets/images/theme6.webp'
 import theme7 from '../assets/images/theme7.webp'
+import { t } from 'i18next'
 
 const defaultIcon = { label: 'react', value: 'react' }
 
@@ -22,7 +24,7 @@ const defaultSettings = {
   bgColor: '#949ee5',
   pattern: '',
   download: 'PNG',
-  author: 'Rutik Wankhade',
+  author: 'Lruihao',
   icon: defaultIcon,
   devIconOptions: [defaultIcon],
   font: 'font-Anek',
@@ -42,11 +44,11 @@ class Editor extends React.Component {
   state = defaultSettings
 
   componentDidMount() {
-    console.log('Mount')
+    // console.log('Mount')
     fetch(devIconsUrl)
       .then((r) => r.json())
       .then((data) => {
-        data.push({ name: 'custom' })
+        data.unshift({ name: this.props.t('editor.custom') })
         this.setState({ devIconOptions: data.map((item) => ({ value: item.name, label: item.name })) })
       })
   }
@@ -69,6 +71,8 @@ class Editor extends React.Component {
   )
 
   render() {
+    const { t } = this.props
+
     return (
       <div>
         <Header />
@@ -81,7 +85,7 @@ class Editor extends React.Component {
                   <Tab.List className=" bg-white md:p-0 p-2 flex flex-row md:flex-col">
                     <Tab className="flex  items-center font-semibold  ">
                       <svg
-                        className="text-gray- bg-white rounded-xl w-12 m-2 h-12 p-2 rounded border"
+                        className="text-gray- bg-white w-12 m-2 h-12 p-2 rounded border"
                         fill="currentColor"
                         height="24"
                         viewBox="0 0 24 24"
@@ -94,7 +98,7 @@ class Editor extends React.Component {
 
                     <Tab className="flex items-center   font-semibold    text-lg">
                       <svg
-                        className=" text-gray-800 bg-white rounded-xl w-12 h-12 p-2 m-2 rounded border"
+                        className=" text-gray-800 bg-white w-12 h-12 p-2 m-2 rounded border"
                         fill="currentColor"
                         height="24"
                         viewBox="0 0 24 24"
@@ -111,7 +115,7 @@ class Editor extends React.Component {
                   <Tab.Panels className="bg-white border-l w-full p-4 ">
                     <Tab.Panel>
                       <div className="m-2 flex flex-col">
-                        <span className="font-medium pb-1">Blog Title</span>
+                        <span className="font-medium pb-1">{t('editor.title')}</span>
                         <textarea
                           className="focus:outline-none border text-gray-700 text-xl rounded p-2 h-24"
                           placeholder="Enter title here"
@@ -122,7 +126,7 @@ class Editor extends React.Component {
                       </div>
 
                       <div className="flex flex-col m-2 ">
-                        <span className="font-medium pb-1">Author</span>
+                        <span className="font-medium pb-1">{t('editor.author')}</span>
                         <input
                           className="focus:outline-none border text-gray-700 text-xl rounded bg-white p-2"
                           placeholder="Author"
@@ -133,7 +137,7 @@ class Editor extends React.Component {
                       </div>
 
                       <div className="flex flex-col m-2 ">
-                        <span className="font-medium pb-1">Icon</span>
+                        <span className="font-medium pb-1">{t('editor.icon')}</span>
                         <Select
                           className="outline-none focus:outline-none text-xl text-gray-700"
                           formatOptionLabel={this.formatOptionLabel}
@@ -157,7 +161,7 @@ class Editor extends React.Component {
 
                       <div className="flex items-center">
                         <div className="flex flex-col m-2 w-1/2">
-                          <span className="font-medium pb-1">Font</span>
+                          <span className="font-medium pb-1">{t('editor.font')}</span>
 
                           <select
                             className="focus:outline-none text-gray-700 text-xl p-2 rounded border"
@@ -173,7 +177,7 @@ class Editor extends React.Component {
                           </select>
                         </div>
                         <div className="flex flex-col m-2 w-1/2">
-                          <span className="font-medium pb-1">Color</span>
+                          <span className="font-medium pb-1">{t('editor.color')}</span>
                           <div className="border rounded flex items-center p-2">
                             <span className="text-xl text-gray-700  mx-2">{this.state.bgColor}</span>
                             <input
@@ -188,7 +192,7 @@ class Editor extends React.Component {
 
                       <div className="flex items-center">
                         {/* <div className="flex flex-col m-2 w-1/2">
-                          <span className="font-medium pb-1">Pattern</span>
+                          <span className="font-medium pb-1">{t('editor.pattern')}</span>
                           <select
                             onChange={(e) => this.setState({ pattern: e.target.value })}
                             className="focus:outline-none border text-xl p-2 rounded"
@@ -217,7 +221,7 @@ class Editor extends React.Component {
                         </div> */}
 
                         <div className="flex flex-col m-2 w-full">
-                          <span className="font-medium pb-1">Platform</span>
+                          <span className="font-medium pb-1">{t('editor.platform')}</span>
 
                           <select
                             className="focus:outline-none text-gray-700 text-xl p-2 rounded border"
@@ -234,7 +238,7 @@ class Editor extends React.Component {
                         className="flex items-center bg-gray-700 text-white rounded-lg mt-6 text-lg font-semibold p-1 px-4 mx-auto border"
                         onClick={this.handleReset}
                       >
-                        <span>Reset All</span>
+                        <span>{t('editor.resetBtn')}</span>
                       </button>
                     </Tab.Panel>
 
@@ -320,4 +324,4 @@ class Editor extends React.Component {
   }
 }
 
-export default Editor
+export default withTranslation()(Editor)
