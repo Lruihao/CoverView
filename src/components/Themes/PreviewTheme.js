@@ -18,7 +18,7 @@ const PreviewTheme = ({ config }) => {
             <div className="bg-red-400 h-3 w-3 rounded-full mx-1" />
             <div className="bg-yellow-400 h-3 w-3 rounded-full mx-1" />
             <div className="bg-green-400 h-3 w-3 rounded-full mx-1" />
-            <button onClick={() => setImage('')} className="ml-auto mr-4 cursor-pointer">
+            <button className="ml-auto mr-4 cursor-pointer" onClick={() => setImage('')}>
               <svg
                 className="group-hover:inline-block hidden w-4 h-4 text-white rounded-full z-10"
                 fill="none"
@@ -26,20 +26,20 @@ const PreviewTheme = ({ config }) => {
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                <path d="M6 18L18 6M6 6l12 12" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
               </svg>
             </button>
           </div>
 
           {image ? (
             <div className="">
-              <img src={image && image} className="object-cover " alt="preview" />
+              <img alt="preview" className="object-cover " src={image && image} />
             </div>
           ) : (
             <div className="flex flex-col p-20 py-28 bg-white items-center justify-center">
               <input
-                type="file"
                 className="text-xl cursor-pointer mb-2 bg-white rounded border"
+                type="file"
                 onChange={(e) => setImage(URL.createObjectURL(e.target.files[0]))}
               />
               <span className=" text-center italic">click to upload a screenshot</span>

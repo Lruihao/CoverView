@@ -12,9 +12,9 @@ const OutlineTheme = ({ config }) => {
           {customIcon ? (
             <div className=" m-6">
               <img
-                src={customIcon}
                 alt="img"
                 className="rounded-full object-cover w-24 h-24 bg-white p-1 border-white"
+                src={customIcon}
               />
             </div>
           ) : (

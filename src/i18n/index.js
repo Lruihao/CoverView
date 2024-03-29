@@ -18,7 +18,7 @@ i18n
    */
   .init({
     debug: process.env.NODE_ENV === 'development',
-    // lng: 'zh-CN',
+    lng: 'zh-CN',
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false,

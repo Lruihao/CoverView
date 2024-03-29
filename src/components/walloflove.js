@@ -18,15 +18,15 @@ function WallOfLove() {
   return (
     <div>
       <iframe
-        id="senja-frame-902012ea"
-        title="wall of love"
-        src=""
+        className="w-9/12 h-screen  mx-auto"
         data-src="https://widget.senja.io/widget/902012ea-9b49-433a-96df-5cb43fd9a648"
         frameBorder="0"
-        scrolling="no"
-        width="100%"
         height="100%"
-        className="w-9/12 h-screen  mx-auto"
+        id="senja-frame-902012ea"
+        scrolling="no"
+        src=""
+        title="wall of love"
+        width="100%"
       />
     </div>
   )

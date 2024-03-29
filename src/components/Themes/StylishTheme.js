@@ -65,9 +65,9 @@ const StylishTheme = ({ config }) => {
                 {customIcon ? (
                   <div className=" ">
                     <img
-                      src={customIcon}
                       alt="img"
                       className="w-12 h-12 mr-2 rounded-full bg-white border border-white"
+                      src={customIcon}
                     />
                   </div>
                 ) : (
@@ -84,13 +84,13 @@ const StylishTheme = ({ config }) => {
               <div className="relative flex group">
                 <div className="h-96 w-96 ">
                   <img
-                    src={unsplashImage.url && unsplashImage.url}
-                    className=" object-cover h-96 w-96  "
                     alt="preview"
+                    className=" object-cover h-96 w-96  "
+                    src={unsplashImage.url && unsplashImage.url}
                   />
                 </div>
 
-                <button onClick={() => setUnsplashImage('')} className="absolute  top-4 right-2 cursor-pointer">
+                <button className="absolute  top-4 right-2 cursor-pointer" onClick={() => setUnsplashImage('')}>
                   <svg
                     className="group-hover:inline-block hidden w-6 h-6 text-gray-800 bg-white p-1 rounded-full z-10"
                     fill="none"
@@ -98,7 +98,7 @@ const StylishTheme = ({ config }) => {
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                    <path d="M6 18L18 6M6 6l12 12" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
                   </svg>
                 </button>
 
@@ -106,23 +106,23 @@ const StylishTheme = ({ config }) => {
                   <div className=" group-hover:flex hidden items-center">
                     <span className="text-sm text-white mx-2">Photo by</span>
                     <a
-                      href={unsplashImage.profile}
-                      target="_blank"
-                      rel="noreferrer"
                       className="cursor-pointer flex items-center bg-gray-300 rounded-full text-sm"
+                      href={unsplashImage.profile}
+                      rel="noreferrer"
+                      target="_blank"
                     >
                       <img
-                        src={unsplashImage.avatar && unsplashImage.avatar}
                         alt={unsplashImage.name}
                         className="h-6 w-6 rounded-full mr-2"
+                        src={unsplashImage.avatar && unsplashImage.avatar}
                       />
 
                       <span className="pr-2">{unsplashImage.name}</span>
                     </a>
 
                     <a
-                      href="https://unsplash.com/?utm_source=https://coverview.lruihao.cn&utm_medium=referral"
                       className="text-sm text-white mx-2"
+                      href="https://unsplash.com/?utm_source=https://coverview.lruihao.cn&utm_medium=referral"
                     >
                       Unsplash
                     </a>
@@ -131,12 +131,12 @@ const StylishTheme = ({ config }) => {
               </div>
             ) : (
               <div className="flex flex-col p-2  bg-white items-center justify-center">
-                <form onSubmit={(e) => handleSearchSubmit(e)} className="flex bg-gray-50 rounded-full border mb-2">
+                <form className="flex bg-gray-50 rounded-full border mb-2" onSubmit={(e) => handleSearchSubmit(e)}>
                   <input
+                    className="focus:outline-none w-max text-lg bg-gray-50  p-1 px-4  rounded-full border border-gray-50"
+                    placeholder="Search image"
                     type="text"
                     value={searchText}
-                    placeholder="Search image"
-                    className="focus:outline-none w-max text-lg bg-gray-50  p-1 px-4  rounded-full border border-gray-50"
                     onChange={(e) => setSearchText(e.target.value)}
                   />
 
@@ -149,10 +149,10 @@ const StylishTheme = ({ config }) => {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth="2"
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                       />
                     </svg>
                   </button>
@@ -162,10 +162,10 @@ const StylishTheme = ({ config }) => {
                   {imageList.map((image) => {
                     return (
                       <img
-                        src={image.urls.regular}
-                        key={image.id}
                         alt={image.alt_description}
                         className="rounded m-2 cursor-pointer"
+                        key={image.id}
+                        src={image.urls.regular}
                         onClick={() => selectImage(image)}
                       />
                     )

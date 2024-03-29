@@ -20,6 +20,7 @@ const config = {
         ],
       },
       supportsPlatforms: 'Supports platforms like Hashnode or Dev.to',
+      shareOnTwitter: 'Share on Twitter',
       summary: {
         title: 'Simple, quick, and easy to use',
         content: 'So you can focus on writing your blog and never worry about those cover images.',

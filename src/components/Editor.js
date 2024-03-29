@@ -81,12 +81,12 @@ class Editor extends React.Component {
                   <Tab.List className=" bg-white md:p-0 p-2 flex flex-row md:flex-col">
                     <Tab className="flex  items-center font-semibold  ">
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
                         className="text-gray- bg-white rounded-xl w-12 m-2 h-12 p-2 rounded border"
-                        width="24"
+                        fill="currentColor"
                         height="24"
                         viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
                         <path d="M19.045 7.401c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.378-.378-.88-.586-1.414-.586s-1.036.208-1.413.585L4 13.585V18h4.413L19.045 7.401zm-3-3 1.587 1.585-1.59 1.584-1.586-1.585 1.589-1.584zM6 16v-1.585l7.04-7.018 1.586 1.586L7.587 16H6zm-2 4h16v2H4z" />
                       </svg>
@@ -94,12 +94,12 @@ class Editor extends React.Component {
 
                     <Tab className="flex items-center   font-semibold    text-lg">
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
                         className=" text-gray-800 bg-white rounded-xl w-12 h-12 p-2 m-2 rounded border"
-                        width="24"
+                        fill="currentColor"
                         height="24"
                         viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
                         <path d="M11.024 11.536 10 10l-2 3h9l-3.5-5z" />
                         <circle cx="9.503" cy="7.497" r="1.503" />
@@ -113,10 +113,10 @@ class Editor extends React.Component {
                       <div className="m-2 flex flex-col">
                         <span className="font-medium pb-1">Blog Title</span>
                         <textarea
+                          className="focus:outline-none border text-gray-700 text-xl rounded p-2 h-24"
+                          placeholder="Enter title here"
                           type="text"
                           value={this.state.title}
-                          placeholder="Enter title here"
-                          className="focus:outline-none border text-gray-700 text-xl rounded p-2 h-24"
                           onChange={(e) => this.setState({ title: e.target.value })}
                         />
                       </div>
@@ -124,10 +124,10 @@ class Editor extends React.Component {
                       <div className="flex flex-col m-2 ">
                         <span className="font-medium pb-1">Author</span>
                         <input
+                          className="focus:outline-none border text-gray-700 text-xl rounded bg-white p-2"
+                          placeholder="Author"
                           type="text"
                           value={this.state.author}
-                          placeholder="Author"
-                          className="focus:outline-none border text-gray-700 text-xl rounded bg-white p-2"
                           onChange={(e) => this.setState({ author: e.target.value })}
                         />
                       </div>
@@ -135,19 +135,19 @@ class Editor extends React.Component {
                       <div className="flex flex-col m-2 ">
                         <span className="font-medium pb-1">Icon</span>
                         <Select
+                          className="outline-none focus:outline-none text-xl text-gray-700"
+                          formatOptionLabel={this.formatOptionLabel}
+                          options={this.state.devIconOptions}
                           value={this.state.icon}
                           onChange={(selectedOption) => this.setState({ icon: selectedOption })}
-                          options={this.state.devIconOptions}
-                          formatOptionLabel={this.formatOptionLabel}
-                          className="outline-none focus:outline-none text-xl text-gray-700"
                         />
                       </div>
 
                       {this.state.icon.label === 'custom' ? (
                         <div className="flex items-center justify-center m-2">
                           <input
-                            type="file"
                             className="focus:outline-none text-lg cursor-pointer bg-white rounded border"
+                            type="file"
                             onChange={(e) => this.setState({ customIcon: URL.createObjectURL(e.target.files[0]) })}
                           />
                         </div>
@@ -160,9 +160,9 @@ class Editor extends React.Component {
                           <span className="font-medium pb-1">Font</span>
 
                           <select
+                            className="focus:outline-none text-gray-700 text-xl p-2 rounded border"
                             value={this.state.font}
                             onChange={(e) => this.setState({ font: e.target.value })}
-                            className="focus:outline-none text-gray-700 text-xl p-2 rounded border"
                           >
                             <option>font-serif</option>
                             <option>font-sans</option>
@@ -177,10 +177,10 @@ class Editor extends React.Component {
                           <div className="border rounded flex items-center p-2">
                             <span className="text-xl text-gray-700  mx-2">{this.state.bgColor}</span>
                             <input
+                              className="h-8 w-8 ml-auto mr-1 rounded"
                               type="color"
                               value={this.state.bgColor}
                               onChange={(e) => this.setState({ bgColor: e.target.value })}
-                              className="h-8 w-8 ml-auto mr-1 rounded"
                             />
                           </div>
                         </div>
@@ -220,9 +220,9 @@ class Editor extends React.Component {
                           <span className="font-medium pb-1">Platform</span>
 
                           <select
-                            onChange={(e) => this.setState({ platform: e.target.value })}
-                            value={this.state.platform}
                             className="focus:outline-none text-gray-700 text-xl p-2 rounded border"
+                            value={this.state.platform}
+                            onChange={(e) => this.setState({ platform: e.target.value })}
                           >
                             <option>hashnode</option>
                             <option>dev</option>
@@ -248,48 +248,48 @@ class Editor extends React.Component {
 
                       <div className="p-4  flex flex-wrap  overflow-y-scroll ">
                         <img
+                          alt="basic theme"
+                          className=" cursor-pointer border border-gray-100 hover:border-gray-200 hover:scale-105 duration-300 m-2"
                           src={theme7}
-                          alt="basic theme"
                           onClick={(e) => this.setState({ theme: 'background' })}
-                          className=" cursor-pointer border border-gray-100 hover:border-gray-200 hover:scale-105 duration-300 m-2"
                         />
                         <img
-                          src={theme1}
                           alt="basic theme"
-                          onClick={(e) => this.setState({ theme: 'basic' })}
                           className=" cursor-pointer border-gray-100 hover:scale-105 duration-300 hover:border-gray-200 border m-2 "
+                          src={theme1}
+                          onClick={(e) => this.setState({ theme: 'basic' })}
                         />
                         <img
-                          src={theme2}
                           alt="basic theme"
-                          onClick={(e) => this.setState({ theme: 'modern' })}
                           className="cursor-pointer border-gray-100 hover:scale-105 hover:border-gray-200 duration-300 border m-2 "
+                          src={theme2}
+                          onClick={(e) => this.setState({ theme: 'modern' })}
                         />
                         <img
+                          alt="basic theme"
+                          className=" cursor-pointer border border-gray-100 hover:border-gray-200 hover:scale-105 duration-300 m-2"
                           src={theme3}
-                          alt="basic theme"
                           onClick={(e) => this.setState({ theme: 'stylish' })}
-                          className=" cursor-pointer border border-gray-100 hover:border-gray-200 hover:scale-105 duration-300 m-2"
                         />
 
                         <img
+                          alt="basic theme"
+                          className=" cursor-pointer border border-gray-100 hover:border-gray-200 hover:scale-105 duration-300 m-2"
                           src={theme5}
-                          alt="basic theme"
                           onClick={(e) => this.setState({ theme: 'outline' })}
-                          className=" cursor-pointer border border-gray-100 hover:border-gray-200 hover:scale-105 duration-300 m-2"
                         />
 
                         <img
-                          src={theme4}
                           alt="basic theme"
-                          onClick={(e) => this.setState({ theme: 'preview' })}
                           className=" cursor-pointer border border-gray-100 hover:border-gray-200 hover:scale-105 duration-300 m-2"
+                          src={theme4}
+                          onClick={(e) => this.setState({ theme: 'preview' })}
                         />
                         <img
-                          src={theme6}
                           alt="basic theme"
-                          onClick={(e) => this.setState({ theme: 'mobile' })}
                           className=" cursor-pointer border border-gray-100 hover:border-gray-200 hover:scale-105 duration-300 m-2"
+                          src={theme6}
+                          onClick={(e) => this.setState({ theme: 'mobile' })}
                         />
                       </div>
                     </Tab.Panel>

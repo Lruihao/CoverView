@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import Header from './Header'
 
 function Faq() {
   const [showMsg, setShowMsg] = useState(false)
+  const { t } = useTranslation()
 
   return (
     <div>
@@ -34,10 +36,10 @@ function Faq() {
             <p className="italic mt-2">
               See
               <a
-                href="https://twitter.com/WankhadeRutik/status/1518270774335111168?s=20&t=XMjbJpGAC7anadJ690_DUg"
                 className="text-blue-400"
-                target="_blank"
+                href="https://twitter.com/WankhadeRutik/status/1518270774335111168?s=20&t=XMjbJpGAC7anadJ690_DUg"
                 rel="noreferrer"
+                target="_blank"
               >
                 example
               </a>
@@ -65,28 +67,28 @@ function Faq() {
             <p className="text-lg text-gray-700">
               If coverview adds value in your life and you wish to support this project, you can sponsor me with{' '}
               <a
-                href="https://lruihao.cn/images/wechatpay.jpg"
-                target="_blank"
-                rel="noreferrer"
                 className="font-semibold text-green-400 hover:underline"
+                href="https://lruihao.cn/images/wechatpay.jpg"
+                rel="noreferrer"
+                target="_blank"
               >
                 WeChat
               </a>
               /
               <a
-                href="https://lruihao.cn/images/alipay.jpg"
-                target="_blank"
-                rel="noreferrer"
                 className="font-semibold text-blue-400 hover:underline"
+                href="https://lruihao.cn/images/alipay.jpg"
+                rel="noreferrer"
+                target="_blank"
               >
                 Alipay
               </a>{' '}
               or
               <a
-                href="https://www.buymeacoffee.com/rutikwankhade"
-                target="_blank"
-                rel="noreferrer"
                 className="hover:underline text-pink-400 font-semibold"
+                href="https://www.buymeacoffee.com/rutikwankhade"
+                rel="noreferrer"
+                target="_blank"
               >
                 buy Rutik Wankhade a coffee
               </a>
@@ -96,21 +98,21 @@ function Faq() {
         </div>
 
         <div className="md:w-1/2 mx-auto text-center mt-20">
-          <button onClick={() => setShowMsg(!showMsg)} className="text-6xl text-center m-2">
+          <button className="text-6xl text-center m-2" onClick={() => setShowMsg(!showMsg)}>
             💡
           </button>
           <p className="text-xl font-Anek font-semibold text-gray-800">Want to know a secret? Click me</p>
         </div>
 
-        {showMsg ? (
-          <div>
-            <h2 className="md:w-7/12 text-4xl border text-center mx-auto my-10 p-10 rounded-xl shadow-sm font-Nunito">
+        {
+          showMsg ? (
+            <div>
+              <h2 className="md:w-7/12 text-4xl border text-center mx-auto my-10 p-10 rounded-xl shadow-sm font-Nunito">
               Blog titles with a minimum of 8 words have 21% better click-through
-            </h2>
-          </div>
-        ) : (
-          <div />
-        )}
+              </h2>
+            </div>
+          ) : (<div />)
+        }
       </div>
     </div>
   )

@@ -2,7 +2,7 @@ const config = {
   translation: {
     common: {
       howToUse: '如何使用',
-      star: 'GitHub 赞一个吧',
+      star: 'GitHub 赞一个',
     },
     home: {
       description: '为你的博客创建封面图片现在变得非常容易',
@@ -20,6 +20,7 @@ const config = {
         ],
       },
       supportsPlatforms: '支持 Hashnode 或 Dev.to 等平台',
+      shareOnTwitter: '分享到 Twitter',
       summary: {
         title: '简单、快速、易用',
         content: '这样你就可以专注于撰写博客，而不必担心封面图片了。',

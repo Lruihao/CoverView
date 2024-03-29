@@ -23,8 +23,8 @@ const MobileMockupTheme = ({ config }) => {
 
           {image ? (
             <div className="group relative">
-              <img src={image && image} className="object-cover rounded -translate-y-1 h-full" alt="preview" />
-              <button onClick={() => setImage('')} className="ml-auto mr-4 cursor-pointer">
+              <img alt="preview" className="object-cover rounded -translate-y-1 h-full" src={image && image} />
+              <button className="ml-auto mr-4 cursor-pointer" onClick={() => setImage('')}>
                 <svg
                   className="group-hover:inline-block absolute top-4 right-2  bg-gray-500 hidden w-8 h-8 p-2 text-white rounded-full z-10"
                   fill="none"
@@ -32,15 +32,15 @@ const MobileMockupTheme = ({ config }) => {
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                  <path d="M6 18L18 6M6 6l12 12" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
                 </svg>
               </button>
             </div>
           ) : (
             <div className="flex flex-col px-4 rounded-xl py-20 bg-white items-center justify-center">
               <input
-                type="file"
                 className="text-sm  flex flex-col cursor-pointer mb-2 bg-white rounded border"
+                type="file"
                 onChange={(e) => setImage(URL.createObjectURL(e.target.files[0]))}
               />
               <span className=" text-center italic">click to upload a screenshot</span>

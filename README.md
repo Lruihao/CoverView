@@ -1,6 +1,6 @@
 # CoverView
 
-> This project is based on the original [CoverView](https://github.com/Lruihao/CoverView).
+> This project is based on the original [CoverView](https://github.com/rutikwankhade/CoverView).
 
 Creating cover images for your blogs is now super easy.
 
@@ -41,7 +41,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## 🙏 Acknowledgments
 
-- [Rutik Wankhade](https://github.com/rutikwankhade) - original author of the [CoverView](https://github.com/Lruihao/CoverView)
+- [Rutik Wankhade](https://github.com/rutikwankhade) - original author of the [CoverView](https://github.com/rutikwankhade/CoverView)
 - [react-component-export-image](https://www.npmjs.com/package/react-component-export-image)
 - [Hero Patterns](https://www.heropatterns.com/)
 - [Devicons](https://github.com/devicons/devicon)
