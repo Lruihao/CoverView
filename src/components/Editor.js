@@ -147,7 +147,7 @@ class Editor extends React.Component {
                         />
                       </div>
 
-                      {this.state.icon.label === 'custom' ? (
+                      {this.state.icon.label === this.props.t('editor.custom') ? (
                         <div className="flex items-center justify-center m-2">
                           <input
                             className="focus:outline-none text-lg cursor-pointer bg-white rounded border"
