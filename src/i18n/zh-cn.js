@@ -32,6 +32,40 @@ const config = {
         thanks: '感谢原作者 ',
       },
     },
+    faq: {
+      title: '常见问题',
+      questions: [
+        {
+          q: '什么是 CoverView？',
+          a: 'CoverView 是一个快速、轻松地为博客创建封面图片的工具。',
+        },
+        {
+          q: 'CoverView 是免费的吗？',
+          a: '是的！CoverView 绝对是免费使用的。',
+        },
+        {
+          q: '我可以上传自定义品牌图标吗？',
+          a: '可以！只需在图标部分搜索并选择 <span class="font-semibold">自定义</span>，即可上传自己的图标以个性化你的封面图片。<br /><span class="italic mt-2">查看 <a class="text-blue-500" href="https://twitter.com/WankhadeRutik/status/1518270774335111168?s=20&t=XMjbJpGAC7anadJ690_DUg" rel="noreferrer" target="_blank">示例</a></span>。',
+        },
+        {
+          q: '我可以将 CoverView 用于非技术/个人博客吗？',
+          a: '可以！为什么不呢？尽管 CoverView 是针对技术博客而构建的，但你仍然可以将其用于个人博客，查看时尚主题以获取更多信息。',
+        },
+        {
+          q: '为什么使用 CoverView？',
+          a: '因为它简单、快速、易用。几秒钟就能创建封面图像，为什么还要花几个小时来设计呢？',
+        },
+        {
+          q: '想要支持/赞助这个项目吗？',
+          // a: 'If CoverView adds value in your life and you wish to support this project, you can sponsor me with <a class="font-semibold text-green-400 hover:underline" href="https://lruihao.cn/images/wechatpay.jpg" rel="noreferrer" target="_blank">WeChat</a>/<a class="font-semibold text-blue-400 hover:underline" href="https://lruihao.cn/images/alipay.jpg" rel="noreferrer" target="_blank">Alipay</a> or <a class="font-semibold text-pink-400 hover:underline" href="https://www.buymeacoffee.com/rutikwankhade" rel="noreferrer" target="_blank">buy Rutik Wankhade a coffee</a>',
+          a: '如果 Coverview 为你的生活增添了价值，并且你希望支持这个项目，你可以通过 <a class="font-semibold text-green-400 hover:underline" href="https://lruihao.cn/images/wechatpay.jpg" rel="noreferrer" target="_blank">微信</a> / <a class="font-semibold text-blue-400 hover:underline" href="https://lruihao.cn/images/alipay.jpg" rel="noreferrer" target="_blank">支付宝</a> 赞助我或者给 Rutik Wankhade <a class="font-semibold text-pink-400 hover:underline" href="https://www.buymeacoffee.com/rutikwankhade" rel="noreferrer" target="_blank">买杯咖啡</a>。',
+        },
+      ],
+      tips: {
+        title: '想知道秘密吗？点击我',
+        content: '博客标题至少包含 8 个字，点击率提高 21%',
+      },
+    },
   },
 }
 
