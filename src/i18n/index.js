@@ -5,20 +5,18 @@ import en from './en'
 import zhCN from './zh-cn'
 
 i18n
-  /**
-   * 检测用户当前使用的语言
-   * https://github.com/i18next/i18next-browser-languageDetector
-   */
   .use(LanguageDetector)
-  // 注入 react-i18next 实例
   .use(initReactI18next)
-  /**
-   * 初始化 i18next
-   * https://www.i18next.com/overview/configuration-options
-   */
   .init({
+    // 检测用户当前使用的语言
+    // https://github.com/i18next/i18next-browser-languageDetector
+    detection: {
+      // 使用 localStorage 存储用户选择的语言
+      lookupLocalStorage: 'coverview-lang',
+    },
+    // 初始化 i18next
+    // https://www.i18next.com/overview/configuration-options
     debug: process.env.NODE_ENV === 'development',
-    lng: 'zh-CN',
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false,
@@ -29,8 +27,11 @@ i18n
     },
   })
 
+/**
+ * 监听语言变化
+ */
 i18n.on('languageChanged', (lang) => {
-  // console.log(lang)
+  localStorage.setItem('coverview-lang', lang)
   document.title = `CoverView - ${i18n.t('home.description')}`
 })
 
