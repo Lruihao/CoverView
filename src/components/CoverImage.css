@@ -1,10 +1,7 @@
 .dev {
-    height: 340px;
-    width: 860px;
+  aspect-ratio: auto 1000 / 420;
 }
 
 .hashnode {
-    height: 420px;
-    width: 800px;
-
+  aspect-ratio: auto 960 / 504;
 }

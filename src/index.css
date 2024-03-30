@@ -8,13 +8,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Anek+Latin:wght@400;500;600;700&display=swap?crossorigin=anonymous');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap');
 
-
-.h-100{
-    height:36rem;
-}
-
-.h-99{
-    height:35rem;
+html,
+body,
+#root {
+  height: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -22,17 +19,16 @@
   display: none;
 }
 
-Track
-::-webkit-scrollbar-track {
+Track ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background:  #ccccff;
+  background: #ccccff;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background:  #b3b3ff;
+  background: #b3b3ff;
 }

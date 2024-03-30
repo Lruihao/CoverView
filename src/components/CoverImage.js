@@ -41,13 +41,12 @@ function CoverImage(props) {
         return <MobileMockupTheme config={props} />
       case 'background':
         return <BackgroundTheme config={props} />
-
       default:
         return <BasicTheme config={props} />
     }
   }
 
-  return <div className="md:w-full md:scale-100 scale-50">{selectTheme(theme)}</div>
+  return <div className="w-full scale-100 bg-white rounded">{selectTheme(theme)}</div>
 }
 
 export default CoverImage

@@ -15,7 +15,6 @@ import theme4 from '../assets/images/theme4.webp'
 import theme5 from '../assets/images/theme5.webp'
 import theme6 from '../assets/images/theme6.webp'
 import theme7 from '../assets/images/theme7.webp'
-import { t } from 'i18next'
 
 const defaultIcon = { label: 'react', value: 'react' }
 
@@ -74,14 +73,14 @@ class Editor extends React.Component {
     const { t } = this.props
 
     return (
-      <div>
+      <div className="flex flex-col h-full">
         <Header />
 
         <ImgProvider>
-          <div className="flex md:flex-row flex-col bg-gray-50 ">
-            <div className="bg-white flex flex-col h-100 md:w-4/12">
+          <div className="flex flex-col md:flex-row grow bg-gray-50">
+            <div className="md:w-1/3 bg-white flex flex-col">
               <Tab.Group>
-                <div className="flex md:flex-row flex-col">
+                <div className="h-full flex md:flex-row flex-col">
                   <Tab.List className=" bg-white md:p-0 p-2 flex flex-row md:flex-col">
                     <Tab className="flex  items-center font-semibold  ">
                       <svg
@@ -112,7 +111,7 @@ class Editor extends React.Component {
                     </Tab>
                   </Tab.List>
 
-                  <Tab.Panels className="bg-white border-l w-full p-4 ">
+                  <Tab.Panels className="bg-white border-l w-full p-4">
                     <Tab.Panel>
                       <div className="m-2 flex flex-col">
                         <span className="font-medium pb-1">{t('editor.title')}</span>
@@ -242,15 +241,18 @@ class Editor extends React.Component {
                       </button>
                     </Tab.Panel>
 
-                    <Tab.Panel className="h-99 w-full flex flex-col justify-center">
+                    <Tab.Panel className="h-full flex flex-col justify-center">
                       <div className="flex items-center border rounded-xl border-gray-50 px-4">
-                        <h2 className="text-lg pl-2 font-inter font-semibold">Themes</h2>
+                        <h2 className="text-lg pl-2 font-inter font-semibold">{t('editor.themes')}</h2>
                         <div className="ml-auto mr-1 p-2">
                           <RandomTheme onThemeChange={this.getRandomTheme} />
                         </div>
                       </div>
 
-                      <div className="p-4  flex flex-wrap  overflow-y-scroll ">
+                      <div
+                        className="p-4 flex flex-wrap overflow-y-scroll"
+                        style={{ height: 'calc(100vh - 140px)' }}
+                      >
                         <img
                           alt="basic theme"
                           className=" cursor-pointer border border-gray-100 hover:border-gray-200 hover:scale-105 duration-300 m-2"
@@ -312,11 +314,9 @@ class Editor extends React.Component {
           </div> */}
             </div>
 
-            <div className=" flex m-6 flex-col items-center justify-center ">
-              <ComponentToImg downloadAs={this.state.download}>
-                <CoverImage {...this.state} />
-              </ComponentToImg>
-            </div>
+            <ComponentToImg downloadAs={this.state.download}>
+              <CoverImage {...this.state} />
+            </ComponentToImg>
           </div>
         </ImgProvider>
       </div>

@@ -53,7 +53,7 @@ function ComponentToImg(props) {
   }
 
   return (
-    <>
+    <div className="md:w-2/3 flex m-6 flex-col items-center justify-center">
       <div ref={componentRef}>{props.children}</div>
       <button
         className="border p-2 bg-gray-700 hover:bg-gray-800 flex items-center text-white text-xl rounded-lg m-4 px-4"
@@ -91,7 +91,7 @@ function ComponentToImg(props) {
 
         <span className="mx-2">{t('editor.downloadBtn')}</span>
       </button>
-    </>
+    </div>
   )
 }
 
