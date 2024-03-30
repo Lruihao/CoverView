@@ -62,7 +62,11 @@ class Editor extends React.Component {
   }
 
   handleReset = () => {
-    this.setState(defaultSettings)
+    this.setState({
+      ...defaultSettings,
+      // 不重置 devIconOptions，因为它是从网络获取的
+      devIconOptions: this.state.devIconOptions,
+    })
   }
 
   getRandomTheme = (theme, Pattern) => {
