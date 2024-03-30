@@ -15,7 +15,7 @@ function SwitchLang() {
 
   return (
     <select
-      className="font-Nunito font-semibold text-sm bg-transparent outline-none cursor-pointer ml-4"
+      className="font-Nunito font-semibold text-sm bg-transparent outline-none cursor-pointer"
       value={selected}
       onChange={changeLanguage}
     >
