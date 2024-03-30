@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import Header from './Header'
 
@@ -11,7 +12,13 @@ function Faq() {
       <Header />
 
       <div className="md:w-10/12 mx-auto md:p-20 p-4">
-        <h1 className="font-bold md:text-4xl  text-2xl font-Anek text-center">{t('faq.title')}</h1>
+        <div className="mx-auto flex flex-col items-center gap-4">
+          <h1 className="font-bold md:text-4xl text-2xl font-Anek text-center">{t('faq.title')}</h1>
+          <Link
+            className="hover:translate-x-2 duration-300 bg-indigo-400 hover:bg-indigo-500 group rounded-full px-6 py-2 text-white text-sm mx-auto font-Inter font-semibold"
+            to="/editor"
+          >{t('home.openEditor')} ➡️</Link>
+        </div>
 
         <div className="flex flex-wrap justify-center mt-20 font-Inter relative">
           {t('faq.questions', { returnObjects: true }).map((item, index) => (
