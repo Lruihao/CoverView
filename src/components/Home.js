@@ -11,6 +11,7 @@ import step1 from '../assets/images/step1.png'
 import step2 from '../assets/images/step2.png'
 import hashnodeLogo from '../assets/images/hashnode-logo.png'
 import devLogo from '../assets/images/dev-logo.png'
+import fixitLogo from '../assets/icons/fixit.svg'
 import WallOfLove from './walloflove'
 
 function Home() {
@@ -159,6 +160,7 @@ function Home() {
           <div className="flex mx-auto justify-center">
             <img alt="hashnode" className="w-20 m-2" src={hashnodeLogo} />
             <img alt="dev" className="w-20 m-2" src={devLogo} />
+            <img alt="hugo-fixit" className="w-20 m-2" src={fixitLogo} />
           </div>
         </div>
 

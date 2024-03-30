@@ -20,7 +20,7 @@ const config = {
           'Unsplash 集成、个人品牌定制图标等',
         ],
       },
-      supportsPlatforms: '支持 Hashnode 或 Dev.to 等平台',
+      supportsPlatforms: '支持 Hashnode、Dev.to 和 Hugo FixIt 等平台',
       shareOnTwitter: '分享到 Twitter',
       summary: {
         title: '简单、快速、易用',

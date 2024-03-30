@@ -15,6 +15,7 @@ import theme4 from '../assets/images/theme4.webp'
 import theme5 from '../assets/images/theme5.webp'
 import theme6 from '../assets/images/theme6.webp'
 import theme7 from '../assets/images/theme7.webp'
+import fixitIcon from '../assets/icons/fixit.svg'
 
 const defaultIcon = { label: 'react', value: 'react' }
 
@@ -47,9 +48,17 @@ class Editor extends React.Component {
     fetch(devIconsUrl)
       .then((r) => r.json())
       .then((data) => {
+        data.unshift({ name: 'hugo-fixit', value: 'hugo-fixit' })
         data.unshift({ name: this.props.t('editor.custom') })
         this.setState({ devIconOptions: data.map((item) => ({ value: item.name, label: item.name })) })
       })
+  }
+
+  handleSelectPlatform = (e) => {
+    this.setState({ platform: e.target.value })
+    if (e.target.value === 'hugo-fixit') {
+      this.setState({ icon: { label: 'hugo-fixit', value: 'hugo-fixit' } })
+    }
   }
 
   handleReset = () => {
@@ -61,10 +70,16 @@ class Editor extends React.Component {
   }
 
   formatOptionLabel = ({ value, label }) => (
-    <div className="flex">
+    <div className="flex items-center">
       <span className="mr-2">{label}</span>
       <div className="ml-auto mr-2">
-        <i className={`devicon-${value}-plain dev-icon text-2xl`} />
+        {
+          value === 'hugo-fixit' ? (
+            <img alt="Hugo FixIt theme" className="w-6 h-6" src={fixitIcon} />
+          ) : (
+            <i className={`devicon-${value}-plain dev-icon text-2xl`} />
+          )
+        }
       </div>
     </div>
   )
@@ -146,7 +161,7 @@ class Editor extends React.Component {
                         />
                       </div>
 
-                      {this.state.icon.label === this.props.t('editor.custom') ? (
+                      {this.state.icon.label === this.props.t('editor.custom') &&
                         <div className="flex items-center justify-center m-2">
                           <input
                             className="focus:outline-none text-lg cursor-pointer bg-white rounded border"
@@ -154,9 +169,7 @@ class Editor extends React.Component {
                             onChange={(e) => this.setState({ customIcon: URL.createObjectURL(e.target.files[0]) })}
                           />
                         </div>
-                      ) : (
-                        <div />
-                      )}
+                      }
 
                       <div className="flex items-center">
                         <div className="flex flex-col m-2 w-1/2">
@@ -225,10 +238,11 @@ class Editor extends React.Component {
                           <select
                             className="focus:outline-none text-gray-700 text-xl p-2 rounded border"
                             value={this.state.platform}
-                            onChange={(e) => this.setState({ platform: e.target.value })}
+                            onChange={this.handleSelectPlatform}
                           >
                             <option>hashnode</option>
                             <option>dev</option>
+                            <option>hugo-fixit</option>
                           </select>
                         </div>
                       </div>

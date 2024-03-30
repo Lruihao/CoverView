@@ -46,7 +46,7 @@ function CoverImage(props) {
     }
   }
 
-  return <div className="w-full scale-100 bg-white rounded">{selectTheme(theme)}</div>
+  return <div className="bg-white rounded">{selectTheme(theme)}</div>
 }
 
 export default CoverImage

@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import unsplash from '../../utils/unsplashConfig'
 import { ImgContext } from '../../utils/ImgContext'
+import hugoIcon from '../../assets/icons/hugo.svg'
+import fixitIcon from '../../assets/icons/fixit.svg'
 
 const BackgroundTheme = ({ config }) => {
   const { t } = useTranslation()
@@ -88,16 +90,20 @@ const BackgroundTheme = ({ config }) => {
                 <h1 className="md:text-5xl text-center text-2xl font-bold text-white">{title}</h1>
                 <div className="flex flex-col items-center">
                   <h2 className="text-xl font-semibold text-white">{author}</h2>
-                  {customIcon ? (
-                    <img
-                      alt="img"
-                      className="w-12 h-12 m-2 rounded-full bg-white border-2 border-white"
-                      src={customIcon}
-                    />
+                  {customIcon && !icon.value ? (
+                    <img alt="Custom Icon" className="w-10 h-10 m-2 rounded-full bg-white border-2 border-white" src={customIcon} />
                   ) : (
-                    <div className="mr-2 items-center justify-center flex">
-                      <i className={`devicon-${icon.value}-plain text-white dev-icon text-3xl`} />
-                    </div>
+                    icon.value === 'hugo-fixit' ? (
+                      <div className="flex items-center gap-2 m-2">
+                        <img alt="Hugo Icon" className="w-10 h-10 rounded-full bg-white border-2 border-white" src={hugoIcon} />
+                        <span className="text-xl text-white font-black">+</span>
+                        <img alt="FixIt Icon" className="w-10 h-10 rounded-full bg-white border-2 border-white" src={fixitIcon} />
+                      </div>
+                    ) : (
+                      <div className="w-10 h-10 m-2 flex items-center justify-center">
+                        <i className={`devicon-${icon.value}-plain text-white dev-icon text-4xl`} />
+                      </div>
+                    )
                   )}
                 </div>
               </div>

@@ -20,7 +20,7 @@ const config = {
           'Unsplash integration, custom icon for personal branding and more.',
         ],
       },
-      supportsPlatforms: 'Supports platforms like Hashnode or Dev.to',
+      supportsPlatforms: 'Supports platforms like Hashnode, Dev.to and Hugo FixIt',
       shareOnTwitter: 'Share on Twitter',
       summary: {
         title: 'Simple, quick, and easy to use',

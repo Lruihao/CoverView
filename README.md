@@ -14,7 +14,7 @@ Creating cover images for your blogs is now super easy.
 - 🌈 4 different themes, multiple fonts
 - 🌠 100+ dev icons with option to upload custom icon
 - ✨ 15+ different background patterns
-- 💾 Cover size based on blogging platform (i.e hashnode and dev)
+- 💾 Cover size based on blogging platform (i.e hashnode, dev and Hugo FixIt)
 
 ## 👩‍💻 Developing
 

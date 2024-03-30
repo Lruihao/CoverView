@@ -1,7 +1,8 @@
-.dev {
-  aspect-ratio: auto 1000 / 420;
-}
-
 .hashnode {
   aspect-ratio: auto 960 / 504;
+}
+
+.dev,
+.hugo-fixit  {
+  aspect-ratio: auto 1000 / 420;
 }
