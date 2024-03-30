@@ -130,7 +130,7 @@ const BackgroundTheme = ({ config }) => {
             </div>
           </div>
         ) : (
-          <div className="h-full flex flex-col p-4 bg-white items-center justify-around">
+          <div className="h-full flex flex-col p-4 bg-white items-center justify-around gap-2">
             <div className="flex items-center justify-between w-full px-6">
               <div className="text-lg font-semibold text-gray-700">{t('editor.selectImgTips')}</div>
               <form
