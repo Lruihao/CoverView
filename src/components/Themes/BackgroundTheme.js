@@ -91,7 +91,7 @@ const BackgroundTheme = ({ config }) => {
             src={unsplashImage?.url}
           />
 
-          <div className="backdrop-blur-sm h-full bg-gray-800/60 absolute">
+          <div className="backdrop-blur-sm h-full w-full bg-gray-800/60 absolute">
             <button className="absolute top-2 right-2 cursor-pointer" onClick={() => setUnsplashImage('')}>
               <svg
                 className="group-hover:inline-block hidden w-8 h-8 text-gray-800 bg-white p-2 rounded-full z-10"
