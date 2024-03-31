@@ -1,4 +1,7 @@
 import React from 'react'
+import hugoIcon from '../../assets/icons/hugo.svg'
+import fixitIcon from '../../assets/icons/fixit.svg'
+
 const OutlineTheme = ({ config }) => {
   const { title, bgColor, author, icon, font, customIcon } = config
 
@@ -10,14 +13,15 @@ const OutlineTheme = ({ config }) => {
       <div className={`${font} rounded-2xl py-6 flex flex-col h-full`}>
         {customIcon ? (
           <div className="m-6">
-            <img
-              alt="img"
-              className="rounded-full object-cover w-24 h-24 bg-white p-1 border-white"
-              src={customIcon}
-            />
+            <img alt="Custom Icon" className="rounded-full object-cover w-24 h-24 bg-white p-1 border-white" src={customIcon} />
+          </div>
+        ) : icon.value === 'hugo-fixit' ? (
+          <div className="mr-auto ml-2 flex items-center justify-center relative">
+            <img alt="Hugo Icon" className="w-24 h-24 rounded-full bg-white border-4 border-white" src={hugoIcon} />
+            <img alt="FixIt Icon" className="w-1/3 h-1/3 rounded-full absolute bg-white border-2 border-white" src={fixitIcon} />
           </div>
         ) : (
-          <div className="mr-auto ml-2 items-center justify-center flex">
+          <div className="mr-auto ml-2 flex items-center justify-center">
             <i className={`devicon-${icon.value}-plain text-white p-4 dev-icon text-8xl`} />
           </div>
         )}

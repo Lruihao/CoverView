@@ -1,4 +1,6 @@
 import React from 'react'
+import hugoIcon from '../../assets/icons/hugo.svg'
+import fixitIcon from '../../assets/icons/fixit.svg'
 
 const ModernTheme = ({ config }) => {
   const { title, bgColor, pattern, author, icon, font, customIcon } = config
@@ -9,12 +11,17 @@ const ModernTheme = ({ config }) => {
       style={{ backgroundColor: bgColor }}
     >
       {customIcon ? (
-        <div className="  mx-auto items-center justify-center flex">
-          <img alt="img" className="w-28 h-28 rounded-full bg-white border-4 border-white" src={customIcon} />
+        <div className="mx-auto flex items-center justify-center">
+          <img alt="Custom Icon" className="w-32 h-32 rounded-full bg-white border-8 border-white" src={customIcon} />
+        </div>
+      ) : icon.value === 'hugo-fixit' ? (
+        <div className="mx-auto flex items-center justify-center relative">
+          <img alt="Hugo Icon" className="w-32 h-32 rounded-full bg-white border-8 border-white" src={hugoIcon} />
+          <img alt="FixIt Icon" className="w-1/3 h-1/3 rounded-full absolute bg-white border-2 border-white" src={fixitIcon} />
         </div>
       ) : (
-        <div className=" rounded-full p-6 w-32 h-32 bg-white mx-auto items-center justify-center flex">
-          <i className={`devicon-${icon.value}-plain  p-4 dev-icon text-7xl`} />
+        <div className="flex items-center justify-center rounded-full p-6 w-32 h-32 bg-white mx-auto">
+          <i className={`devicon-${icon.value}-plain p-4 dev-icon text-7xl`} />
         </div>
       )}
 

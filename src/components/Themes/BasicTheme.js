@@ -1,4 +1,6 @@
 import React from 'react'
+import hugoIcon from '../../assets/icons/hugo.svg'
+import fixitIcon from '../../assets/icons/fixit.svg'
 
 function BasicTheme({ config }) {
   const { title, bgColor, pattern, author, icon, font, customIcon } = config
@@ -17,12 +19,16 @@ function BasicTheme({ config }) {
 
         <div className="flex mx-4 p-4 rounded-xl items-center bg-white">
           {customIcon ? (
-            <div className="w-12 h-12  ">
-              <img alt="img" className="rounded-full bg-white p-1 border-white" src={customIcon} />
+            <img alt="Custom Icon" className="w-12 h-12 my-4 mr-auto ml-2 rounded-full" src={customIcon} />
+          ) : icon.value === 'hugo-fixit' ? (
+            <div className="flex items-center gap-1 mr-auto ml-2 p-4">
+              <img alt="Hugo Icon" className="w-12 h-12 rounded-full" src={hugoIcon} />
+              <span className="text-xl font-black">+</span>
+              <img alt="FixIt Icon" className="w-12 h-12 rounded-full" src={fixitIcon} />
             </div>
           ) : (
-            <div className="mr-auto ml-2 items-center justify-center flex">
-              <i className={`devicon-${icon.value}-plain  p-4 dev-icon text-5xl`} />
+            <div className="mr-auto ml-2 flex items-center justify-center">
+              <i className={`devicon-${icon.value}-plain p-4 dev-icon text-5xl`} />
             </div>
           )}
 

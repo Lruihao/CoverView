@@ -1,5 +1,4 @@
 import React from 'react'
-// import { useTranslation } from 'react-i18next'
 import { withTranslation } from 'react-i18next'
 import Select from 'react-select'
 import { Tab } from '@headlessui/react'
@@ -17,16 +16,14 @@ import theme6 from '../assets/images/theme6.webp'
 import theme7 from '../assets/images/theme7.webp'
 import fixitIcon from '../assets/icons/fixit.svg'
 
-const defaultIcon = { label: 'react', value: 'react' }
-
 const defaultSettings = {
   title: 'A begineers guide to frontend development',
   bgColor: '#949ee5',
   pattern: '',
   download: 'PNG',
   author: 'Lruihao',
-  icon: defaultIcon,
-  devIconOptions: [defaultIcon],
+  icon: { label: 'Hugo FixIt', value: 'hugo-fixit' },
+  devIconOptions: [],
   font: 'font-Anek',
   theme: 'background',
   customIcon: '',
@@ -60,20 +57,26 @@ class Editor extends React.Component {
   state = defaultSettings
 
   componentDidMount() {
-    // console.log('Mount')
+    const defaultDevIconOptions = [
+      { label: this.props.t('editor.custom'), value: 'custom'},
+      { label: 'Hugo FixIt', value: 'hugo-fixit' },
+    ]
     fetch(devIconsUrl)
       .then((r) => r.json())
       .then((data) => {
-        data.unshift({ name: 'hugo-fixit' })
-        data.unshift({ name: this.props.t('editor.custom') })
-        this.setState({ devIconOptions: data.map((item) => ({ value: item.name, label: item.name })) })
+        this.setState({ devIconOptions: [
+          ...defaultDevIconOptions,
+          ...data.map((icon) => ({ label: icon.altnames[0] ?? icon.name, value: icon.name })),
+        ]})
+      }).catch(() => {
+        this.setState({ devIconOptions: defaultDevIconOptions })
       })
   }
 
   handleSelectPlatform = (e) => {
     this.setState({ platform: e.target.value })
     if (e.target.value === 'hugo-fixit') {
-      this.setState({ icon: { label: 'hugo-fixit', value: 'hugo-fixit' } })
+      this.setState({ icon: { label: 'Hugo FixIt', value: 'hugo-fixit' }})
     }
   }
 
@@ -181,7 +184,7 @@ class Editor extends React.Component {
                         />
                       </div>
 
-                      {this.state.icon.label === this.props.t('editor.custom') &&
+                      {this.state.icon.value === 'custom' &&
                         <div className="flex items-center justify-center m-2">
                           <input
                             className="focus:outline-none text-lg cursor-pointer bg-white rounded border"
