@@ -31,3 +31,10 @@ Track ::-webkit-scrollbar-track {
 ::-webkit-scrollbar-thumb:hover {
   background: #b3b3ff;
 }
+
+/* font Virgil */
+@font-face {
+  font-family: 'Virgil';
+  font-display: swap;
+  src: url(https://virgil.excalidraw.com/Virgil.woff2) format('woff2');
+}

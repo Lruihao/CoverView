@@ -30,6 +30,16 @@ const defaultSettings = {
   platform: 'hashnode',
 }
 
+const fontOptions = [
+  'font-Anek',
+  'font-Inter',
+  'font-mono',
+  'font-Poppins',
+  'font-sans',
+  'font-serif',
+  'font-Virgil',
+]
+
 const patternOptions = [
   'none',
   'graph-paper',
@@ -201,12 +211,11 @@ class Editor extends React.Component {
                             value={this.state.font}
                             onChange={(e) => this.setState({ font: e.target.value })}
                           >
-                            <option>font-serif</option>
-                            <option>font-sans</option>
-                            <option>font-mono</option>
-                            <option>font-Inter</option>
-                            <option>font-Poppins</option>
-                            <option>font-Anek</option>
+                            {
+                              fontOptions.map((font) => (
+                                <option key={font} value={font}>{font}</option>
+                              ))
+                            }
                           </select>
                         </div>
                         <div className="flex flex-col m-2 w-full">

@@ -9,6 +9,7 @@ module.exports = {
         Poppins: ['Poppins', 'sans-serif'],
         Anek: ['Anek Latin', 'sans-serif'],
         Nunito: ['Nunito', 'sans-serif'],
+        Virgil: ['Virgil', 'sans-serif'],
       },
     },
   },
