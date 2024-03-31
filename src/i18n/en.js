@@ -79,6 +79,17 @@ const config = {
       selectImgTips: 'Click on any image to select',
       downloadBtn: 'Download',
       themes: 'Themes',
+      imageListEmpty: 'No images found. Try different keywords.',
+    },
+    pagination: {
+      summary: 'Showing <span class="font-medium">{{page}}</span> to <span class="font-medium">{{totalPages}}</span> of <span class="font-medium">{{total}}</span> results',
+      prev: 'Previous Page',
+      next: 'Next Page',
+    },
+    orientation: {
+      landscape: 'Landscape',
+      portrait: 'Portrait',
+      squarish: 'Squarish',
     },
   },
 }

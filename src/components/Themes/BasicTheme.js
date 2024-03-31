@@ -6,17 +6,17 @@ function BasicTheme({ config }) {
   return (
     <div className="p-4 bg-white">
       <div
-        className={`overflow-y-hidden flex text-gray-800 items-center h-full ${platform} ${pattern} `}
+        className={`overflow-y-hidden flex text-gray-800 items-center h-full ${platform} ${pattern}`}
         style={{ backgroundColor: bgColor }}
       >
-        <div className={`${font} bg-white md:w-10/12  m-auto flex flex-col pt-12 rounded-xl`}>
+        <div className={`${font} bg-white md:w-10/12 m-auto flex flex-col pt-12 rounded-xl`}>
           <div className="px-12">
             <div>
               <h1 className="text-3xl md:text-5xl text-gray-800 font-bold text-center">{title}</h1>
             </div>
           </div>
 
-          <div className=" flex mx-4  p-4 rounded-xl items-center bg-white">
+          <div className="flex mx-4 p-4 rounded-xl items-center bg-white">
             {customIcon ? (
               <div className="w-12 h-12  ">
                 <img alt="img" className="rounded-full bg-white p-1 border-white" src={customIcon} />
