@@ -194,7 +194,6 @@ class Editor extends React.Component {
                       <div className="flex items-center">
                         <div className="flex flex-col m-2 w-1/2">
                           <span className="font-medium pb-1">{t('editor.font')}</span>
-
                           <select
                             className="focus:outline-none text-gray-700 text-xl p-2 rounded border"
                             value={this.state.font}
@@ -208,6 +207,21 @@ class Editor extends React.Component {
                             <option>font-Anek</option>
                           </select>
                         </div>
+                        <div className="flex flex-col m-2 w-full">
+                          <span className="font-medium pb-1">{t('editor.platform')}</span>
+                          <select
+                            className="focus:outline-none text-gray-700 text-xl p-2 rounded border"
+                            value={this.state.platform}
+                            onChange={this.handleSelectPlatform}
+                          >
+                            <option>hashnode</option>
+                            <option>dev</option>
+                            <option>hugo-fixit</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div className={`flex items-center ${this.state.theme === 'background' ? 'hidden' : ''}`}>
                         <div className="flex flex-col m-2 w-1/2">
                           <span className="font-medium pb-1">{t('editor.color')}</span>
                           <div className="border rounded flex items-center p-2">
@@ -220,10 +234,7 @@ class Editor extends React.Component {
                             />
                           </div>
                         </div>
-                      </div>
-
-                      <div className="flex items-center">
-                        <div className={`flex flex-col m-2 w-1/2 ${this.state.theme === 'background' ? 'hidden' : ''}`}>
+                        <div className="flex flex-col m-2 w-1/2">
                           <span className="font-medium pb-1">{t('editor.pattern')}</span>
                           <select
                             className="focus:outline-none border text-xl p-2 rounded"
@@ -231,20 +242,6 @@ class Editor extends React.Component {
                             onChange={(e) => this.setState({ pattern: e.target.value })}
                           >
                             {patternOptions.map((item) => (<option key={item}>{item}</option>))}
-                          </select>
-                        </div>
-
-                        <div className="flex flex-col m-2 w-full">
-                          <span className="font-medium pb-1">{t('editor.platform')}</span>
-
-                          <select
-                            className="focus:outline-none text-gray-700 text-xl p-2 rounded border"
-                            value={this.state.platform}
-                            onChange={this.handleSelectPlatform}
-                          >
-                            <option>hashnode</option>
-                            <option>dev</option>
-                            <option>hugo-fixit</option>
                           </select>
                         </div>
                       </div>

@@ -117,18 +117,16 @@ const BackgroundTheme = ({ config }) => {
                 <h2 className="text-xl font-semibold text-white">{author}</h2>
                 {customIcon ? (
                   <img alt="Custom Icon" className="w-10 h-10 m-2 rounded-full bg-white border-2 border-white" src={customIcon} />
+                ) : icon.value === 'hugo-fixit' ? (
+                  <div className="flex items-center gap-2 m-2">
+                    <img alt="Hugo Icon" className="w-10 h-10 rounded-full bg-white border-2 border-white" src={hugoIcon} />
+                    <span className="text-xl text-white font-black">+</span>
+                    <img alt="FixIt Icon" className="w-10 h-10 rounded-full bg-white border-2 border-white" src={fixitIcon} />
+                  </div>
                 ) : (
-                  icon.value === 'hugo-fixit' ? (
-                    <div className="flex items-center gap-2 m-2">
-                      <img alt="Hugo Icon" className="w-10 h-10 rounded-full bg-white border-2 border-white" src={hugoIcon} />
-                      <span className="text-xl text-white font-black">+</span>
-                      <img alt="FixIt Icon" className="w-10 h-10 rounded-full bg-white border-2 border-white" src={fixitIcon} />
-                    </div>
-                  ) : (
-                    <div className="w-10 h-10 m-2 flex items-center justify-center">
-                      <i className={`devicon-${icon.value}-plain text-white dev-icon text-4xl`} />
-                    </div>
-                  )
+                  <div className="w-10 h-10 m-2 flex items-center justify-center">
+                    <i className={`devicon-${icon.value}-plain text-white dev-icon text-4xl`} />
+                  </div>
                 )}
               </div>
             </div>
