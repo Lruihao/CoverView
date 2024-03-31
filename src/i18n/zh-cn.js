@@ -80,7 +80,7 @@ const config = {
       selectImgTips: '点击选择图片',
       downloadBtn: '下载',
       themes: '主题',
-      imageListEmpty: '未找到图片，请尝试不同的关键字。',
+      imageListEmpty: '暂无图片',
     },
     pagination: {
       summary: '共 <span class="font-medium">{{total}}</span> 个结果，<span class="font-medium">{{page}}</span>/<span class="font-medium">{{totalPages}}</span> 页',

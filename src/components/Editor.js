@@ -48,7 +48,7 @@ class Editor extends React.Component {
     fetch(devIconsUrl)
       .then((r) => r.json())
       .then((data) => {
-        data.unshift({ name: 'hugo-fixit', value: 'hugo-fixit' })
+        data.unshift({ name: 'hugo-fixit' })
         data.unshift({ name: this.props.t('editor.custom') })
         this.setState({ devIconOptions: data.map((item) => ({ value: item.name, label: item.name })) })
       })
@@ -161,7 +161,7 @@ class Editor extends React.Component {
                           formatOptionLabel={this.formatOptionLabel}
                           options={this.state.devIconOptions}
                           value={this.state.icon}
-                          onChange={(selectedOption) => this.setState({ icon: selectedOption })}
+                          onChange={(selectedOption) => this.setState({ icon: selectedOption, customIcon: ''})}
                         />
                       </div>
 

@@ -79,7 +79,7 @@ const config = {
       selectImgTips: 'Click on any image to select',
       downloadBtn: 'Download',
       themes: 'Themes',
-      imageListEmpty: 'No images found. Try different keywords.',
+      imageListEmpty: 'No images found',
     },
     pagination: {
       summary: 'Showing <span class="font-medium">{{page}}</span> to <span class="font-medium">{{totalPages}}</span> of <span class="font-medium">{{total}}</span> results',
