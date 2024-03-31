@@ -22,7 +22,7 @@ const defaultSettings = {
   pattern: '',
   download: 'PNG',
   author: 'Lruihao',
-  icon: { label: 'Hugo FixIt', value: 'hugo-fixit' },
+  icon: { label: 'reactjs', value: 'react' },
   devIconOptions: [],
   font: 'font-Anek',
   theme: 'background',
@@ -61,6 +61,7 @@ class Editor extends React.Component {
       { label: this.props.t('editor.custom'), value: 'custom'},
       { label: 'Hugo FixIt', value: 'hugo-fixit' },
     ]
+    this.setState({ devIconOptions: defaultDevIconOptions })
     fetch(devIconsUrl)
       .then((r) => r.json())
       .then((data) => {
@@ -68,8 +69,6 @@ class Editor extends React.Component {
           ...defaultDevIconOptions,
           ...data.map((icon) => ({ label: icon.altnames[0] ?? icon.name, value: icon.name })),
         ]})
-      }).catch(() => {
-        this.setState({ devIconOptions: defaultDevIconOptions })
       })
   }
 
