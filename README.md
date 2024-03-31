@@ -41,9 +41,11 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## 🙏 Acknowledgments
 
-- [Rutik Wankhade](https://github.com/rutikwankhade) - original author of the [CoverView](https://github.com/rutikwankhade/CoverView)
+- [Rutik Wankhade](https://github.com/rutikwankhade) - the author of original [CoverView](https://github.com/rutikwankhade/CoverView)
 - [react-component-export-image](https://www.npmjs.com/package/react-component-export-image)
 - [Hero Patterns](https://www.heropatterns.com/)
 - [Devicons](https://github.com/devicons/devicon)
+- [Font Virgil](https://github.com/excalidraw/virgil)
+- [Font MMT](https://github.com/Lruihao/MMT)
 
 Don't forget to leave a ⭐ if you found this useful.
