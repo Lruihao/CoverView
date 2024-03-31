@@ -9,7 +9,7 @@ function Pagination({ page, pageSize, total, pagerCount, pagination, className }
   return (
     <div className={`hidden sm:flex sm:flex-1 sm:items-center sm:justify-between bg-white p-2 h-max w-full ${className}`}>
       <div>
-        <p className="text-sm text-gray-700" dangerouslySetInnerHTML={{ __html: t('pagination.summary', { page, totalPages, total }) }} />
+        <p className="text-sm text-gray-600" dangerouslySetInnerHTML={{ __html: t('pagination.summary', { page, totalPages, total }) }} />
       </div>
       <nav aria-label="Pagination" className="isolate inline-flex -space-x-px rounded-md shadow-sm">
         <button
@@ -24,7 +24,7 @@ function Pagination({ page, pageSize, total, pagerCount, pagination, className }
         </button>
         {Array.from({ length: pagerCountActual }, (_, i) => i + 1).map((item) => (
           <button
-            className={`relative inline-flex items-center px-4 py-2 text-sm font-semibold ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 ${item === page ? 'bg-indigo-600 text-white' : 'text-gray-900'}`}
+            className={`relative inline-flex items-center px-4 py-2 text-sm font-semibold ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 ${item === page ? 'bg-indigo-400 text-white' : 'text-gray-900'}`}
             disabled={item === page}
             key={item}
             onClick={() => pagination(item)}
@@ -35,7 +35,7 @@ function Pagination({ page, pageSize, total, pagerCount, pagination, className }
         {totalPages > pagerCountActual && pagerCountActual > 0 && <span className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 focus:outline-offset-0">...</span>}
         {totalPages > pagerCountActual && pagerCountActual > 0 && (
           <button
-            className={`relative inline-flex items-center px-4 py-2 text-sm font-semibold ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 ${totalPages === page ? 'bg-indigo-600 text-white' : 'text-gray-900'}`}
+            className={`relative inline-flex items-center px-4 py-2 text-sm font-semibold ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 ${totalPages === page ? 'bg-indigo-400 text-white' : 'text-gray-900'}`}
             disabled={page === totalPages}
             onClick={() => pagination(totalPages)}
           >
