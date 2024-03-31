@@ -7,7 +7,7 @@ function Pagination({ page, pageSize, total, pagerCount, pagination, className }
   const pagerCountActual = Math.max(0, Math.min(pagerCount, totalPages) - 2)
 
   return (
-    <div className={`hidden sm:flex sm:flex-1 sm:items-center sm:justify-between bg-white p-2 h-max w-full ${className}`}>
+    <div className={`hidden sm:flex sm:items-center sm:justify-between bg-white p-2 h-max w-full shrink-0 ${className}`}>
       <div>
         <p className="text-sm text-gray-600" dangerouslySetInnerHTML={{ __html: t('pagination.summary', { page, totalPages, total }) }} />
       </div>

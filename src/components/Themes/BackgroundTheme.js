@@ -16,11 +16,32 @@ const BackgroundTheme = ({ config }) => {
   const [imageList, setImageList] = useState([])
   const [total, setTotal] = useState(0)
   const [page, setPage] = useState(1)
-  const [pageSize] = useState(30)
+  const pageSize = 30
   const [loading, setLoading] = useState(false)
   const [searchText, setSearchText] = useState('setup')
-  const [orientation, setOrientation] = useState('landscape')
+  const [orientation, setOrientation] = useState('all')
+  const [resultColor, setResultColor] = useState('all')
   const { unsplashImage, setUnsplashImage } = useContext(ImgContext)
+  const orientationOptions = [
+    'all',
+    'landscape',
+    'portrait',
+    'squarish',
+  ]
+  const resultColorOptions = [
+    'all',
+    'black_and_white',
+    'black',
+    'white',
+    'yellow',
+    'orange',
+    'red',
+    'purple',
+    'magenta',
+    'green',
+    'teal',
+    'blue',
+  ]
 
   const searchImages = (resetPage=false) => {
     // 重置页码
@@ -28,12 +49,16 @@ const BackgroundTheme = ({ config }) => {
       setPage(1)
     }
     setLoading(true)
-    getPhotos({
+    const query = {
       query: searchText,
       page: page,
       perPage: pageSize,
       orientation: orientation,
-    }).then((response) => {
+      color: resultColor,
+    }
+    orientation === 'all' && delete query.orientation
+    resultColor === 'all' && delete query.color
+    getPhotos(query).then((response) => {
       setLoading(false)
       if (response.status !== 200) {
         return console.error('Failed to fetch images!', response.errors)
@@ -132,19 +157,28 @@ const BackgroundTheme = ({ config }) => {
         {/* 图片列表 */}
         <div className={`${unsplashImage ? 'hidden' : 'flex'} h-full flex-col p-1 md:p-4 bg-white items-center justify-around gap-1 md:gap-2 relative`}>
           <div className="flex flex-wrap items-center justify-center md:justify-between w-full px-2">
-            <div className="text-lg font-semibold text-gray-700">{t('editor.selectImgTips')}</div>
+            <div className="text-lg font-semibold text-gray-700">{t('editor.selectImgTips')} 👇</div>
             <form
               className="flex bg-gray-50 rounded-full border"
               onSubmit={(e) => e.preventDefault()}
             >
               <select
-                className="focus:outline-none bg-gray-50 py-1 px-2 md:px-4 rounded-l-full border border-gray-50"
+                className="focus:outline-none bg-gray-50 py-1 px-2 md:px-4 rounded-l-full"
                 value={orientation}
                 onChange={(e) => setOrientation(e.target.value)}
               >
-                <option value="landscape">{t('orientation.landscape')}</option>
-                <option value="portrait">{t('orientation.portrait')}</option>
-                <option value="squarish">{t('orientation.squarish')}</option>
+                {orientationOptions.map((option) => (
+                  <option key={option} value={option}>{t(`orientation.${option}`)}</option>
+                ))}
+              </select>
+              <select
+                className="focus:outline-none bg-gray-50 py-1 px-2 md:px-4 w-24"
+                value={resultColor}
+                onChange={(e) => setResultColor(e.target.value)}
+              >
+                {resultColorOptions.map((color) => (
+                  <option key={color} value={color}>{t(`resultColors.${color}`)}</option>
+                ))}
               </select>
               <input
                 className="focus:outline-none w-full text-lg bg-gray-50 py-1 px-2 md:px-4 rounded-full border border-gray-50"

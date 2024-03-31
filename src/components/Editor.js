@@ -33,13 +33,29 @@ const defaultSettings = {
   platform: 'hashnode',
 }
 
-const devIconsUrl = 'https://raw.githubusercontent.com/devicons/devicon/master/devicon.json'
-// const devIconOptions = [
-//   { value: 'None', label: 'None' },
-//   { value: 'javascript', label: 'Javascript' },
-//   { value: 'python', label: 'Python' },
-// ]
+const patternOptions = [
+  'none',
+  'graph-paper',
+  'jigsaw',
+  'hideout',
+  'dots',
+  'falling-triangles',
+  'circuit-board',
+  'temple',
+  'anchors',
+  'brickwall',
+  'overlapping-circles',
+  'wiggle',
+  'tic-tac-toe',
+  'leaf',
+  'bubbles',
+  'squares',
+  'explorer',
+  'jupiter',
+  'sun',
+]
 
+const devIconsUrl = 'https://raw.githubusercontent.com/devicons/devicon/master/devicon.json'
 class Editor extends React.Component {
   state = defaultSettings
 
@@ -214,25 +230,7 @@ class Editor extends React.Component {
                             value={this.state.pattern}
                             onChange={(e) => this.setState({ pattern: e.target.value })}
                           >
-                            <option>none</option>
-                            <option>graph-paper</option>
-                            <option>jigsaw</option>
-                            <option>hideout</option>
-                            <option>dots</option>
-                            <option>falling-triangles</option>
-                            <option>circuit-board</option>
-                            <option>temple</option>
-                            <option>anchors</option>
-                            <option>brickwall</option>
-                            <option>overlapping-circles</option>
-                            <option>wiggle</option>
-                            <option>tic-tac-toe</option>
-                            <option>leaf</option>
-                            <option>bubbles</option>
-                            <option>squares</option>
-                            <option>explorer</option>
-                            <option>jupiter</option>
-                            <option>sun</option>
+                            {patternOptions.map((item) => (<option key={item}>{item}</option>))}
                           </select>
                         </div>
 
