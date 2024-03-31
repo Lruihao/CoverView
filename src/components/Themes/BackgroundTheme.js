@@ -9,10 +9,7 @@ import Pagination from '../Pagination'
 
 const BackgroundTheme = ({ config }) => {
   const { t } = useTranslation()
-  const { title, author, font, icon, customIcon, platform, bgColor } = config
-
-  // const [image, setImage] = useState({})
-
+  const { title, author, font, icon, customIcon } = config
   const [imageList, setImageList] = useState([])
   const [total, setTotal] = useState(0)
   const [page, setPage] = useState(1)
@@ -84,7 +81,7 @@ const BackgroundTheme = ({ config }) => {
   }
 
   return (
-    <div className={`overflow-y-hidden flex flex-col rounded ${platform}`} style={{ backgroundColor: bgColor }}>
+    <div className="theme-background overflow-y-hidden flex flex-col rounded h-full">
       <div className="h-full bg-white">
         {/* 预览图片 */}
         <div className={`${unsplashImage ? 'flex': 'hidden'} h-full relative group`}>
@@ -133,7 +130,7 @@ const BackgroundTheme = ({ config }) => {
           </div>
 
           <div className="absolute bottom-2 right-2 opacity-80">
-            <div className=" group-hover:flex hidden items-center">
+            <div className="group-hover:flex hidden items-center">
               <span className="text-sm text-white mx-2">Photo by</span>
               <a
                 className="cursor-pointer flex items-center bg-gray-300 rounded-full text-sm"
@@ -188,7 +185,7 @@ const BackgroundTheme = ({ config }) => {
 
               <button type="submit" onClick={() => searchImages(true)}>
                 <svg
-                  className="w-8 h-8 ml-auto m-1 p-2 bg-gray-700 hover:bg-gray-800 text-white rounded-full"
+                  className="w-8 h-8 m-1 p-2 bg-gray-700 hover:bg-gray-800 text-white rounded-full"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

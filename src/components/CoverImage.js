@@ -10,20 +10,11 @@ import MobileMockupTheme from './Themes/MobileMockupTheme'
 import BackgroundTheme from './Themes/BackgroundTheme'
 
 function CoverImage(props) {
-  // hexToRgbA(hex, opacity) {
-  //   var c;
-  //   if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
-  //     c = hex.substring(1).split("");
-  //     if (c.length === 3) {
-  //       c = [c[0], c[0], c[1], c[1], c[2], c[2]];
-  //     }
-  //     c = "0x" + c.join("");
-  //     return "rgba(" + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(",") + `,${opacity})`;
-  //   }
-  //   throw new Error("Bad Hex");
-  // }
-
-  const { theme } = props
+  const { theme, platform } = props
+  const noPaddingThemes = [
+    'stylish',
+    'background',
+  ]
 
   const selectTheme = (theme) => {
     switch (theme) {
@@ -45,8 +36,7 @@ function CoverImage(props) {
         return <BasicTheme config={props} />
     }
   }
-
-  return <div className="bg-white rounded">{selectTheme(theme)}</div>
+  return <div className={`coverview-preview-container bg-white rounded ${platform} ${noPaddingThemes.includes(theme) ? 'p-0' : 'p-4'}`}>{selectTheme(theme)}</div>
 }
 
 export default CoverImage

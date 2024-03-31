@@ -1,8 +1,14 @@
+.coverview-preview-container {
+  aspect-ratio: var(--cv-platform-x) / var(--cv-platform-y);
+}
+
 .hashnode {
-  aspect-ratio: auto 960 / 504;
+  --cv-platform-x: 960;
+  --cv-platform-y: 504;
 }
 
 .dev,
 .hugo-fixit  {
-  aspect-ratio: auto 1000 / 420;
+  --cv-platform-x: 1000;
+  --cv-platform-y: 420;
 }
