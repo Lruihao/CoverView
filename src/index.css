@@ -38,3 +38,10 @@ Track ::-webkit-scrollbar-track {
   font-display: swap;
   src: url(https://virgil.excalidraw.com/Virgil.woff2) format('woff2');
 }
+
+/* font MMT */
+@font-face {
+  font-family: 'MMT';
+  font-display: swap;
+  src: url(https://lruihao.cn/fonts/mmt_1.5.ttf) format('woff2');
+}

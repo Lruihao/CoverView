@@ -10,6 +10,7 @@ module.exports = {
         Anek: ['Anek Latin', 'sans-serif'],
         Nunito: ['Nunito', 'sans-serif'],
         Virgil: ['Virgil', 'sans-serif'],
+        MMT: ['MMT', 'sans-serif'],
       },
     },
   },

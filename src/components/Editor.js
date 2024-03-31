@@ -24,7 +24,7 @@ const defaultSettings = {
   author: 'Lruihao',
   icon: { label: 'reactjs', value: 'react' },
   devIconOptions: [],
-  font: 'font-Anek',
+  font: 'font-Virgil',
   theme: 'background',
   customIcon: '',
   platform: 'hashnode',
@@ -38,6 +38,7 @@ const fontOptions = [
   'font-sans',
   'font-serif',
   'font-Virgil',
+  'font-MMT',
 ]
 
 const patternOptions = [
