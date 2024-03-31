@@ -124,7 +124,7 @@ class RandomTheme extends React.Component {
 
   render() {
     return (
-      <div className="flex flex-col justify-center">
+      <div className={`flex flex-col justify-center ${this.props.className}`}>
         <div
           className="shuffle-btn  w-10 flex justify-center items-center shadow-xl shadow-gray-100 h-10 p-2  bg-indigo-400  rounded-xl cursor-pointer"
           onClick={this.changeTheme}

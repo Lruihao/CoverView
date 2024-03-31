@@ -143,7 +143,7 @@ class Editor extends React.Component {
                         />
                       </div>
 
-                      <div className="flex flex-col m-2 ">
+                      <div className="flex flex-col m-2">
                         <span className="font-medium pb-1">{t('editor.author')}</span>
                         <input
                           className="focus:outline-none border text-gray-700 text-xl rounded bg-white p-2"
@@ -154,7 +154,7 @@ class Editor extends React.Component {
                         />
                       </div>
 
-                      <div className="flex flex-col m-2 ">
+                      <div className="flex flex-col m-2">
                         <span className="font-medium pb-1">{t('editor.icon')}</span>
                         <Select
                           className="outline-none focus:outline-none text-xl text-gray-700"
@@ -195,7 +195,7 @@ class Editor extends React.Component {
                         <div className="flex flex-col m-2 w-1/2">
                           <span className="font-medium pb-1">{t('editor.color')}</span>
                           <div className="border rounded flex items-center p-2">
-                            <span className="text-xl text-gray-700  mx-2">{this.state.bgColor}</span>
+                            <span className="text-xl text-gray-700 mx-2">{this.state.bgColor}</span>
                             <input
                               className="h-8 w-8 ml-auto mr-1 rounded"
                               type="color"
@@ -207,13 +207,13 @@ class Editor extends React.Component {
                       </div>
 
                       <div className="flex items-center">
-                        {/* <div className="flex flex-col m-2 w-1/2">
+                        <div className={`flex flex-col m-2 w-1/2 ${this.state.theme === 'background' ? 'hidden' : ''}`}>
                           <span className="font-medium pb-1">{t('editor.pattern')}</span>
                           <select
-                            onChange={(e) => this.setState({ pattern: e.target.value })}
                             className="focus:outline-none border text-xl p-2 rounded"
-                            value={this.state.pattern}>
-
+                            value={this.state.pattern}
+                            onChange={(e) => this.setState({ pattern: e.target.value })}
+                          >
                             <option>none</option>
                             <option>graph-paper</option>
                             <option>jigsaw</option>
@@ -234,7 +234,7 @@ class Editor extends React.Component {
                             <option>jupiter</option>
                             <option>sun</option>
                           </select>
-                        </div> */}
+                        </div>
 
                         <div className="flex flex-col m-2 w-full">
                           <span className="font-medium pb-1">{t('editor.platform')}</span>
@@ -251,20 +251,24 @@ class Editor extends React.Component {
                         </div>
                       </div>
 
-                      <button
-                        className="flex items-center bg-gray-700 text-white rounded-lg mt-6 text-lg font-semibold p-1 px-4 mx-auto border"
-                        onClick={this.handleReset}
-                      >
-                        <span>{t('editor.resetBtn')}</span>
-                      </button>
+                      <div className="flex items-center justify-center gap-2 md:gap-4 m-2">
+                        <RandomTheme
+                          className={this.state.theme === 'background' ? 'hidden' : ''}
+                          onThemeChange={this.getRandomTheme}
+                        />
+                        <button
+                          className="bg-gray-700 text-white rounded-lg text-lg font-semibold p-1 px-4 border"
+                          onClick={this.handleReset}
+                        >
+                          <span>{t('editor.resetBtn')}</span>
+                        </button>
+                      </div>
                     </Tab.Panel>
 
-                    <Tab.Panel className="h-full flex flex-col justify-center">
-                      <div className="flex items-center border rounded-xl border-gray-50 px-4">
-                        <h2 className="text-lg pl-2 font-inter font-semibold">{t('editor.themes')}</h2>
-                        <div className="ml-auto mr-1 p-2">
-                          <RandomTheme onThemeChange={this.getRandomTheme} />
-                        </div>
+                    <Tab.Panel className="h-full flex flex-col">
+                      <div className="flex items-center justify-between border rounded-xl border-gray-50 px-4 py-2">
+                        <h2 className="text-lg font-inter font-semibold">{t('editor.themes')}</h2>
+                        <RandomTheme onThemeChange={this.getRandomTheme} />
                       </div>
 
                       <div
