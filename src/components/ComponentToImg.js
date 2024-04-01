@@ -1,45 +1,39 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import './CoverImage.css'
-import domtoimage from 'dom-to-image'
-import { ImgContext } from '../utils/ImgContext'
-import { trackDownload } from '../utils/unsplashConfig'
+import domtoimage from 'dom-to-image-more'
 
 function ComponentToImg(props) {
   const { t } = useTranslation()
   const [loading, setLoading] = useState(false)
-
-  const { unsplashImage } = useContext(ImgContext)
   const componentRef = React.createRef()
 
-  async function saveImage(data) {
-    const a = document.createElement('A')
-    a.href = data
-    a.download = 'cover.png'
-    document.body.appendChild(a)
-    setLoading(false)
-
-    a.click()
-    document.body.removeChild(a)
-  }
-
-  const downloadImage = async () => {
+  function downloadImage() {
     setLoading(true)
-    const element = componentRef.current
-    if (unsplashImage) {
-      await trackDownload({ downloadLocation: unsplashImage.downloadLink })
-    }
-    const data = await domtoimage.toPng(componentRef.current, {
-      height: element.offsetHeight * 2,
-      width: element.offsetWidth * 2,
+    const coverviewEl = componentRef.current.querySelector('.coverview-preview-container')
+    const { width, height } = coverviewEl.getBoundingClientRect()
+    const scale = 2
+    domtoimage.toPng(coverviewEl, {
+      width: width * scale,
+      height: height * scale,
+      cacheBust: true,
+      copyDefaultStyles: false,
       style: {
-        transform: `scale(${2})`,
+        transform: `scale(${scale})`,
         transformOrigin: 'top left',
-        width: `${element.offsetWidth}px`,
-        height: `${element.offsetHeight}px`,
+        width: `${width}px`,
+        height: `${height}px`,
+        margin: 0,
       },
+    }).then((dataUrl) => {
+      const a = document.createElementNS('http://www.w3.org/1999/xhtml', 'a')
+      a.href = dataUrl
+      a.download = 'cover.png'
+      a.click()
+      setLoading(false)
+    }).catch((error) => {
+      console.error('oops, something went wrong!', error)
     })
-    await saveImage(data)
   }
 
   return (
