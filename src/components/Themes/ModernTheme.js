@@ -4,6 +4,7 @@ import fixitIcon from '../../assets/icons/fixit.svg'
 
 const ModernTheme = ({ config }) => {
   const { title, bgColor, pattern, author, icon, font, customIcon } = config
+  const fontBold = font !== 'font-Virgil' ? 'font-bold' : ''
 
   return (
     <div
@@ -27,7 +28,7 @@ const ModernTheme = ({ config }) => {
 
       <div className="h-full w-2/3">
         <div className={`${font} bg-white px-12 justify-center text-left rounded-xl h-full p-4 flex flex-col`}>
-          <h1 className="text-3xl md:text-5xl font-bold text-gray-800">{title}</h1>
+          <h1 className={`text-3xl md:text-5xl text-gray-800 ${fontBold}`}>{title}</h1>
           <h2 className="text-xl mt-10 font-semibold text-left ">{author}</h2>
         </div>
       </div>

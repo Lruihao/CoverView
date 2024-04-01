@@ -4,6 +4,7 @@ import fixitIcon from '../../assets/icons/fixit.svg'
 
 function BasicTheme({ config }) {
   const { title, bgColor, pattern, author, icon, font, customIcon } = config
+  const fontBold = font !== 'font-Virgil' ? 'font-bold' : ''
 
   return (
     <div
@@ -13,7 +14,7 @@ function BasicTheme({ config }) {
       <div className={`${font} bg-white md:w-10/12 m-auto flex flex-col pt-12 rounded-xl`}>
         <div className="px-12">
           <div>
-            <h1 className="text-3xl md:text-5xl text-gray-800 font-bold text-center">{title}</h1>
+            <h1 className={`text-3xl md:text-5xl text-gray-800 text-center ${fontBold}`}>{title}</h1>
           </div>
         </div>
 

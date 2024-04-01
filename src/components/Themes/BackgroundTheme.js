@@ -10,6 +10,7 @@ import Pagination from '../Pagination'
 const BackgroundTheme = ({ config }) => {
   const { t } = useTranslation()
   const { title, author, font, icon, customIcon } = config
+  const fontBold = font !== 'font-Virgil' ? 'font-bold' : ''
   const [imageList, setImageList] = useState([])
   const [total, setTotal] = useState(0)
   const [page, setPage] = useState(1)
@@ -109,7 +110,7 @@ const BackgroundTheme = ({ config }) => {
               </svg>
             </button>
             <div className={`${font} rounded-xl h-full p-4 flex flex-col justify-center gap-12`}>
-              <h1 className="md:text-5xl text-center text-2xl font-bold text-white">{title}</h1>
+              <h1 className={`md:text-5xl text-center text-2xl text-white ${fontBold}`}>{title}</h1>
               <div className="flex flex-col items-center">
                 <h2 className="text-xl font-semibold text-white">{author}</h2>
                 {customIcon ? (
