@@ -16,7 +16,6 @@ function ComponentToImg(props) {
     domtoimage.toPng(coverviewEl, {
       width: width * scale,
       height: height * scale,
-      cacheBust: true,
       copyDefaultStyles: false,
       filter(node) {
         if (node.classList?.contains('download-ignore')) {
@@ -32,11 +31,10 @@ function ComponentToImg(props) {
         margin: 0,
       },
     }).then((dataUrl) => {
-      const a = document.createElementNS('http://www.w3.org/1999/xhtml', 'a')
-      dataUrl.replace()
-      a.href = dataUrl
-      a.download = 'cover.png'
-      a.click()
+      const link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a')
+      link.href = dataUrl
+      link.download = 'cover.png'
+      link.click()
       setLoading(false)
     }).catch((error) => {
       setLoading(false)
