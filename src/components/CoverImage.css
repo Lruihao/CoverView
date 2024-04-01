@@ -17,6 +17,12 @@
   --cv-width: 860px;
 }
 
+.hexo-butterfly {
+  --cv-platform-x: 3;
+  --cv-platform-y: 2;
+  --cv-width: 680px;
+}
+
 /* md */
 @media (min-width: 768px) {
   .coverview-preview-container {

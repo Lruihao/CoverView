@@ -63,6 +63,13 @@ const patternOptions = [
   'sun',
 ]
 
+const platformOptions = [
+  { label: 'Hashnode', value: 'hashnode' },
+  { label: 'Dev.to', value: 'dev' },
+  { label: 'Hugo FixIt', value: 'hugo-fixit' },
+  { label: 'Hexo Butterfly', value: 'hexo-butterfly' },
+]
+
 const themeOptions = [
   { name: 'background', src: theme7 },
   { name: 'basic', src: theme1 },
@@ -236,9 +243,11 @@ class Editor extends React.Component {
                             value={this.state.platform}
                             onChange={this.handleSelectPlatform}
                           >
-                            <option>hashnode</option>
-                            <option>dev</option>
-                            <option>hugo-fixit</option>
+                            {
+                              platformOptions.map((platform) => (
+                                <option key={platform.value} value={platform.value}>{platform.label}</option>
+                              ))
+                            }
                           </select>
                         </div>
                       </div>

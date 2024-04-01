@@ -14,7 +14,11 @@ Creating cover images for your blogs is now super easy.
 - 🌈 4 different themes, multiple fonts
 - 🌠 100+ dev icons with option to upload custom icon
 - ✨ 15+ different background patterns
-- 💾 Cover size based on blogging platform (i.e hashnode, dev and Hugo FixIt)
+- 💾 Cover size based on blogging platform
+  - Hashnode
+  - Dev.to
+  - Hugo FixIt
+  - Hexo Butterfly
 
 ## 👩‍💻 Developing
 
@@ -42,7 +46,6 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## 🙏 Acknowledgments
 
 - [Rutik Wankhade](https://github.com/rutikwankhade) - the author of original [CoverView](https://github.com/rutikwankhade/CoverView)
-- [react-component-export-image](https://www.npmjs.com/package/react-component-export-image)
 - [Hero Patterns](https://www.heropatterns.com/)
 - [Devicons](https://github.com/devicons/devicon)
 - [Font Virgil](https://github.com/excalidraw/virgil)
