@@ -36,7 +36,7 @@ function CoverImage(props) {
         return <BasicTheme config={props} />
     }
   }
-  return <div className={`coverview-preview-container bg-white rounded ${platform} ${noPaddingThemes.includes(theme) ? 'p-0' : 'p-4'}`}>{selectTheme(theme)}</div>
+  return <div className={`coverview-preview-container bg-white rounded mx-auto ${platform} ${noPaddingThemes.includes(theme) ? 'p-0' : 'p-4'}`}>{selectTheme(theme)}</div>
 }
 
 export default CoverImage

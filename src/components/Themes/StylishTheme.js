@@ -91,15 +91,15 @@ const StylishTheme = ({ config }) => {
             <h1 className="text-4xl font-bold text-gray-800">{title}</h1>
             <div className="flex items-center text-left">
               {customIcon ? (
-                <img alt="Custom Icon" className="w-10 h-10 m-2 rounded-full" src={customIcon} />
+                <img alt="Custom Icon" className="w-8 h-8 mr-2 rounded-full" src={customIcon} />
               ) : icon.value === 'hugo-fixit' ? (
-                <div className="flex items-center gap-1 m-2">
-                  <img alt="Hugo Icon" className="w-10 h-10 rounded-full" src={hugoIcon} />
+                <div className="flex items-center gap-1 mr-2">
+                  <img alt="Hugo Icon" className="w-7 h-7 rounded-full" src={hugoIcon} />
                   <span className="text-xl font-black">+</span>
-                  <img alt="FixIt Icon" className="w-10 h-10 rounded-full" src={fixitIcon} />
+                  <img alt="FixIt Icon" className="w-7 h-7 rounded-full" src={fixitIcon} />
                 </div>
               ) : (
-                <div className="w-10 h-10 m-2 flex items-center justify-center">
+                <div className="mr-2 flex items-center justify-center">
                   <i className={`devicon-${icon.value}-plain dev-icon text-3xl`} />
                 </div>
               )}

@@ -17,7 +17,7 @@ const ModernTheme = ({ config }) => {
       ) : icon.value === 'hugo-fixit' ? (
         <div className="mx-auto flex items-center justify-center relative">
           <img alt="Hugo Icon" className="w-32 h-32 rounded-full bg-white border-8 border-white" src={hugoIcon} />
-          <img alt="FixIt Icon" className="w-1/3 h-1/3 rounded-full absolute bg-white border-2 border-white" src={fixitIcon} />
+          <img alt="FixIt Icon" className="w-7/12 h-7/12 rounded-full absolute bg-white border-2 border-white" src={fixitIcon} />
         </div>
       ) : (
         <div className="flex items-center justify-center rounded-full p-6 w-32 h-32 bg-white mx-auto">

@@ -10,15 +10,15 @@ const OutlineTheme = ({ config }) => {
       className="theme-outline overflow-y-hidden rounded flex flex-col text-gray-800 px-10 h-full"
       style={{ backgroundColor: bgColor }}
     >
-      <div className={`${font} rounded-2xl py-6 flex flex-col h-full`}>
+      <div className={`${font} rounded-2xl py-10 md:py-6 flex flex-col h-full`}>
         {customIcon ? (
-          <div className="m-6">
-            <img alt="Custom Icon" className="rounded-full object-cover w-24 h-24 bg-white p-1 border-white" src={customIcon} />
+          <div className="m-4 ml-6">
+            <img alt="Custom Icon" className="rounded-full object-cover w-24 h-24 bg-white p-1 border-2 border-white" src={customIcon} />
           </div>
         ) : icon.value === 'hugo-fixit' ? (
-          <div className="mr-auto ml-2 flex items-center justify-center relative">
-            <img alt="Hugo Icon" className="w-24 h-24 rounded-full bg-white border-4 border-white" src={hugoIcon} />
-            <img alt="FixIt Icon" className="w-1/3 h-1/3 rounded-full absolute bg-white border-2 border-white" src={fixitIcon} />
+          <div className="mr-auto m-4 ml-6 flex items-center justify-center relative">
+            <img alt="Hugo Icon" className="w-24 h-24 rounded-full bg-white border-8 border-white" src={hugoIcon} />
+            <img alt="FixIt Icon" className="w-7/12 h-7/12 rounded-full absolute bg-white border-2 border-white" src={fixitIcon} />
           </div>
         ) : (
           <div className="mr-auto ml-2 flex items-center justify-center">

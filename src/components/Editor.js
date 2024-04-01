@@ -63,6 +63,16 @@ const patternOptions = [
   'sun',
 ]
 
+const themeOptions = [
+  { name: 'background', src: theme7 },
+  { name: 'basic', src: theme1 },
+  { name: 'modern', src: theme2 },
+  { name: 'stylish', src: theme3 },
+  { name: 'outline', src: theme5 },
+  { name: 'preview', src: theme4 },
+  { name: 'mobile', src: theme6 },
+]
+
 const devIconsUrl = 'https://raw.githubusercontent.com/devicons/devicon/master/devicon.json'
 class Editor extends React.Component {
   state = defaultSettings
@@ -129,8 +139,8 @@ class Editor extends React.Component {
             <div className="md:w-1/3 bg-white flex flex-col">
               <Tab.Group>
                 <div className="h-full flex md:flex-row flex-col">
-                  <Tab.List className=" bg-white md:p-0 p-2 flex flex-row md:flex-col">
-                    <Tab className="flex  items-center font-semibold  ">
+                  <Tab.List className="bg-white md:p-0 p-2 flex flex-row md:flex-col">
+                    <Tab className="flex items-center font-semibold  ">
                       <svg
                         className="text-gray- bg-white w-12 m-2 h-12 p-2 rounded border"
                         fill="currentColor"
@@ -278,54 +288,23 @@ class Editor extends React.Component {
                         <RandomTheme onThemeChange={this.getRandomTheme} />
                       </div>
 
-                      <div
-                        className="p-4 flex flex-wrap overflow-y-scroll"
-                        style={{ height: 'calc(100vh - 140px)' }}
-                      >
-                        <img
-                          alt="basic theme"
-                          className=" cursor-pointer border border-gray-100 hover:border-gray-200 hover:scale-105 duration-300 m-2"
-                          src={theme7}
-                          onClick={(e) => this.setState({ theme: 'background' })}
-                        />
-                        <img
-                          alt="basic theme"
-                          className=" cursor-pointer border-gray-100 hover:scale-105 duration-300 hover:border-gray-200 border m-2 "
-                          src={theme1}
-                          onClick={(e) => this.setState({ theme: 'basic' })}
-                        />
-                        <img
-                          alt="basic theme"
-                          className="cursor-pointer border-gray-100 hover:scale-105 hover:border-gray-200 duration-300 border m-2 "
-                          src={theme2}
-                          onClick={(e) => this.setState({ theme: 'modern' })}
-                        />
-                        <img
-                          alt="basic theme"
-                          className=" cursor-pointer border border-gray-100 hover:border-gray-200 hover:scale-105 duration-300 m-2"
-                          src={theme3}
-                          onClick={(e) => this.setState({ theme: 'stylish' })}
-                        />
-
-                        <img
-                          alt="basic theme"
-                          className=" cursor-pointer border border-gray-100 hover:border-gray-200 hover:scale-105 duration-300 m-2"
-                          src={theme5}
-                          onClick={(e) => this.setState({ theme: 'outline' })}
-                        />
-
-                        <img
-                          alt="basic theme"
-                          className=" cursor-pointer border border-gray-100 hover:border-gray-200 hover:scale-105 duration-300 m-2"
-                          src={theme4}
-                          onClick={(e) => this.setState({ theme: 'preview' })}
-                        />
-                        <img
-                          alt="basic theme"
-                          className=" cursor-pointer border border-gray-100 hover:border-gray-200 hover:scale-105 duration-300 m-2"
-                          src={theme6}
-                          onClick={(e) => this.setState({ theme: 'mobile' })}
-                        />
+                      <div className="h-full flex flex-wrap overflow-y-scroll">
+                        {
+                          themeOptions.map((theme) => (
+                            <div
+                              className={`${theme.name === 'background' ? 'w-full' : 'w-1/2'} p-2`}
+                              key={theme.name}
+                              title={theme.name}
+                            >
+                              <img
+                                alt={theme.name}
+                                className={`${this.state.theme === theme.name ? 'border-2 border-indigo-400 hover:border-indigo-500' : 'border border-gray-100 hover:border-gray-200'} cursor-pointer hover:scale-105 duration-300`}
+                                src={theme.src}
+                                onClick={(e) => this.setState({ theme: theme.name })}
+                              />
+                            </div>
+                          ))
+                        }
                       </div>
                     </Tab.Panel>
                   </Tab.Panels>
