@@ -99,11 +99,14 @@ const StylishTheme = ({ config }) => {
                   <span className="text-xl font-black">+</span>
                   <img alt="FixIt Icon" className="w-7 h-7 rounded-full" src={fixitIcon} />
                 </div>
-              ) : (
-                <div className="mr-2 flex items-center justify-center">
-                  <i className={`devicon-${icon.value}-plain dev-icon text-3xl`} />
-                </div>
-              )}
+              ) : icon.value !== 'custom' ? (
+                <img
+                  alt={`${icon.label} Icon`}
+                  className="w-8 h-8 mr-2"
+                  data-icon={icon.value}
+                  src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon.value}/${icon.value}-${icon.opts[0]}.svg`}
+                />
+              ) : ''}
 
               <h2 className="text-xl font-semibold text-left">{author}</h2>
             </div>

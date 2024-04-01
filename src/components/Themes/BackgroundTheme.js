@@ -121,11 +121,14 @@ const BackgroundTheme = ({ config }) => {
                     <span className="text-xl text-white font-black">+</span>
                     <img alt="FixIt Icon" className="w-10 h-10 rounded-full bg-white border-2 border-white" src={fixitIcon} />
                   </div>
-                ) : (
-                  <div className="w-10 h-10 m-2 flex items-center justify-center">
-                    <i className={`devicon-${icon.value}-plain text-white dev-icon text-4xl`} />
-                  </div>
-                )}
+                ) : icon.value !== 'custom' ? (
+                  <img
+                    alt={`${icon.label} Icon`}
+                    className="w-10 h-10 m-2"
+                    data-icon={icon.value}
+                    src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon.value}/${icon.value}-${icon.opts[0]}.svg`}
+                  />
+                ) : ''}
               </div>
             </div>
           </div>

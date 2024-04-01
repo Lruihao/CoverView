@@ -21,11 +21,16 @@ const OutlineTheme = ({ config }) => {
             <img alt="Hugo Icon" className="w-24 h-24 rounded-full bg-white border-8 border-white" src={hugoIcon} />
             <img alt="FixIt Icon" className="w-7/12 h-7/12 rounded-full absolute bg-white border-2 border-white" src={fixitIcon} />
           </div>
-        ) : (
-          <div className="mr-auto px-4 flex items-center justify-center">
-            <i className={`devicon-${icon.value}-plain text-white dev-icon text-8xl`} />
+        ) : icon.value !== 'custom' ? (
+          <div className="mx-4">
+            <img
+              alt={`${icon.label} Icon`}
+              className="rounded-full object-cover w-24 h-24 bg-white p-1 border-2 border-white"
+              data-icon={icon.value}
+              src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon.value}/${icon.value}-${icon.opts[0]}.svg`}
+            />
           </div>
-        )}
+        ) : ''}
         <h1 className={`text-3xl px-4 text-white md:text-5xl ${fontBold}`}>{title}</h1>
 
         <div className={`${font} w-full h-12 flex px-4 items-center`}>

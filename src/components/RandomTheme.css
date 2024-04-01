@@ -1,13 +1,10 @@
-
-.shuffle-btn:active{
-    transform: rotate(360deg);
-    transition: all 0.2s ease-out;
+.shuffle-btn:active {
+  transform: rotate(360deg);
+  transition: all 0.2s ease-out;
 }
 
-.bi-shuffle{
-    height: 30px;
-    width: 30px;
-    opacity: 0.6;
+.bi-shuffle {
+  height: 30px;
+  width: 30px;
+  opacity: 0.6;
 }
-
-

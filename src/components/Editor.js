@@ -22,7 +22,9 @@ const defaultSettings = {
   pattern: '',
   download: 'PNG',
   author: 'Lruihao',
-  icon: { label: 'reactjs', value: 'react' },
+  icon: { label: 'reactjs', value: 'react', opts: ['original', 'original-wordmark'] },
+  iconStyle: 'original',
+  iconStyleOptions: ['original', 'original-wordmark'],
   devIconOptions: [],
   font: 'font-Virgil',
   theme: 'background',
@@ -86,8 +88,8 @@ class Editor extends React.Component {
 
   componentDidMount() {
     const defaultDevIconOptions = [
-      { label: this.props.t('editor.custom'), value: 'custom'},
-      { label: 'Hugo FixIt', value: 'hugo-fixit' },
+      { label: this.props.t('editor.custom'), value: 'custom', opts: []},
+      { label: 'Hugo FixIt', value: 'hugo-fixit', opts: [] },
     ]
     this.setState({ devIconOptions: defaultDevIconOptions })
     fetch(devIconsUrl)
@@ -95,7 +97,12 @@ class Editor extends React.Component {
       .then((data) => {
         this.setState({ devIconOptions: [
           ...defaultDevIconOptions,
-          ...data.map((icon) => ({ label: icon.altnames[0] ?? icon.name, value: icon.name })),
+          ...data.map((icon) => ({
+            label: icon.altnames[0] ?? icon.name,
+            value: icon.name,
+            // 后续如有需要可以放开所有风格的图标进行选择
+            opts: icon.versions.svg,
+          })),
         ]})
       })
   }
@@ -119,16 +126,20 @@ class Editor extends React.Component {
     this.setState({ bgColor: theme.bgColor, borderColor: theme.bdColor, pattern: Pattern })
   }
 
-  formatOptionLabel = ({ value, label }) => (
+  formatOptionLabel = ({ value, label, opts }) => (
     <div className="flex items-center">
       <span className="mr-2">{label}</span>
       <div className="ml-auto mr-2">
-        {
-          value === 'hugo-fixit' ? (
-            <img alt="Hugo FixIt theme" className="w-6 h-6" src={fixitIcon} />
-          ) : (
-            <i className={`devicon-${value}-plain dev-icon text-2xl`} />
-          )
+        {value !== 'custom' && (
+          <img
+            alt={`${label} Icon`}
+            className="w-6 h-6"
+            src={ value === 'hugo-fixit'
+              ? fixitIcon
+              : `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${value}/${value}-${opts[0]}.svg`
+            }
+          />
+        )
         }
       </div>
     </div>
@@ -160,7 +171,7 @@ class Editor extends React.Component {
                       </svg>
                     </Tab>
 
-                    <Tab className="flex items-center   font-semibold    text-lg">
+                    <Tab className="flex items-center font-semibold text-lg">
                       <svg
                         className=" text-gray-800 bg-white w-12 h-12 p-2 m-2 rounded border"
                         fill="currentColor"
@@ -207,7 +218,12 @@ class Editor extends React.Component {
                           formatOptionLabel={this.formatOptionLabel}
                           options={this.state.devIconOptions}
                           value={this.state.icon}
-                          onChange={(selectedOption) => this.setState({ icon: selectedOption, customIcon: ''})}
+                          onChange={(selectedOption) => this.setState({
+                            icon: selectedOption,
+                            iconStyle: selectedOption.opts[0],
+                            iconStyleOptions: selectedOption.opts,
+                            customIcon: '',
+                          })}
                         />
                       </div>
 

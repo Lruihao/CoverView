@@ -27,11 +27,14 @@ function BasicTheme({ config }) {
               <span className="text-xl font-black">+</span>
               <img alt="FixIt Icon" className="w-12 h-12 rounded-full" src={fixitIcon} />
             </div>
-          ) : (
-            <div className="mr-auto ml-2 flex items-center justify-center">
-              <i className={`devicon-${icon.value}-plain p-4 dev-icon text-5xl`} />
-            </div>
-          )}
+          ) : icon.value !== 'custom' ? (
+            <img
+              alt={`${icon.label} Icon`}
+              className="w-12 h-12 my-4 mr-auto ml-2"
+              data-icon={icon.value}
+              src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon.value}/${icon.value}-${icon.opts[0]}.svg`}
+            />
+          ) : ''}
 
           <h2 className="text-xl ml-auto mr-2 font-semibold">{author}</h2>
         </div>
