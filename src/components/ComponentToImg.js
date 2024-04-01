@@ -1,10 +1,9 @@
 import React, { useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-// import { exportComponentAsPNG } from "react-component-export-image";
 import './CoverImage.css'
 import domtoimage from 'dom-to-image'
 import { ImgContext } from '../utils/ImgContext'
-import unsplash from '../utils/unsplashConfig'
+import { trackDownload } from '../utils/unsplashConfig'
 
 function ComponentToImg(props) {
   const { t } = useTranslation()
@@ -25,14 +24,11 @@ function ComponentToImg(props) {
   }
 
   const downloadImage = async () => {
-    // exportComponentAsPNG(componentRef, 'cover')
     setLoading(true)
-
     const element = componentRef.current
-
-    // console.log(element)
-    // console.log(element.offsetHeight)
-
+    if (unsplashImage) {
+      await trackDownload({ downloadLocation: unsplashImage.downloadLink })
+    }
     const data = await domtoimage.toPng(componentRef.current, {
       height: element.offsetHeight * 2,
       width: element.offsetWidth * 2,
@@ -43,20 +39,15 @@ function ComponentToImg(props) {
         height: `${element.offsetHeight}px`,
       },
     })
-
-    // console.log(data)
     await saveImage(data)
-
-    if (unsplashImage) {
-      unsplash.photos.trackDownload({ downloadLocation: unsplashImage.downloadLink })
-    }
   }
 
   return (
-    <div className="md:w-2/3 flex m-6 flex-col items-center justify-center">
-      <div className="md:w-full scale-50 md:scale-75 md:translate-x-8 lg:scale-100" ref={componentRef}>{props.children}</div>
+    <div className="lg:w-2/3 flex m-6 flex-col items-center justify-center">
+      <div className="md:w-full scale-50 md:scale-100" ref={componentRef}>{props.children}</div>
       <button
         className="border p-2 bg-gray-700 hover:bg-gray-800 flex items-center text-white text-xl rounded-lg m-4 px-4"
+        disabled={loading}
         onClick={() => downloadImage()}
       >
         <span>

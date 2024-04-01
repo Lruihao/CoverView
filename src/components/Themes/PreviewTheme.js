@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const PreviewTheme = ({ config }) => {
+  const { t } = useTranslation()
   const { bgColor, title, font } = config
-
   const [image, setImage] = useState()
 
   return (
@@ -31,17 +32,17 @@ const PreviewTheme = ({ config }) => {
         </div>
 
         {image ? (
-          <div className="">
+          <div>
             <img alt="preview" className="object-cover" src={image && image} />
           </div>
         ) : (
-          <div className="flex flex-col p-20 py-28 bg-white items-center justify-center">
+          <div className="flex flex-col p-20 bg-white items-center justify-center">
             <input
               className="text-xl cursor-pointer mb-2 bg-white rounded border"
               type="file"
               onChange={(e) => setImage(URL.createObjectURL(e.target.files[0]))}
             />
-            <span className="text-center italic">click to upload a screenshot</span>
+            <span className="text-center italic text-sm">{t('editor.uploadScreenshot')}</span>
           </div>
         )}
       </div>

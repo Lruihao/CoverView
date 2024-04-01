@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const MobileMockupTheme = ({ config }) => {
+  const { t } = useTranslation()
   const { bgColor, title, font } = config
   const fontBold = font !== 'font-Virgil' ? 'font-bold' : ''
 
@@ -23,10 +25,10 @@ const MobileMockupTheme = ({ config }) => {
 
         {image ? (
           <div className="group relative">
-            <img alt="preview" className="object-cover rounded -translate-y-1 h-full" src={image && image} />
-            <button className="ml-auto mr-4 cursor-pointer" onClick={() => setImage('')}>
+            <img alt="preview" className="object-cover rounded h-full" src={image && image} />
+            <button className="absolute top-2 right-2 cursor-pointer" onClick={() => setImage('')}>
               <svg
-                className="group-hover:inline-block absolute top-4 right-2  bg-gray-500 hidden w-8 h-8 p-2 text-white rounded-full z-10"
+                className="group-hover:inline-block bg-gray-500 hidden w-8 h-8 p-2 text-white rounded-full z-10"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -37,13 +39,13 @@ const MobileMockupTheme = ({ config }) => {
             </button>
           </div>
         ) : (
-          <div className="flex flex-col px-4 rounded-xl py-20 bg-white items-center justify-center">
+          <div className="flex flex-col rounded-xl px-4 py-20 bg-white items-center justify-center">
             <input
               className="text-sm flex flex-col cursor-pointer mb-2 bg-white rounded border w-full"
               type="file"
               onChange={(e) => setImage(URL.createObjectURL(e.target.files[0]))}
             />
-            <span className=" text-center italic">click to upload a screenshot</span>
+            <span className="text-center italic text-sm">{t('editor.uploadScreenshot')}</span>
           </div>
         )}
       </div>

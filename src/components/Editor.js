@@ -135,8 +135,8 @@ class Editor extends React.Component {
         <Header />
 
         <ImgProvider>
-          <div className="flex flex-col md:flex-row grow bg-gray-50">
-            <div className="md:w-1/3 bg-white flex flex-col">
+          <div className="flex flex-col lg:flex-row grow bg-gray-50">
+            <div className="lg:w-1/3 bg-white flex flex-col">
               <Tab.Group>
                 <div className="h-full flex md:flex-row flex-col">
                   <Tab.List className="bg-white md:p-0 p-2 flex flex-row md:flex-col">

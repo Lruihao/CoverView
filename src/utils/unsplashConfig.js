@@ -14,6 +14,17 @@ const getPhotos = async (options) => {
   return await unsplash.search.getPhotos(options)
 }
 
-export default unsplash
+/**
+ * 下载图片
+ * @param {Object} options { downloadLocation: 'unsplash_image_download_link' }
+ * @returns {Promise}
+ */
+const trackDownload = async (options) => {
+  return await unsplash.photos.trackDownload(options)
+}
 
-export { getPhotos }
+export {
+  unsplash,
+  getPhotos,
+  trackDownload,
+}
