@@ -8,6 +8,23 @@ Creating cover images for your blogs is now super easy.
 
 <img src="https://user-images.githubusercontent.com/47467468/175771056-bf7fa9a0-801b-4887-80b5-169735923d64.png" height="auto" width="800px" margin="20px" alt="preview">
 
+## 💥 Change Notice
+
+Moved the original CoverView to my repositories since 2024-03-28, and made the following changes and enhancements:
+
+- Fixed the problem that images with patterns background cannot be downloaded
+- Fixed the problem of being unable to download and upload images with SVG format icons
+- Fixed mobile style disorder
+- Fixed `Reset All` button function abnormality
+- Added ESLint support
+- Added I18n support
+- Enhanced Unsplash image search feature
+- Optimize image download speed
+- Optimize Devicons to be displayed as multi-color SVG icons
+- Added more font and platform support
+- Unify the size of downloaded images for different themes
+- And more ...
+
 ## ⚡ Features
 
 - 🚀 super fast and easy to use
@@ -45,7 +62,8 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## 🙏 Acknowledgments
 
-- [Rutik Wankhade](https://github.com/rutikwankhade) - the author of original [CoverView](https://github.com/rutikwankhade/CoverView)
+- [Rutik Wankhade](https://github.com/rutikwankhade) (original CoverView)
+- [dom-to-image-more](https://github.com/1904labs/dom-to-image-more)
 - [Hero Patterns](https://www.heropatterns.com/)
 - [Devicons](https://github.com/devicons/devicon)
 - [Font Virgil](https://github.com/excalidraw/virgil)
