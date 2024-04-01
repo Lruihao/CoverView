@@ -93,7 +93,7 @@ const BackgroundTheme = ({ config }) => {
           />
 
           <div className="backdrop-blur-sm h-full w-full bg-gray-800/60 absolute">
-            <button className="absolute top-2 right-2 cursor-pointer" onClick={() => setUnsplashImage('')}>
+            <button className="absolute top-2 right-2 cursor-pointer download-ignore" onClick={() => setUnsplashImage('')}>
               <svg
                 className="group-hover:inline-block hidden w-8 h-8 text-gray-800 bg-white p-2 rounded-full z-10"
                 fill="none"
@@ -133,7 +133,7 @@ const BackgroundTheme = ({ config }) => {
             </div>
           </div>
 
-          <div className="absolute bottom-2 right-2 opacity-80">
+          <div className="absolute bottom-2 right-2 opacity-80 download-ignore">
             <div className="group-hover:flex hidden items-center">
               <span className="text-sm text-white mx-2">Photo by</span>
               <a
@@ -154,7 +154,7 @@ const BackgroundTheme = ({ config }) => {
           </div>
         </div>
         {/* 图片列表 */}
-        <div className={`${unsplashImage ? 'hidden' : 'flex'} h-full flex-col p-1 md:p-4 bg-white items-center justify-around gap-1 md:gap-2 relative`}>
+        <div className={`${unsplashImage ? 'hidden' : 'flex'} h-full flex-col p-1 md:p-4 bg-white items-center justify-around gap-1 md:gap-2 relative download-ignore`}>
           <div className="flex flex-wrap items-center justify-center md:justify-between w-full px-2">
             <div className="text-lg font-semibold text-gray-700">{t('editor.selectImgTips')} 👇</div>
             <form

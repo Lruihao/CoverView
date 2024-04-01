@@ -18,6 +18,12 @@ function ComponentToImg(props) {
       height: height * scale,
       cacheBust: true,
       copyDefaultStyles: false,
+      filter(node) {
+        if (node.classList?.contains('download-ignore')) {
+          return false
+        }
+        return true
+      },
       style: {
         transform: `scale(${scale})`,
         transformOrigin: 'top left',
@@ -27,11 +33,13 @@ function ComponentToImg(props) {
       },
     }).then((dataUrl) => {
       const a = document.createElementNS('http://www.w3.org/1999/xhtml', 'a')
+      dataUrl.replace()
       a.href = dataUrl
       a.download = 'cover.png'
       a.click()
       setLoading(false)
     }).catch((error) => {
+      setLoading(false)
       console.error('oops, something went wrong!', error)
     })
   }
