@@ -176,7 +176,7 @@ const StylishTheme = ({ config }) => {
               </select>
               <input
                 className="focus:outline-none w-full text-lg bg-gray-50 p-1 px-4 rounded-full border border-gray-50"
-                placeholder="Search image"
+                placeholder={t('editor.searchPlaceholder')}
                 type="text"
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}

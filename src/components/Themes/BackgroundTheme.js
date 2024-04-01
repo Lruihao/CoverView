@@ -178,7 +178,7 @@ const BackgroundTheme = ({ config }) => {
               </select>
               <input
                 className="focus:outline-none w-full text-lg bg-gray-50 py-1 px-2 md:px-4 rounded-full border border-gray-50"
-                placeholder="Search image"
+                placeholder={t('editor.searchPlaceholder')}
                 type="text"
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}

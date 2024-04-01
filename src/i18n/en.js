@@ -81,6 +81,7 @@ const config = {
       themes: 'Themes',
       imageListEmpty: 'No images found',
       uploadScreenshot: 'click to upload a screenshot',
+      searchPlaceholder: 'Search for images',
     },
     pagination: {
       summary: 'Showing <span class="font-medium">{{page}}</span> to <span class="font-medium">{{totalPages}}</span> of <span class="font-medium">{{total}}</span> results',

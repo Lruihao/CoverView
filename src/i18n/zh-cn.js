@@ -82,6 +82,7 @@ const config = {
       themes: '主题',
       imageListEmpty: '暂无图片',
       uploadScreenshot: '点击上传截图',
+      searchPlaceholder: '搜索图片',
     },
     pagination: {
       summary: '共 <span class="font-medium">{{total}}</span> 个结果，<span class="font-medium">{{page}}</span>/<span class="font-medium">{{totalPages}}</span> 页',
