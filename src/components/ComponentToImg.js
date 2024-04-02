@@ -11,7 +11,7 @@ const downloadFmtOptions = [
 function ComponentToImg(props) {
   const { t } = useTranslation()
   const [loading, setLoading] = useState(false)
-  const [downloadFmt, setDownloadFmt] = useState('PNG')
+  const [downloadFmt, setDownloadFmt] = useState('png')
   const [quality, setQuality] = useState(1)
   const componentRef = React.createRef()
 
@@ -68,6 +68,7 @@ function ComponentToImg(props) {
           {downloadFmt === 'jpeg' && (
             <input
               className="w-24 mr-2"
+              disabled={loading}
               max="1"
               min="0.01"
               step="0.01"
@@ -78,6 +79,7 @@ function ComponentToImg(props) {
           )}
           <select
             className="h-10 px-1 focus:outline-none border-4 border-gray-700 rounded-lg rounded-r-none"
+            disabled={loading}
             value={downloadFmt}
             onChange={(e) => {
               setDownloadFmt(e.target.value)

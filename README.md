@@ -36,7 +36,6 @@ Moved the original CoverView to my repositories since 2024-03-28, and made the f
   - Hashnode
   - Dev.to
   - Hugo FixIt
-  - Hexo Butterfly
 
 ## 👩‍💻 Developing
 

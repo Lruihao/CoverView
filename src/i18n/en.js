@@ -74,7 +74,7 @@ const config = {
       font: 'Font',
       color: 'Color',
       pattern: 'Pattern',
-      platform: 'Platform',
+      platform: 'Platform/Size',
       resetBtn: 'Reset All',
       selectImgTips: 'Click on any image to select',
       downloadBtn: 'Download',

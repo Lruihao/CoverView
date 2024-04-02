@@ -64,11 +64,19 @@ const patternOptions = [
   'sun',
 ]
 
+// TODO To be adapted
 const platformOptions = [
   { label: 'Hashnode', value: 'hashnode' },
   { label: 'Dev.to', value: 'dev' },
   { label: 'Hugo FixIt', value: 'hugo-fixit' },
-  { label: 'Hexo Butterfly', value: 'hexo-butterfly' },
+  { label: '16:9', value: 'size-16:9' },
+  // { label: '5:4', value: 'size-5:4' },
+  // { label: '7:5', value: 'size-7:5' },
+  { label: '4:3', value: 'size-4:3' },
+  { label: '5:3', value: 'size-5:3' },
+  { label: '3:2', value: 'size-3:2' },
+  // { label: '2:1', value: 'size-2:1' },
+  // { label: '1:1', value: 'size-1:1' },
 ]
 
 const themeOptions = [

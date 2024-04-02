@@ -17,10 +17,54 @@
   --cv-width: 860px;
 }
 
-.hexo-butterfly {
+/* frequently used sizes */
+/* TODO To be adapted */
+.size-16\:9 {
+  --cv-platform-x: 16;
+  --cv-platform-y: 9;
+  --cv-width: 800px;
+}
+
+.size-5\:4 {
+  --cv-platform-x: 5;
+  --cv-platform-y: 4;
+  --cv-width: 640px;
+}
+
+.size-7\:5 {
+  --cv-platform-x: 7;
+  --cv-platform-y: 5;
+  --cv-width: 700px;
+}
+
+.size-4\:3 {
+  --cv-platform-x: 4;
+  --cv-platform-y: 3;
+  --cv-width: 640px;
+}
+
+.size-5\:3 {
+  --cv-platform-x: 5;
+  --cv-platform-y: 3;
+  --cv-width: 640px;
+}
+
+.size-3\:2 {
   --cv-platform-x: 3;
   --cv-platform-y: 2;
-  --cv-width: 680px;
+  --cv-width: 640px;
+}
+
+.size-2\:1 {
+  --cv-platform-x: 2;
+  --cv-platform-y: 1;
+  --cv-width: 640px;
+}
+
+.size-1\:1 {
+  --cv-platform-x: 1;
+  --cv-platform-y: 1;
+  --cv-width: 512px;
 }
 
 /* md */
