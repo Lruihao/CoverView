@@ -104,6 +104,16 @@ class Editor extends React.Component {
             opts: icon.versions.svg,
           })),
         ]})
+        // 保存 devIconOptions 到默认配置中，并保存到 localStorage 中
+        defaultSettings.devIconOptions = this.state.devIconOptions
+        localStorage.setItem('devIconOptions', JSON.stringify(this.state.devIconOptions))
+      }).catch((e) => {
+        console.error('Failed to fetch devicons', e)
+        const devIconOptions = localStorage.getItem('devIconOptions')
+        if (devIconOptions) {
+          this.setState({ devIconOptions: JSON.parse(devIconOptions) })
+          console.log('Detected devIconOptions from localStorage')
+        }
       })
   }
 
@@ -115,11 +125,7 @@ class Editor extends React.Component {
   }
 
   handleReset = () => {
-    this.setState({
-      ...defaultSettings,
-      // 不重置 devIconOptions，因为它是从网络获取的
-      devIconOptions: this.state.devIconOptions,
-    })
+    this.setState(defaultSettings)
   }
 
   getRandomTheme = (theme, Pattern) => {
