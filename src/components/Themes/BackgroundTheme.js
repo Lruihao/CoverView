@@ -113,22 +113,24 @@ const BackgroundTheme = ({ config }) => {
               <h1 className={`md:text-5xl text-center text-2xl text-white ${fontBold}`}>{title}</h1>
               <div className="flex flex-col items-center">
                 <h2 className="text-xl font-semibold text-white">{author}</h2>
-                {customIcon ? (
+                {customIcon && (
                   <img alt="Custom Icon" className="w-10 h-10 m-2 rounded-full bg-white border-2 border-white" src={customIcon} />
-                ) : icon.value === 'hugo-fixit' ? (
+                )}
+                {icon.value === 'hugo-fixit' && (
                   <div className="flex items-center gap-2 m-2">
                     <img alt="Hugo Icon" className="w-10 h-10 rounded-full bg-white border-2 border-white" src={hugoIcon} />
                     <span className="text-xl text-white font-black">+</span>
                     <img alt="FixIt Icon" className="w-10 h-10 rounded-full bg-white border-2 border-white" src={fixitIcon} />
                   </div>
-                ) : icon.value !== 'custom' ? (
+                )}
+                {icon.value !== 'custom' && icon.value !== 'hugo-fixit' && (
                   <img
                     alt={`${icon.label} Icon`}
                     className="w-10 h-10 m-2"
                     data-icon={icon.value}
                     src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon.value}/${icon.value}-${icon.opts[0]}.svg`}
                   />
-                ) : ''}
+                )}
               </div>
             </div>
           </div>
@@ -149,7 +151,12 @@ const BackgroundTheme = ({ config }) => {
                 />
                 <span className="pr-2">{unsplashImage?.name}</span>
               </a>
-              <a className="text-sm text-white mx-2" href="https://unsplash.com/?utm_source=https://coverview.lruihao.cn&utm_medium=referral">Unsplash</a>
+              <a
+                className="text-sm text-white mx-2"
+                href="https://unsplash.com/?utm_source=https://coverview.lruihao.cn&utm_medium=referral"
+                rel="noreferrer"
+                target="_blank"
+              >Unsplash</a>
             </div>
           </div>
         </div>

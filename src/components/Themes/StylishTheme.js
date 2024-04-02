@@ -91,22 +91,23 @@ const StylishTheme = ({ config }) => {
           <div className={`${font} px-12 justify-center gap-10 text-left rounded-xl h-full p-4 flex flex-col`}>
             <h1 className={`text-4xl text-gray-800 ${fontBold}`}>{title}</h1>
             <div className="flex items-center text-left">
-              {customIcon ? (
-                <img alt="Custom Icon" className="w-8 h-8 mr-2 rounded-full" src={customIcon} />
-              ) : icon.value === 'hugo-fixit' ? (
+              {customIcon && <img alt="Custom Icon" className="w-8 h-8 mr-2 rounded-full" src={customIcon} />}
+              {icon.value === 'custom' && !customIcon && <i className="h-8" />}
+              {icon.value === 'hugo-fixit' && (
                 <div className="flex items-center gap-1 mr-2">
-                  <img alt="Hugo Icon" className="w-7 h-7 rounded-full" src={hugoIcon} />
+                  <img alt="Hugo Icon" className="w-8 h-8 rounded-full" src={hugoIcon} />
                   <span className="text-xl font-black">+</span>
-                  <img alt="FixIt Icon" className="w-7 h-7 rounded-full" src={fixitIcon} />
+                  <img alt="FixIt Icon" className="w-8 h-8 rounded-full" src={fixitIcon} />
                 </div>
-              ) : icon.value !== 'custom' ? (
+              )}
+              {icon.value !== 'custom' && icon.value !== 'hugo-fixit' && (
                 <img
                   alt={`${icon.label} Icon`}
                   className="w-8 h-8 mr-2"
                   data-icon={icon.value}
                   src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon.value}/${icon.value}-${icon.opts[0]}.svg`}
                 />
-              ) : ''}
+              )}
 
               <h2 className="text-xl font-semibold text-left">{author}</h2>
             </div>

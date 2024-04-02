@@ -31,11 +31,7 @@ const PreviewTheme = ({ config }) => {
           </button>
         </div>
 
-        {image ? (
-          <div>
-            <img alt="preview" className="object-cover" src={image && image} />
-          </div>
-        ) : (
+        {image ? (<div><img alt="preview" className="object-cover" src={image} /></div>) : (
           <div className="flex flex-col p-20 bg-white items-center justify-center">
             <input
               className="text-xl cursor-pointer mb-2 bg-white rounded border"

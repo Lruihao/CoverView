@@ -11,25 +11,20 @@ const ModernTheme = ({ config }) => {
       className={`theme-modern overflow-y-hidden h-full rounded-xl text-gray-800 flex items-center p-4 ${pattern}`}
       style={{ backgroundColor: bgColor }}
     >
-      {customIcon ? (
-        <div className="mx-auto flex items-center justify-center">
-          <img alt="Custom Icon" className="w-32 h-32 rounded-full bg-white border-8 border-white" src={customIcon} />
-        </div>
-      ) : icon.value === 'hugo-fixit' ? (
-        <div className="mx-auto flex items-center justify-center relative">
-          <img alt="Hugo Icon" className="w-32 h-32 rounded-full bg-white border-8 border-white" src={hugoIcon} />
-          <img alt="FixIt Icon" className="w-7/12 h-7/12 rounded-full absolute bg-white border-2 border-white" src={fixitIcon} />
-        </div>
-      ) : icon.value !== 'custom' ? (
-        <div className="mx-auto flex items-center justify-center">
+      <div className="mx-auto flex items-center justify-center relative">
+        {customIcon && (<img alt="Custom Icon" className="w-32 h-32 rounded-full bg-white border-8 border-white" src={customIcon} />)}
+        {icon.value === 'custom' && !customIcon && <i className="w-32 h-32 rounded-full bg-white border-8 border-white" />}
+        {icon.value === 'hugo-fixit' && <img alt="Hugo Icon" className="w-32 h-32 rounded-full bg-white border-8 border-white" src={hugoIcon} />}
+        {icon.value === 'hugo-fixit' && <img alt="FixIt Icon" className="w-7/12 h-7/12 rounded-full absolute bg-white border-2 border-white" src={fixitIcon} />}
+        {icon.value !== 'custom' && icon.value !== 'hugo-fixit' && (
           <img
             alt={`${icon.label} Icon`}
             className="w-32 h-32 rounded-full bg-white border-8 border-white"
             data-icon={icon.value}
             src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon.value}/${icon.value}-${icon.opts[0]}.svg`}
           />
-        </div>
-      ) : ''}
+        )}
+      </div>
 
       <div className="h-full w-2/3">
         <div className={`${font} bg-white px-12 justify-center text-left rounded-xl h-full p-4 flex flex-col`}>
