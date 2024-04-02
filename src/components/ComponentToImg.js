@@ -3,9 +3,16 @@ import { useTranslation } from 'react-i18next'
 import './CoverImage.css'
 import domtoimage from 'dom-to-image-more'
 
+const downloadFmtOptions = [
+  { label: 'PNG' , value: 'png' },
+  { label: 'JPEG', value: 'jpeg' },
+]
+
 function ComponentToImg(props) {
   const { t } = useTranslation()
   const [loading, setLoading] = useState(false)
+  const [downloadFmt, setDownloadFmt] = useState('PNG')
+  const [quality, setQuality] = useState(1)
   const componentRef = React.createRef()
 
   /**
@@ -26,6 +33,7 @@ function ComponentToImg(props) {
       width: originalWidth * scale,
       height: originalHeight * scale,
       copyDefaultStyles: false,
+      quality: quality, // quality of the jpeg image
       filter: (node) => !node.classList?.contains('download-ignore'),
       style: {
         transform: `scale(${scale})`,
@@ -35,59 +43,96 @@ function ComponentToImg(props) {
         margin: 0,
       },
     }
-    // download image as png
-    domtoimage.toPng(coverviewEl, downloadOptions).then((dataUrl) => {
+    const downloadMethod = {
+      png: domtoimage.toPng,
+      jpeg: domtoimage.toJpeg,
+    }
+    downloadMethod[downloadFmt](coverviewEl, downloadOptions).then((dataUrl) => {
       const link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a')
       link.href = dataUrl
-      link.download = 'cover.png'
+      // download the image as cover_{timestamp}.{format}
+      link.download = `cover_${new Date().getTime().toString().slice(-6)}.${downloadFmt}`
       link.click()
-    }).catch((error) => {
-      console.error('oops, something went wrong!', error)
-    }).finally(() => {
       setLoading(false)
+    }).catch((error) => {
+      setLoading(false)
+      console.error('oops, something went wrong!', error)
     })
   }
 
   return (
     <div className="lg:w-2/3 flex m-6 flex-col items-center justify-center">
       <div className="md:w-full scale-50 md:scale-100" ref={componentRef}>{props.children}</div>
-      <button
-        className="border p-2 bg-gray-700 hover:bg-gray-800 flex items-center text-white text-xl rounded-lg m-4 px-4"
-        disabled={loading}
-        onClick={() => downloadImage()}
-      >
-        <span>
-          {loading ? (
+      <div className="flex items-center justify-center gap-4 m-6">
+        <div className="flex items-center justify-center">
+          {downloadFmt === 'jpeg' && (
+            <input
+              className="w-24 mr-2"
+              max="1"
+              min="0.01"
+              step="0.01"
+              title="Image Quality"
+              type="range"
+              value={quality} onChange={(e) => setQuality(Number(e.target.value))}
+            />
+          )}
+          <select
+            className="h-10 px-1 focus:outline-none border-4 border-gray-700 rounded-lg rounded-r-none"
+            value={downloadFmt}
+            onChange={(e) => {
+              setDownloadFmt(e.target.value)
+              setQuality(1)
+            }}
+          >
+            {downloadFmtOptions.map((item) => (<option key={item.value} value={item.value}>{item.label}</option>))}
+          </select>
+          <button
+            className="border border-l-0 p-2 bg-gray-700 hover:bg-gray-800 flex items-center text-white rounded-lg rounded-l-none"
+            disabled={loading}
+            onClick={() => downloadImage()}
+          >
+            <span>
+              {loading ? (
+                <svg
+                  aria-hidden="true"
+                  className="w-6 h-6 text-white animate animate-spin"
+                  fill="currentColor"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                ><path d="M12 22c5.421 0 10-4.579 10-10h-2c0 4.337-3.663 8-8 8s-8-3.663-8-8c0-4.336 3.663-8 8-8V2C6.579 2 2 6.58 2 12c0 5.421 4.579 10 10 10z" /></svg>
+              ) : (
+                <svg
+                  aria-hidden="true"
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                ><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"/></svg>
+              )}
+            </span>
+            <span className="mx-2">{t('editor.downloadBtn')}</span>
+          </button>
+        </div>
+        {/*
+        <button className="border p-2 bg-gray-700 hover:bg-gray-800 flex items-center text-white rounded-lg">
+          <span>
             <svg
-              className="w-6 h-6 text-white animate animate-spin"
-              fill="currentColor"
-              height="24"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M12 22c5.421 0 10-4.579 10-10h-2c0 4.337-3.663 8-8 8s-8-3.663-8-8c0-4.336 3.663-8 8-8V2C6.579 2 2 6.58 2 12c0 5.421 4.579 10 10 10z" />
-            </svg>
-          ) : (
-            <svg
+              aria-hidden="true"
               className="w-6 h-6"
               fill="none"
               stroke="currentColor"
+              strokeWidth="2"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-              />
-            </svg>
-          )}
-        </span>
-
-        <span className="mx-2">{t('editor.downloadBtn')}</span>
-      </button>
+            ><path d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+          </span>
+          <span>{t('editor.copyBtn')}</span>
+        </button>
+         */}
+      </div>
     </div>
   )
 }

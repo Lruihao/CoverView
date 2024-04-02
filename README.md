@@ -19,6 +19,7 @@ Moved the original CoverView to my repositories since 2024-03-28, and made the f
 - Added ESLint support
 - Added I18n support
 - Enhanced Unsplash image search feature
+- Added download image format selection (PNG/JPEG), and support JPEG image quality adjustment
 - Optimize image download speed
 - Optimize Devicons to be displayed as multi-color SVG icons
 - Added more font and platform support

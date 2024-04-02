@@ -20,7 +20,6 @@ const defaultSettings = {
   title: 'A begineers guide to frontend development',
   bgColor: '#949ee5',
   pattern: '',
-  download: 'PNG',
   author: 'Lruihao',
   icon: { label: 'reactjs', value: 'react', opts: ['original', 'original-wordmark'] },
   iconStyle: 'original',
@@ -305,7 +304,7 @@ class Editor extends React.Component {
                           onThemeChange={this.getRandomTheme}
                         />
                         <button
-                          className="bg-gray-700 text-white rounded-lg text-lg font-semibold p-1 px-4 border"
+                          className="bg-gray-700 text-white rounded-lg text-lg font-semibold py-1 px-4 border"
                           onClick={this.handleReset}
                         >
                           <span>{t('editor.resetBtn')}</span>
@@ -341,19 +340,9 @@ class Editor extends React.Component {
                   </Tab.Panels>
                 </div>
               </Tab.Group>
-
-              {/* <div className="mx-4 my-1">
-            <h6>Download As</h6>
-            <select onChange={(e) => this.setState({ download: e.target.value })}
-              className="form-control input"
-              value={this.state.download}>
-              <option>PNG</option>
-              <option>JPEG</option>
-            </select>
-          </div> */}
             </div>
 
-            <ComponentToImg downloadAs={this.state.download}>
+            <ComponentToImg>
               <CoverImage {...this.state} />
             </ComponentToImg>
           </div>
