@@ -8,37 +8,43 @@ function ComponentToImg(props) {
   const [loading, setLoading] = useState(false)
   const componentRef = React.createRef()
 
+  /**
+   * download image
+   */
   function downloadImage() {
     setLoading(true)
     const coverviewEl = componentRef.current.querySelector('.coverview-preview-container')
     const { width, height } = coverviewEl.getBoundingClientRect()
+    // get the device original scale
+    const deviceScale = window.matchMedia('only screen and (max-width: 768px)').matches ? 0.5 : 1
+    // recover original width and height
+    const originalWidth = width / deviceScale
+    const originalHeight = height / deviceScale
+    // scale the image when downloading
     const scale = 2
-    domtoimage.toPng(coverviewEl, {
-      width: width * scale,
-      height: height * scale,
+    const downloadOptions = {
+      width: originalWidth * scale,
+      height: originalHeight * scale,
       copyDefaultStyles: false,
-      filter(node) {
-        if (node.classList?.contains('download-ignore')) {
-          return false
-        }
-        return true
-      },
+      filter: (node) => !node.classList?.contains('download-ignore'),
       style: {
         transform: `scale(${scale})`,
         transformOrigin: 'top left',
-        width: `${width}px`,
-        height: `${height}px`,
+        width: `${originalWidth}px`,
+        height: `${originalHeight}px`,
         margin: 0,
       },
-    }).then((dataUrl) => {
+    }
+    // download image as png
+    domtoimage.toPng(coverviewEl, downloadOptions).then((dataUrl) => {
       const link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a')
       link.href = dataUrl
       link.download = 'cover.png'
       link.click()
-      setLoading(false)
     }).catch((error) => {
-      setLoading(false)
       console.error('oops, something went wrong!', error)
+    }).finally(() => {
+      setLoading(false)
     })
   }
 
