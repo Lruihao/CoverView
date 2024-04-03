@@ -18,7 +18,7 @@ function BasicTheme({ config }) {
           </div>
         </div>
 
-        <div className="flex mx-4 p-4 rounded-xl items-center bg-white">
+        <div className="flex mx-4 p-4 rounded-xl items-center">
           {customIcon && <img alt="Custom Icon" className="w-12 h-12 my-4 mr-auto ml-2 rounded-full" src={customIcon} />}
           {icon.value === 'custom' && !customIcon && <i className="w-12 h-12 my-4 mr-auto ml-2 rounded-full" />}
           {icon.value === 'hugo-fixit' && (
