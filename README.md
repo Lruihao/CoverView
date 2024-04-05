@@ -1,12 +1,13 @@
 # CoverView
 
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/Lruihao/CoverView)
+
 > This project is based on the original [CoverView](https://github.com/rutikwankhade/CoverView).
 
 Creating cover images for your blogs is now super easy.
 
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/Lruihao/CoverView)
+![cover_852562](https://github.com/Lruihao/CoverView/assets/33419593/f61407eb-fcba-4e78-8ee1-abd633f4c5a0)
 
-<img src="https://user-images.githubusercontent.com/47467468/175771056-bf7fa9a0-801b-4887-80b5-169735923d64.png" height="auto" width="800px" margin="20px" alt="preview">
 
 ## 💥 Change Notice
 
