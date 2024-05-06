@@ -29,7 +29,7 @@ const config = {
       tryItNow: 'It\'s Free! Try now',
       footer: {
         copyright: 'Made with 💛 by <a href="https://github.com/Lruihao" class="font-semibold" target="_blank" rel="noreferrer">Lruihao</a>',
-        authorBlog: 'Checkout <a href="https://lruihao.cn" target="_blank" rel="noreferrer" class="text-purple-400 hover:text-pink-400">more cool stuff</a> I built',
+        authorBlog: 'Checkout <a href="https://lruihao.cn/projects/" target="_blank" rel="noreferrer" class="text-purple-400 hover:text-pink-400">more cool stuff</a> I built',
         thanks: 'Thanks the original author',
       },
     },
