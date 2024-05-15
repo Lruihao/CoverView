@@ -18,7 +18,6 @@
 }
 
 /* frequently used sizes */
-/* TODO To be adapted */
 .size-16\:9 {
   --cv-platform-x: 16;
   --cv-platform-y: 9;
@@ -58,13 +57,13 @@
 .size-2\:1 {
   --cv-platform-x: 2;
   --cv-platform-y: 1;
-  --cv-width: 640px;
+  --cv-width: 800px;
 }
 
 .size-1\:1 {
   --cv-platform-x: 1;
   --cv-platform-y: 1;
-  --cv-width: 512px;
+  --cv-width: 640px;
 }
 
 /* md */
