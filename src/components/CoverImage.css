@@ -17,6 +17,12 @@
   --cv-width: 860px;
 }
 
+.juejin {
+  --cv-platform-x: 1303;
+  --cv-platform-y: 734;
+  --cv-width: 860px;
+}
+
 /* frequently used sizes */
 .size-16\:9 {
   --cv-platform-x: 16;

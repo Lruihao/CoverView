@@ -8,7 +8,6 @@ Creating cover images for your blogs is now super easy.
 
 ![cover_852562](https://github.com/Lruihao/CoverView/assets/33419593/f61407eb-fcba-4e78-8ee1-abd633f4c5a0)
 
-
 ## 💥 Change Notice
 
 Moved the original CoverView to my repositories since 2024-03-28, and made the following changes and enhancements:
@@ -20,7 +19,7 @@ Moved the original CoverView to my repositories since 2024-03-28, and made the f
 - Added ESLint support
 - Added I18n support
 - Enhanced Unsplash image search feature
-- Added download image format selection (PNG/JPEG), and support JPEG image quality adjustment
+- Added download image format selection (PNG/JPEG/SVG/Blob), and support JPEG image quality adjustment
 - Optimize image download speed
 - Optimize Devicons to be displayed as multi-color SVG icons
 - Added more font and platform support
@@ -30,13 +29,14 @@ Moved the original CoverView to my repositories since 2024-03-28, and made the f
 ## ⚡ Features
 
 - 🚀 super fast and easy to use
-- 🌈 4 different themes, multiple fonts
+- 🌈 7 different themes, multiple fonts
 - 🌠 100+ dev icons with option to upload custom icon
 - ✨ 15+ different background patterns
-- 💾 Cover size based on blogging platform
+- 💾 Cover size based on blogging platform or frequently used sizes
   - Hashnode
   - Dev.to
   - Hugo FixIt
+  - 稀土掘金
 
 ## 👩‍💻 Developing
 

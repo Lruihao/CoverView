@@ -69,6 +69,7 @@ const platformOptions = [
   { label: 'Hashnode', value: 'hashnode' },
   { label: 'Dev.to', value: 'dev' },
   { label: 'Hugo FixIt', value: 'hugo-fixit' },
+  { label: '稀土掘金', value: 'juejin' },
   { label: '16:9', value: 'size-16:9' },
   { label: '5:4', value: 'size-5:4' },
   { label: '7:5', value: 'size-7:5' },
