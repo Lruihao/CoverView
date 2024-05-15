@@ -29,11 +29,9 @@ const defaultSettings = {
   theme: 'background',
   customIcon: '',
   platform: 'hashnode',
-  customPlatform: {
-    width: void 0,
-    x: void 0,
-    y: void 0,
-  },
+  customPlatformWidth: 1024,
+  customPlatformX: 0,
+  customPlatformY: 0,
 }
 
 const fontOptions = [
@@ -291,16 +289,16 @@ class Editor extends React.Component {
                           min={500}
                           placeholder="width"
                           type="number"
-                          value={this.state.customPlatform.width}
-                          onChange={(e) => this.setState({ customPlatform: { ...this.state.customPlatform, width: e.target.value } })}
+                          value={this.state.customPlatformWidth}
+                          onChange={(e) => this.setState({ customPlatformWidth: e.target.value })}
                         />
                         <input
                           className="w-1/3 focus:outline-none border text-gray-700 text-xl rounded p-2 m-2"
                           min={1}
                           placeholder="x"
                           type="number"
-                          value={this.state.customPlatform.x}
-                          onChange={(e) => this.setState({ customPlatform: { ...this.state.customPlatform, x: e.target.value } })}
+                          value={this.state.customPlatformX}
+                          onChange={(e) => this.setState({ customPlatformX: e.target.value })}
                         />
                         :
                         <input
@@ -308,15 +306,15 @@ class Editor extends React.Component {
                           min={1}
                           placeholder="y"
                           type="number"
-                          value={this.state.customPlatform.y}
-                          onChange={(e) => this.setState({ customPlatform: { ...this.state.customPlatform, y: e.target.value } })}
+                          value={this.state.customPlatformY}
+                          onChange={(e) => this.setState({ customPlatformY: e.target.value })}
                         />
                         <style>
                           {`
                             .custom {
-                              --cv-width: ${this.state.customPlatform.width}px;
-                              --cv-platform-x: ${this.state.customPlatform.x};
-                              --cv-platform-y: ${this.state.customPlatform.y};
+                              --cv-width: ${this.state.customPlatformWidth}px;
+                              --cv-platform-x: ${this.state.customPlatformX};
+                              --cv-platform-y: ${this.state.customPlatformY};
                             }
                           `}
                         </style>
