@@ -29,6 +29,11 @@ const defaultSettings = {
   theme: 'background',
   customIcon: '',
   platform: 'hashnode',
+  customPlatform: {
+    width: void 0,
+    x: void 0,
+    y: void 0,
+  },
 }
 
 const fontOptions = [
@@ -64,7 +69,6 @@ const patternOptions = [
   'sun',
 ]
 
-// TODO To be adapted
 const platformOptions = [
   { label: 'Hashnode', value: 'hashnode' },
   { label: 'Dev.to', value: 'dev' },
@@ -207,7 +211,7 @@ class Editor extends React.Component {
                         <span className="font-medium pb-1">{t('editor.title')}</span>
                         <textarea
                           className="focus:outline-none border text-gray-700 text-xl rounded p-2 h-24"
-                          placeholder="Enter title here"
+                          placeholder={t('editor.title')}
                           type="text"
                           value={this.state.title}
                           onChange={(e) => this.setState({ title: e.target.value })}
@@ -218,7 +222,7 @@ class Editor extends React.Component {
                         <span className="font-medium pb-1">{t('editor.author')}</span>
                         <input
                           className="focus:outline-none border text-gray-700 text-xl rounded bg-white p-2"
-                          placeholder="Author"
+                          placeholder={t('editor.author')}
                           type="text"
                           value={this.state.author}
                           onChange={(e) => this.setState({ author: e.target.value })}
@@ -241,15 +245,13 @@ class Editor extends React.Component {
                         />
                       </div>
 
-                      {this.state.icon.value === 'custom' &&
-                        <div className="flex items-center justify-center m-2">
-                          <input
-                            className="focus:outline-none text-lg cursor-pointer bg-white rounded border"
-                            type="file"
-                            onChange={(e) => this.setState({ customIcon: URL.createObjectURL(e.target.files[0]) })}
-                          />
-                        </div>
-                      }
+                      <div className={`flex items-center justify-center ${this.state.icon.value === 'custom' ? '' : 'hidden'}`}>
+                        <input
+                          className="focus:outline-none text-lg cursor-pointer bg-white rounded border m-2"
+                          type="file"
+                          onChange={(e) => this.setState({ customIcon: URL.createObjectURL(e.target.files[0]) })}
+                        />
+                      </div>
 
                       <div className="flex items-center">
                         <div className="flex flex-col m-2 w-1/2">
@@ -273,6 +275,7 @@ class Editor extends React.Component {
                             value={this.state.platform}
                             onChange={this.handleSelectPlatform}
                           >
+                            <option value="custom">{this.props.t('editor.custom')}</option>
                             {
                               platformOptions.map((platform) => (
                                 <option key={platform.value} value={platform.value}>{platform.label}</option>
@@ -280,6 +283,43 @@ class Editor extends React.Component {
                             }
                           </select>
                         </div>
+                      </div>
+
+                      <div className={`flex items-center justify-center ${this.state.platform === 'custom' ? '' : 'hidden'}`}>
+                        <input
+                          className="w-1/3 focus:outline-none border text-gray-700 text-xl rounded p-2 m-2"
+                          min={500}
+                          placeholder="width"
+                          type="number"
+                          value={this.state.customPlatform.width}
+                          onChange={(e) => this.setState({ customPlatform: { ...this.state.customPlatform, width: e.target.value } })}
+                        />
+                        <input
+                          className="w-1/3 focus:outline-none border text-gray-700 text-xl rounded p-2 m-2"
+                          min={1}
+                          placeholder="x"
+                          type="number"
+                          value={this.state.customPlatform.x}
+                          onChange={(e) => this.setState({ customPlatform: { ...this.state.customPlatform, x: e.target.value } })}
+                        />
+                        :
+                        <input
+                          className="w-1/3 focus:outline-none border text-gray-700 text-xl rounded p-2 m-2"
+                          min={1}
+                          placeholder="y"
+                          type="number"
+                          value={this.state.customPlatform.y}
+                          onChange={(e) => this.setState({ customPlatform: { ...this.state.customPlatform, y: e.target.value } })}
+                        />
+                        <style>
+                          {`
+                            .custom {
+                              --cv-width: ${this.state.customPlatform.width}px;
+                              --cv-platform-x: ${this.state.customPlatform.x};
+                              --cv-platform-y: ${this.state.customPlatform.y};
+                            }
+                          `}
+                        </style>
                       </div>
 
                       <div className={`flex items-center ${this.state.theme === 'background' ? 'hidden' : ''}`}>
