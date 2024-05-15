@@ -161,6 +161,33 @@ class Editor extends React.Component {
     </div>
   )
 
+  getFontStyle = () => {
+    let fontStyle = ''
+    switch (this.state.font) {
+      case 'font-Virgil':
+        fontStyle =
+        `
+          @font-face {
+            font-family: 'Virgil';
+            font-display: swap;
+            src: url(https://virgil.excalidraw.com/Virgil.woff2) format('woff2');
+          }
+        `
+        break
+      case 'font-MMT':
+        fontStyle =
+        `
+          @font-face {
+            font-family: 'MMT';
+            font-display: swap;
+            src: url(https://lruihao.cn/fonts/mmt_1.5.ttf) format('woff2');
+          }
+        `
+        break
+    }
+    return fontStyle
+  }
+
   render() {
     const { t } = this.props
 
@@ -265,6 +292,14 @@ class Editor extends React.Component {
                               ))
                             }
                           </select>
+                          {
+                            (() => {
+                              const fontStyle = this.getFontStyle()
+                              if (fontStyle) {
+                                return <style>{fontStyle}</style>
+                              }
+                            })()
+                          }
                         </div>
                         <div className="flex flex-col m-2 w-full">
                           <span className="font-medium pb-1">{t('editor.platform')}</span>
