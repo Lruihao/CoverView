@@ -79,6 +79,7 @@ const config = {
       resetBtn: '重置所有',
       selectImgTips: '点击选择图片',
       downloadBtn: '下载',
+      copyBtn: '复制',
       themes: '主题',
       imageListEmpty: '暂无图片',
       uploadScreenshot: '点击上传截图',

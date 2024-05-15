@@ -2,10 +2,13 @@ import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import './CoverImage.css'
 import domtoimage from 'dom-to-image-more'
+import * as clipboard from 'clipboard-polyfill'
 
 const downloadFmtOptions = [
   { label: 'PNG' , value: 'png' },
   { label: 'JPEG', value: 'jpeg' },
+  { label: 'SVG', value: 'svg' },
+  { label: 'Blob', value: 'blob' },
 ]
 
 function ComponentToImg(props) {
@@ -14,6 +17,51 @@ function ComponentToImg(props) {
   const [downloadFmt, setDownloadFmt] = useState('png')
   const [quality, setQuality] = useState(1)
   const componentRef = React.createRef()
+
+  /**
+   * 获取下载按钮图标
+   * @param {Boolean} loading whether loading
+   * @param {String} downloadFmt download format
+   * @returns {JSX.Element} download icon
+   */
+  function _getDownloadIcon (loading, downloadFmt) {
+    if (loading) {
+      return (
+        <svg
+          aria-hidden="true"
+          className="w-6 h-6 text-white animate animate-spin"
+          fill="currentColor"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        ><path d="M12 22c5.421 0 10-4.579 10-10h-2c0 4.337-3.663 8-8 8s-8-3.663-8-8c0-4.336 3.663-8 8-8V2C6.579 2 2 6.58 2 12c0 5.421 4.579 10 10 10z" /></svg>
+      )
+    }
+    if (downloadFmt === 'blob') {
+      return (
+        <svg
+          aria-hidden="true"
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        ><path d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+      )
+    }
+    return (
+      <svg
+        aria-hidden="true"
+        className="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      ><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"/></svg>
+    )
+  }
 
   /**
    * download image
@@ -28,7 +76,7 @@ function ComponentToImg(props) {
     const originalWidth = width / deviceScale
     const originalHeight = height / deviceScale
     // scale the image when downloading
-    const scale = 2
+    const scale = downloadFmt === 'svg' ? 1 : 2
     const downloadOptions = {
       width: originalWidth * scale,
       height: originalHeight * scale,
@@ -46,11 +94,22 @@ function ComponentToImg(props) {
     const downloadMethod = {
       png: domtoimage.toPng,
       jpeg: domtoimage.toJpeg,
+      svg: domtoimage.toSvg,
+      blob: domtoimage.toBlob,
     }
-    downloadMethod[downloadFmt](coverviewEl, downloadOptions).then((dataUrl) => {
-      const link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a')
-      link.href = dataUrl
+    downloadMethod[downloadFmt](coverviewEl, downloadOptions).then((data) => {
+      // copy image to clipboard
+      if (downloadFmt === 'blob') {
+        const blob = new Blob([data], { type: 'image/png' })
+        const item = new clipboard.ClipboardItem({ 'image/png': blob })
+        clipboard.write([item])
+        setLoading(false)
+        return
+      }
+
       // download the image as cover_{timestamp}.{format}
+      const link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a')
+      link.href = data
       link.download = `cover_${new Date().getTime().toString().slice(-6)}.${downloadFmt}`
       link.click()
       setLoading(false)
@@ -93,47 +152,10 @@ function ComponentToImg(props) {
             disabled={loading}
             onClick={() => downloadImage()}
           >
-            <span>
-              {loading ? (
-                <svg
-                  aria-hidden="true"
-                  className="w-6 h-6 text-white animate animate-spin"
-                  fill="currentColor"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                ><path d="M12 22c5.421 0 10-4.579 10-10h-2c0 4.337-3.663 8-8 8s-8-3.663-8-8c0-4.336 3.663-8 8-8V2C6.579 2 2 6.58 2 12c0 5.421 4.579 10 10 10z" /></svg>
-              ) : (
-                <svg
-                  aria-hidden="true"
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                ><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"/></svg>
-              )}
-            </span>
-            <span className="mx-2">{t('editor.downloadBtn')}</span>
+            <span>{_getDownloadIcon(loading, downloadFmt)}</span>
+            <span className="mx-2">{t(downloadFmt === 'blob' ? 'editor.copyBtn' : 'editor.downloadBtn')}</span>
           </button>
         </div>
-        {/*
-        <button className="border p-2 bg-gray-700 hover:bg-gray-800 flex items-center text-white rounded-lg">
-          <span>
-            <svg
-              aria-hidden="true"
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            ><path d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-          </span>
-          <span>{t('editor.copyBtn')}</span>
-        </button>
-         */}
       </div>
     </div>
   )

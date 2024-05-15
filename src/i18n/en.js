@@ -78,6 +78,7 @@ const config = {
       resetBtn: 'Reset All',
       selectImgTips: 'Click on any image to select',
       downloadBtn: 'Download',
+      copyBtn: 'Copy',
       themes: 'Themes',
       imageListEmpty: 'No images found',
       uploadScreenshot: 'click to upload a screenshot',
