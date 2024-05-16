@@ -35,14 +35,14 @@ const defaultSettings = {
 }
 
 const fontOptions = [
+  'font-Virgil',
+  'font-MMT',
   'font-Anek',
   'font-Inter',
   'font-mono',
   'font-Poppins',
   'font-sans',
   'font-serif',
-  'font-Virgil',
-  'font-MMT',
 ]
 
 const patternOptions = [
@@ -161,7 +161,7 @@ class Editor extends React.Component {
     </div>
   )
 
-  getFontStyle = () => {
+  _getFontStyle = () => {
     let fontStyle = ''
     switch (this.state.font) {
       case 'font-Virgil':
@@ -185,7 +185,10 @@ class Editor extends React.Component {
         `
         break
     }
-    return fontStyle
+    if (fontStyle) {
+      fontStyle = fontStyle.replace(/\s+/g, ' ')
+      return <style>{fontStyle}</style>
+    }
   }
 
   render() {
@@ -414,12 +417,7 @@ class Editor extends React.Component {
         </ImgProvider>
 
         {/* 额外引入的字体样式 */}
-        {(() => {
-          const fontStyle = this.getFontStyle()
-          if (fontStyle) {
-            return <style>{fontStyle}</style>
-          }
-        })()}
+        {this._getFontStyle()}
         {/* 自定义平台尺寸样式 */}
         {this.state.platform === 'custom' && (
           <style>{`.custom { --cv-width: ${this.state.customPlatformWidth}px; --cv-platform-x: ${this.state.customPlatformX}; --cv-platform-y: ${this.state.customPlatformY};}`}</style>
