@@ -6,7 +6,7 @@ const unsplash = createApi({
 })
 
 /**
- * 搜索图片
+ * search photos
  * @param {Object} options https://unsplash.com/documentation#search-photos
  * @returns {Promise}
  */
@@ -15,7 +15,7 @@ const getPhotos = async (options) => {
 }
 
 /**
- * 下载图片
+ * download a photo
  * @param {Object} options { downloadLocation: 'unsplash_image_download_link' }
  * @returns {Promise}
  */
