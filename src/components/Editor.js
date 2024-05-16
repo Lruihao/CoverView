@@ -292,14 +292,6 @@ class Editor extends React.Component {
                               ))
                             }
                           </select>
-                          {
-                            (() => {
-                              const fontStyle = this.getFontStyle()
-                              if (fontStyle) {
-                                return <style>{fontStyle}</style>
-                              }
-                            })()
-                          }
                         </div>
                         <div className="flex flex-col m-2 w-full">
                           <span className="font-medium pb-1">{t('editor.platform')}</span>
@@ -344,15 +336,6 @@ class Editor extends React.Component {
                           value={this.state.customPlatformY}
                           onChange={(e) => this.setState({ customPlatformY: e.target.value })}
                         />
-                        <style>
-                          {`
-                            .custom {
-                              --cv-width: ${this.state.customPlatformWidth}px;
-                              --cv-platform-x: ${this.state.customPlatformX};
-                              --cv-platform-y: ${this.state.customPlatformY};
-                            }
-                          `}
-                        </style>
                       </div>
 
                       <div className={`flex items-center ${this.state.theme === 'background' ? 'hidden' : ''}`}>
@@ -429,6 +412,18 @@ class Editor extends React.Component {
             </ComponentToImg>
           </div>
         </ImgProvider>
+
+        {/* 额外引入的字体样式 */}
+        {(() => {
+          const fontStyle = this.getFontStyle()
+          if (fontStyle) {
+            return <style>{fontStyle}</style>
+          }
+        })()}
+        {/* 自定义平台尺寸样式 */}
+        {this.state.platform === 'custom' && (
+          <style>{`.custom { --cv-width: ${this.state.customPlatformWidth}px; --cv-platform-x: ${this.state.customPlatformX}; --cv-platform-y: ${this.state.customPlatformY};}`}</style>
+        )}
       </div>
     )
   }
