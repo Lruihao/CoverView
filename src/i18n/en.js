@@ -81,7 +81,7 @@ const config = {
       copyBtn: 'Copy',
       themes: 'Themes',
       imageListEmpty: 'No images found',
-      uploadScreenshot: 'click to upload a screenshot',
+      uploadScreenshot: 'Click to upload a screenshot or Ctrl+V to paste',
       searchPlaceholder: 'Search for images',
     },
     pagination: {

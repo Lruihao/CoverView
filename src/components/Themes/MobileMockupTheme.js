@@ -1,12 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { getPasteImage } from '../../utils'
 
 const MobileMockupTheme = ({ config }) => {
   const { t } = useTranslation()
   const { bgColor, title, font } = config
   const fontBold = font !== 'font-Virgil' ? 'font-bold' : ''
-
   const [image, setImage] = useState()
+
+  const handlePaste = async (e) => getPasteImage(e).then(url => setImage(url))
+
+  useEffect(() => {
+    /**
+     * 监控粘贴事件
+     * Windows: Ctrl + V
+     * Mac: Command + V
+     */
+    document.addEventListener('paste', handlePaste)
+    return () => {
+      // 组件销毁时移除事件监听
+      document.removeEventListener('paste', handlePaste)
+    }
+  }, [])
 
   return (
     <div
@@ -28,7 +43,7 @@ const MobileMockupTheme = ({ config }) => {
 
         {image ? (
           <div className="group relative">
-            <img alt="preview" className="object-cover rounded h-full" src={image && image} />
+            <img alt="preview" className="object-cover rounded h-full" src={image} />
             <button className="absolute top-2 right-2 cursor-pointer" onClick={() => setImage('')}>
               <svg
                 className="group-hover:inline-block bg-gray-500 hidden w-8 h-8 p-2 text-white rounded-full z-10"

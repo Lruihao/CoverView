@@ -1,10 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { getPasteImage } from '../../utils'
 
 const PreviewTheme = ({ config }) => {
   const { t } = useTranslation()
   const { bgColor, title, font } = config
   const [image, setImage] = useState()
+
+  const handlePaste = async (e) => getPasteImage(e).then(url => setImage(url))
+
+  useEffect(() => {
+    /**
+     * 监控粘贴事件
+     * Windows: Ctrl + V
+     * Mac: Command + V
+     */
+    document.addEventListener('paste', handlePaste)
+    return () => {
+      // 组件销毁时移除事件监听
+      document.removeEventListener('paste', handlePaste)
+    }
+  }, [])
 
   return (
     <div
