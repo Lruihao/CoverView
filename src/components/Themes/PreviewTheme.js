@@ -34,7 +34,7 @@ const PreviewTheme = ({ config }) => {
           <div className="bg-red-400 h-3 w-3 rounded-full mx-1" />
           <div className="bg-yellow-400 h-3 w-3 rounded-full mx-1" />
           <div className="bg-green-400 h-3 w-3 rounded-full mx-1" />
-          <button className="ml-auto mr-2 cursor-pointer" onClick={() => setImage('')}>
+          <button className={`ml-auto mr-2 cursor-pointer${!image ? ' hidden' : ''}`} onClick={() => setImage('')}>
             <svg
               className="group-hover:inline-block hidden w-4 h-4 text-white rounded-full z-10"
               fill="none"
