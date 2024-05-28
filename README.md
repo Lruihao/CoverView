@@ -1,5 +1,7 @@
 # CoverView
 
+👉 简体中文说明 | [English README](README.en.md)
+
 [![用爱发电](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/Lruihao/CoverView)
 
 > 该项目基于原始的 [CoverView](https://github.com/rutikwankhade/CoverView)。

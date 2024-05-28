@@ -1,5 +1,7 @@
 # CoverView
 
+👉 [简体中文说明](README.md) | English README
+
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/Lruihao/CoverView)
 
 > This project is based on the original [CoverView](https://github.com/rutikwankhade/CoverView).
