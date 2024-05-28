@@ -110,7 +110,7 @@ const BackgroundTheme = ({ config }) => {
               </svg>
             </button>
             <div className={`${font} rounded-xl h-full p-4 flex flex-col justify-center gap-12`}>
-              <h1 className={`md:text-5xl text-center text-2xl text-white ${fontBold}`}>{title}</h1>
+              <h1 className={`whitespace-pre-wrap md:text-5xl text-center text-2xl text-white ${fontBold}`}>{title}</h1>
               <div className="flex flex-col items-center">
                 <h2 className="text-xl font-semibold text-white">{author}</h2>
                 {customIcon && (

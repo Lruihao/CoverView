@@ -28,7 +28,7 @@ const MobileMockupTheme = ({ config }) => {
       className="theme-mobile overflow-y-hidden flex flex-row items-center justify-center rounded h-full px-8 pt-4"
       style={{ backgroundColor: bgColor }}
     >
-      <h1 className={`${font} ${fontBold} text-2xl w-1/2 md:text-4xl px-4 text-white font-bold text-left`}>{title}</h1>
+      <h1 className={`whitespace-pre-wrap ${font} ${fontBold} text-2xl w-1/2 md:text-4xl px-4 text-white font-bold text-left`}>{title}</h1>
 
       <div
         className="w-5/12 mx-auto mt-auto group shadow-lg flex flex-col bg-white border-t-8 border-x-8 border-gray-800 rounded-t-3xl"

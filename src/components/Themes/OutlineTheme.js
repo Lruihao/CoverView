@@ -34,7 +34,7 @@ const OutlineTheme = ({ config }) => {
             />
           </div>
         )}
-        <h1 className={`text-3xl px-4 text-white md:text-5xl ${fontBold}`}>{title}</h1>
+        <h1 className={`whitespace-pre-wrap text-3xl px-4 text-white md:text-5xl ${fontBold}`}>{title}</h1>
 
         <div className={`${font} w-full h-12 flex px-4 items-center`}>
           <h2 className="text-2xl text-white font-semibold">{author}</h2>
