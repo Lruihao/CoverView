@@ -83,6 +83,16 @@ const config = {
       imageListEmpty: 'No images found',
       uploadScreenshot: 'Click to upload a screenshot or Ctrl+V to paste',
       searchPlaceholder: 'Search for images',
+      fonts: {
+        'font-Virgil': 'Virgil',
+        'font-MMT': 'MMT',
+        'font-Anek': 'Anek Latin',
+        'font-Inter': 'Inter',
+        'font-Poppins': 'Poppins',
+        'font-mono': 'Monospace',
+        'font-sans': 'Sans serif',
+        'font-serif': 'Serif',
+      },
     },
     pagination: {
       summary: 'Showing <span class="font-medium">{{page}}</span> to <span class="font-medium">{{totalPages}}</span> of <span class="font-medium">{{total}}</span> results',

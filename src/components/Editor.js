@@ -39,8 +39,8 @@ const fontOptions = [
   'font-MMT',
   'font-Anek',
   'font-Inter',
-  'font-mono',
   'font-Poppins',
+  'font-mono',
   'font-sans',
   'font-serif',
 ]
@@ -291,7 +291,7 @@ class Editor extends React.Component {
                           >
                             {
                               fontOptions.map((font) => (
-                                <option key={font} value={font}>{font}</option>
+                                <option key={font} value={font}>{this.props.t('editor.fonts.' + font)}</option>
                               ))
                             }
                           </select>

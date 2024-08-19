@@ -84,6 +84,16 @@ const config = {
       imageListEmpty: '暂无图片',
       uploadScreenshot: '点击上传截图或按 Ctrl+V 粘贴',
       searchPlaceholder: '搜索图片',
+      fonts: {
+        'font-Virgil': 'Virgil',
+        'font-MMT': '沐目体',
+        'font-Anek': 'Anek Latin',
+        'font-Inter': 'Inter',
+        'font-Poppins': 'Poppins',
+        'font-mono': '等宽字体',
+        'font-sans': '无衬线字体',
+        'font-serif': '衬线字体',
+      },
     },
     pagination: {
       summary: '共 <span class="font-medium">{{total}}</span> 个结果，<span class="font-medium">{{page}}</span>/<span class="font-medium">{{totalPages}}</span> 页',
