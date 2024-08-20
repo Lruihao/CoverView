@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { getPhotos } from '../../utils/unsplashConfig'
 import { ImgContext } from '../../utils/ImgContext'
+import { downloadRawImage } from '../../utils'
 import hugoIcon from '../../assets/icons/hugo.svg'
 import fixitIcon from '../../assets/icons/fixit.svg'
 import emptyImg from '../../assets/images/empty.svg'
@@ -16,6 +17,7 @@ const StylishTheme = ({ config }) => {
   const [page, setPage] = useState(1)
   const pageSize = 30
   const [loading, setLoading] = useState(false)
+  const [downloading, setDownloading] = useState(false)
   const [searchText, setSearchText] = useState('setup')
   const [orientation, setOrientation] = useState('all')
   const [resultColor, setResultColor] = useState('all')
@@ -78,6 +80,15 @@ const StylishTheme = ({ config }) => {
       avatar: image.user.profile_image.small,
       profile: `${image.user.links.html}?utm_source=https://coverview.lruihao.cn&utm_medium=referral`,
       downloadLink: image.links.download_location,
+    })
+  }
+
+  const downloadImage = (image) => {
+    setDownloading(true)
+    downloadRawImage(image).then(() => {
+      setDownloading(false)
+    }).catch((error) => {
+      console.error('Failed to download image!', error)
     })
   }
 
@@ -222,13 +233,28 @@ const StylishTheme = ({ config }) => {
             <div className="overflow-y-scroll overflow-x-hidden h-96 w-full">
               {imageList.map((image) => {
                 return (
-                  <img
-                    alt={image.alt_description}
-                    className="rounded m-2 cursor-pointer"
-                    key={image.id}
-                    src={image.urls.regular}
-                    onClick={() => selectImage(image)}
-                  />
+                  <div className="unsplash-image-container cursor-pointer relative" key={image.id}>
+                    <img
+                      alt={image.alt_description}
+                      className="rounded-lg p-1 w-full"
+                      src={image.urls.small}
+                      onClick={() => selectImage(image)}
+                    />
+                    <button
+                      className="hidden border p-1 bg-gray-700 hover:bg-gray-800 text-white rounded-lg absolute top-2 right-2"
+                      disabled={downloading}
+                      onClick={() => downloadImage(image)}
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      ><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"/></svg>
+                    </button>
+                  </div>
                 )
               })}
               {imageList.length === 0 && (

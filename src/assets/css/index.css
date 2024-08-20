@@ -31,3 +31,8 @@ Track ::-webkit-scrollbar-track {
 ::-webkit-scrollbar-thumb:hover {
   background: #b3b3ff;
 }
+
+/* Common style for unsplash image display */
+.unsplash-image-container:hover button.hidden {
+  display: inline-block;
+}

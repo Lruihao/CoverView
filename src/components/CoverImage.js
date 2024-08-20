@@ -1,5 +1,5 @@
 import React from 'react'
-import './CoverImage.css'
+import '../assets/css/CoverImage.css'
 import '../assets/css/patterns.css'
 import ModernTheme from './Themes/ModernTheme'
 import BasicTheme from './Themes/BasicTheme'

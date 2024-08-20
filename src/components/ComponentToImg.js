@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import './CoverImage.css'
+import '../assets/css/CoverImage.css'
 import domtoimage from 'dom-to-image-more'
 import * as clipboard from 'clipboard-polyfill'
 
@@ -24,7 +24,7 @@ function ComponentToImg(props) {
    * @param {String} downloadFmt download format
    * @returns {JSX.Element} download icon
    */
-  function _getDownloadIcon (loading, downloadFmt) {
+  function _getDownloadIcon(loading, downloadFmt) {
     if (loading) {
       return (
         <svg

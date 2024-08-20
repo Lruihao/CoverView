@@ -1,5 +1,5 @@
 import React from 'react'
-import './RandomTheme.css'
+import '../assets/css/RandomTheme.css'
 
 class RandomTheme extends React.Component {
   changeTheme = () => {
