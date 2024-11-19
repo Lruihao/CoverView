@@ -1,8 +1,19 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
-import en from './en'
-import zhCN from './zh-cn'
+import translationEN from './en'
+import translationZhCN from './zh-cn'
+
+const langResources = {
+  'en': {
+    name: 'English',
+    translation: translationEN,
+  },
+  'zh-CN': {
+    name: '简体中文',
+    translation: translationZhCN,
+  },
+}
 
 i18n
   .use(LanguageDetector)
@@ -21,10 +32,7 @@ i18n
     interpolation: {
       escapeValue: false,
     },
-    resources: {
-      'en': en,
-      'zh-CN': zhCN,
-    },
+    resources: langResources,
   })
 
 /**
@@ -35,9 +43,9 @@ i18n.on('languageChanged', (lang) => {
   document.title = `CoverView - ${i18n.t('home.description')}`
 })
 
-export const languages = [
-  { code: 'en', name: en.name },
-  { code: 'zh-CN', name: zhCN.name },
-]
+export const languages = Object.keys(langResources).map((code) => ({
+  code,
+  name: langResources[code].name,
+}))
 
 export default i18n
