@@ -12,7 +12,7 @@ const ModernTheme = ({ config }) => {
       style={{ backgroundColor: bgColor }}
     >
       <div className="mx-auto flex items-center justify-center relative">
-        {customIcon && (<img alt="Custom Icon" className="w-32 h-32 rounded-full bg-white border-8 border-white" src={customIcon} />)}
+        {customIcon && (<img alt="Custom Icon" className="w-32 h-32 rounded-full border-8 border-white" src={customIcon} />)}
         {icon.value === 'custom' && !customIcon && <i className="w-32 h-32 rounded-full bg-white border-8 border-white" />}
         {icon.value === 'hugo-fixit' && <img alt="Hugo Icon" className="w-32 h-32 rounded-full bg-white border-8 border-white" src={hugoIcon} />}
         {icon.value === 'hugo-fixit' && <img alt="FixIt Icon" className="w-7/12 h-7/12 rounded-full absolute bg-white border-2 border-white" src={fixitIcon} />}

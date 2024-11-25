@@ -102,7 +102,7 @@ const StylishTheme = ({ config }) => {
           <div className={`${font} px-12 justify-center gap-10 text-left rounded-xl h-full p-4 flex flex-col`}>
             <h1 className={`whitespace-pre-wrap text-4xl text-gray-800 ${fontBold}`}>{title}</h1>
             <div className="flex items-center text-left">
-              {customIcon && <img alt="Custom Icon" className="w-8 h-8 mr-2 rounded-full" src={customIcon} />}
+              {customIcon && <img alt="Custom Icon" className="w-8 h-8 mr-2" src={customIcon} />}
               {icon.value === 'custom' && !customIcon && <i className="h-8" />}
               {icon.value === 'hugo-fixit' && (
                 <div className="flex items-center gap-1 mr-2">

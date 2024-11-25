@@ -125,7 +125,7 @@ const BackgroundTheme = ({ config }) => {
               <div className="flex flex-col items-center">
                 <h2 className="text-xl font-semibold text-white">{author}</h2>
                 {customIcon && (
-                  <img alt="Custom Icon" className="w-10 h-10 m-2 rounded-full bg-white border-2 border-white" src={customIcon} />
+                  <img alt="Custom Icon" className="w-10 h-10 m-2" src={customIcon} />
                 )}
                 {icon.value === 'hugo-fixit' && (
                   <div className="flex items-center gap-2 m-2">

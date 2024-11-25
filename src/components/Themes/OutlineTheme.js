@@ -14,7 +14,7 @@ const OutlineTheme = ({ config }) => {
       <div className={`${font} rounded-2xl py-10 px-4 flex flex-col h-full justify-around`}>
         {customIcon && (
           <div className="mx-4">
-            <img alt="Custom Icon" className="rounded-full object-cover w-24 h-24 bg-white p-1 border-2 border-white" src={customIcon} />
+            <img alt="Custom Icon" className="object-cover w-24 h-24 p-1" src={customIcon} />
           </div>
         )}
         {icon.value === 'custom' && !customIcon && <i className="w-24 h-24 rounded-full bg-white p-1 border-2 border-white mx-auto mx-4" />}
