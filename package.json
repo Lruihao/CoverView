@@ -1,34 +1,44 @@
 {
   "name": "coverview",
+  "type": "module",
   "version": "0.2.0",
   "private": true,
-  "dependencies": {
-    "@headlessui/react": "^1.7.7",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "clipboard-polyfill": "^4.1.0",
-    "dom-to-image-more": "^3.3.0",
-    "dotenv": "^16.0.1",
-    "i18next": "^23.10.1",
-    "i18next-browser-languagedetector": "^7.2.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-i18next": "^14.1.0",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "^5.0.1",
-    "react-select": "^3.1.0",
-    "unsplash-js": "^7.0.15"
-  },
+  "packageManager": "pnpm@9.15.0",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.js"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "dependencies": {
+    "@headlessui/react": "^2.2.0",
+    "clipboard-polyfill": "^4.1.0",
+    "dom-to-image-more": "^3.5.0",
+    "i18next": "^24.1.0",
+    "i18next-browser-languagedetector": "^8.0.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-i18next": "^15.1.4",
+    "react-router": "^7.0.2",
+    "react-select": "^5.8.3",
+    "unsplash-js": "^7.0.19"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.11.2",
+    "@eslint-react/eslint-plugin": "^1.19.0",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.2",
+    "@vitejs/plugin-react-swc": "^3.7.2",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.16.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "globals": "^15.13.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3"
   },
   "browserslist": {
     "production": [
@@ -41,13 +51,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "autoprefixer": "^10.4.4",
-    "eslint": "^8.57.0",
-    "eslint-plugin-react": "^7.34.1",
-    "postcss": "^8.4.12",
-    "tailwindcss": "^3.0.24"
   }
 }
