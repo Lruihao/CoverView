@@ -42,18 +42,16 @@ Moved the original CoverView to my repositories since 2024-03-28, and made the f
 
 ## 👩‍💻 Developing
 
-> This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 1. Clone the project and install dependencies:
 
     ```shell
     git clone https://github.com/Lruihao/CoverView.git
     cd CoverView/
-    npm install
+    pnpm i
     ```
 
 2. Get an access key from [Unsplash API](https://unsplash.com/developers).
-3. Add the `REACT_APP_UNSPLASH_ACCESS_KEY` environment variable in the `.env` file.
+3. Add the `REACT_APP_UNSPLASH_ACCESS_KEY` environment variable in the `.env.local` file.
 
     ```bash
     # https://unsplash.com/ Access Key
@@ -63,7 +61,7 @@ Moved the original CoverView to my repositories since 2024-03-28, and made the f
 4. Run the following command to start the project:
 
     ```shell
-    npm start
+    pnpm dev
     ```
 
 ## 👇 Contributing
