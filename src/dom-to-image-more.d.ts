@@ -21,17 +21,17 @@ declare module 'dom-to-image-more' {
 
   export const DomToImage: DomToImage
 
-type DomToImage_ = DomToImage
-type Options_ = Options
+  type DomToImage_ = DomToImage
+  type Options_ = Options
 
-export default DomToImage
+  export default DomToImage
 
-declare global {
-  namespace DomToImage {
-        type Options = Options_
-        type DomToImage = DomToImage_
+  declare global {
+    namespace DomToImage {
+      type Options = Options_
+      type DomToImage = DomToImage_
+    }
+
+    const DomToImage: DomToImage.DomToImage
   }
-
-  const DomToImage: DomToImage.DomToImage
-}
 }
