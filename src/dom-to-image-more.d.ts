@@ -17,6 +17,7 @@ declare module 'dom-to-image-more' {
     quality?: number | undefined
     imagePlaceholder?: string | undefined
     cacheBust?: boolean | undefined
+    copyDefaultStyles?: boolean | undefined
   }
 
   export const DomToImage: DomToImage

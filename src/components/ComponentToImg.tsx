@@ -87,7 +87,7 @@ function ComponentToImg({ children }: PropsWithChildren) {
     const downloadOptions: ToImageOptions = {
       width: originalWidth * scale,
       height: originalHeight * scale,
-      // copyDefaultStyles: false,
+      copyDefaultStyles: false,
       quality, // quality of the jpeg image
       filter: node => !(node as HTMLElement).classList?.contains('download-ignore'),
       style: {
