@@ -1,15 +1,15 @@
 import type { ColorId, Orientation } from 'unsplash-js'
 import type { ThemeProps } from './themeProps'
+import fixitIcon from '@/assets/icons/fixit.svg'
+import hugoIcon from '@/assets/icons/hugo.svg'
+import emptyImg from '@/assets/images/empty.svg'
+import { orientationOptions, resultColorOptions } from '@/common'
+import { ImgContext } from '@/components/ImgContext'
+import Pagination from '@/components/Pagination'
+import { downloadRawImage } from '@/services/downloadRawImage'
+import { type BasicPhoto, getPhotos, type GetPhotosOptions } from '@/services/unsplash'
 import { useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import fixitIcon from '../../assets/icons/fixit.svg'
-import hugoIcon from '../../assets/icons/hugo.svg'
-import emptyImg from '../../assets/images/empty.svg'
-import { orientationOptions, resultColorOptions } from '../../common'
-import { downloadRawImage } from '../../services/downloadRawImage'
-import { type BasicPhoto, getPhotos, type GetPhotosOptions } from '../../services/unsplash'
-import { ImgContext } from '..//ImgContext'
-import Pagination from '../Pagination'
 
 function StylishTheme({ config }: ThemeProps) {
   const { t } = useTranslation()

@@ -10,9 +10,9 @@ import hashnodeLogo from '@/assets/images/hashnode-logo.png'
 import step1 from '@/assets/images/step1.png'
 import step2 from '@/assets/images/step2.png'
 import SwitchLang from '@/components/SwitchLang'
-import WallOfLove from '@/components/WallOfLove'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
+import WallOfLove from './components/WallOfLove'
 
 function Home() {
   const { t } = useTranslation()
