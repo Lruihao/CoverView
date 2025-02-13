@@ -1,4 +1,4 @@
-import type { ThemeConfig, ThemeType } from '../types'
+import type { ThemeConfig, ThemeType } from '@/types'
 import BackgroundTheme from './Themes/BackgroundTheme'
 import BasicTheme from './Themes/BasicTheme'
 import MobileMockupTheme from './Themes/MobileMockupTheme'

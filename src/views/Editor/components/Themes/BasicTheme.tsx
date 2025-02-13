@@ -1,6 +1,6 @@
 import type { ThemeProps } from './themeProps'
-import fixitIcon from '../../assets/icons/fixit.svg'
-import hugoIcon from '../../assets/icons/hugo.svg'
+import fixitIcon from '@/assets/icons/fixit.svg'
+import hugoIcon from '@/assets/icons/hugo.svg'
 
 function BasicTheme({ config }: ThemeProps) {
   const { title, bgColor, pattern, author, icon, font, customIcon } = config

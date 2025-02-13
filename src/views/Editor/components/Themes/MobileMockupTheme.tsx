@@ -1,7 +1,7 @@
 import type { ThemeProps } from './themeProps'
+import { getPasteImage } from '@/services/getPasteImage'
 import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { getPasteImage } from '../../services/getPasteImage'
 
 function MobileMockupTheme({ config }: ThemeProps) {
   const { t } = useTranslation()
