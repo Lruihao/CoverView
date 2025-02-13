@@ -14,7 +14,7 @@ export default {
       1: '添加博客文章的标题和作者',
       2: '自定义颜色、字体、图标等',
       3: [
-        '从不同的主题中选择',
+        '从不同的主题中选择样式',
         'Unsplash 集成、个人品牌定制图标等',
       ],
     },
@@ -26,7 +26,7 @@ export default {
     },
     tryItNow: '免费！立即试用',
     footer: {
-      copyright: '为爱发电 💛 <a href="https://github.com/Lruihao" class="font-semibold" target="_blank" rel="noreferrer">Lruihao</a>',
+      copyright: '为爱发电 💛 <a href="https://github.com/Lruihao" class="font-semibold underline decoration-wavy underline-offset-4" target="_blank" rel="noreferrer">Lruihao</a>',
       authorBlog: '查看我的 <a href="https://lruihao.cn/projects/" target="_blank" rel="noreferrer" class="text-purple-400 hover:text-pink-400">其他作品</a>',
       thanks: '感谢原作者 ',
     },
