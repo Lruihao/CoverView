@@ -30,6 +30,7 @@ export default {
       authorBlog: 'Checkout <a href="https://lruihao.cn/projects/" target="_blank" rel="noreferrer" class="text-purple-400 hover:text-pink-400">more cool stuff</a> I built',
       thanks: 'Thanks the original author',
     },
+    tweetText: 'type your thoughts here, Try https://coverview.lruihao.cn by @Lruihao',
   },
   faq: {
     title: 'Frequently Asked Questions',

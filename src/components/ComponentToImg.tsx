@@ -1,8 +1,8 @@
-import type { DownloadFormat } from '../types'
+import type { DownloadFormat } from '@/types'
+import { toImage, type ToImageOptions } from '@/services/toImage'
 import * as clipboard from 'clipboard-polyfill'
 import { type PropsWithChildren, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { toImage, type ToImageOptions } from '../services/toImage'
 
 const downloadFmtOptions: { label: string, value: DownloadFormat }[] = [
   { label: 'PNG', value: 'png' },

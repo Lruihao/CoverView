@@ -1,7 +1,7 @@
 import type { ChangeEventHandler } from 'react'
+import { languages } from '@/i18n'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { languages } from '../i18n'
 
 function SwitchLang() {
   const { i18n } = useTranslation()

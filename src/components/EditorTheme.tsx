@@ -1,7 +1,7 @@
-import type { ColorTheme, ThemeConfig } from '../types'
+import type { ColorTheme, ThemeConfig } from '@/types'
+import { themeOptions } from '@/common'
 import { TabPanel } from '@headlessui/react'
 import { useTranslation } from 'react-i18next'
-import { themeOptions } from '../common'
 import RandomTheme from './RandomTheme'
 
 export interface RandomThemeProps {

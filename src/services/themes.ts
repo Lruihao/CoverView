@@ -1,4 +1,4 @@
-import type { ColorTheme } from '../types'
+import type { ColorTheme } from '@/types'
 
 const colorThemes: ColorTheme[] = [
   {

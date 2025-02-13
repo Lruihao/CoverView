@@ -1,7 +1,7 @@
-import type { ThemeIcon } from '../types'
+import type { ThemeIcon } from '@/types'
+import { getDevIcon } from '@/services/devIcon'
 import { useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { getDevIcon } from '../services/devIcon'
 import { useLocalStorage } from './useLocalStorage'
 
 export function useDevIcon() {

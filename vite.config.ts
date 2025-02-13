@@ -1,3 +1,4 @@
+import path from 'node:path'
 import process from 'node:process'
 import react from '@vitejs/plugin-react-swc'
 import { defineConfig, loadEnv } from 'vite'
@@ -11,5 +12,10 @@ export default defineConfig(({ mode }) => {
       'import.meta.env.REACT_APP_AUTHOR': JSON.stringify(env.REACT_APP_AUTHOR),
     },
     plugins: [react()],
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src'),
+      },
+    },
   }
 })

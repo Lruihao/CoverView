@@ -1,10 +1,10 @@
-import type { ColorTheme, ThemeConfig, ThemeFont, ThemeIcon } from '../types'
+import type { ColorTheme, ThemeConfig, ThemeFont, ThemeIcon } from '@/types'
+import fixitIcon from '@/assets/icons/fixit.svg'
+import { fontOptions, patternOptions, platformOptions } from '@/common'
+import { useDevIcon } from '@/hooks/useDevIcon'
 import { TabPanel } from '@headlessui/react'
 import { useTranslation } from 'react-i18next'
 import Select from 'react-select'
-import fixitIcon from '../assets/icons/fixit.svg'
-import { fontOptions, patternOptions, platformOptions } from '../common'
-import { useDevIcon } from '../hooks/useDevIcon'
 import RandomTheme from './RandomTheme'
 
 export interface EditorSettingsProps {

@@ -1,22 +1,22 @@
 /* eslint-disable react-dom/no-dangerously-set-innerhtml */
+import fixitLogo from '@/assets/icons/fixit.svg'
+import logo from '@/assets/icons/logo.png'
+import cover1 from '@/assets/images/cover1.webp'
+import cover2 from '@/assets/images/cover2.webp'
+import cover3 from '@/assets/images/cover3.webp'
+import cover4 from '@/assets/images/cover4.webp'
+import devLogo from '@/assets/images/dev-logo.png'
+import hashnodeLogo from '@/assets/images/hashnode-logo.png'
+import step1 from '@/assets/images/step1.png'
+import step2 from '@/assets/images/step2.png'
+import SwitchLang from '@/components/SwitchLang'
+import WallOfLove from '@/components/WallOfLove'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
-import fixitLogo from '../assets/icons/fixit.svg'
-import logo from '../assets/icons/logo.png'
-import cover1 from '../assets/images/cover1.webp'
-import cover2 from '../assets/images/cover2.webp'
-import cover3 from '../assets/images/cover3.webp'
-import cover4 from '../assets/images/cover4.webp'
-import devLogo from '../assets/images/dev-logo.png'
-import hashnodeLogo from '../assets/images/hashnode-logo.png'
-import step1 from '../assets/images/step1.png'
-import step2 from '../assets/images/step2.png'
-import SwitchLang from '../components/SwitchLang'
-import WallOfLove from '../components/WallOfLove'
 
 function Home() {
   const { t } = useTranslation()
-  const tweetText = encodeURIComponent('type your thoughts here, Try https://coverview.lruihao.cn by @Lruihao')
+  const tweetText = encodeURIComponent(t('home.tweetText'))
 
   return (
     <div className="bg-gray-50">

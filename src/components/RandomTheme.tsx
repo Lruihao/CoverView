@@ -1,5 +1,5 @@
-import type { ColorTheme } from '../types'
-import { getRandomTheme } from '../services/themes'
+import type { ColorTheme } from '@/types'
+import { getRandomTheme } from '@/services/themes'
 
 function RandomIcon() {
   return (
