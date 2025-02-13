@@ -19,7 +19,7 @@ function Faq() {
             className="hover:translate-x-2 duration-300 bg-indigo-400 hover:bg-indigo-500 group rounded-full px-6 py-2 text-white text-sm mx-auto font-Inter font-semibold"
             to="/editor"
           >
-            {t('home.openEditor')}
+            {t('home.goEditor')}
             {' '}
             ➜
           </Link>

@@ -5,7 +5,7 @@ export default {
   },
   home: {
     description: 'Creating cover images for your blogs is now super easy',
-    openEditor: 'Open Editor',
+    goEditor: 'Create Now',
     whyCoverImages: 'Why cover images are more important than you think?',
     reason1: 'Around <b>7 million</b> blog posts are published daily. And with the rise of new-age blogging tools, it will only go up.',
     reason2: 'A good cover image can lead to <b>higher conversion rate</b> than a random stock image.',
