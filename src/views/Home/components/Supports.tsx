@@ -1,6 +1,6 @@
 import fixitLogo from '@/assets/icons/fixit.svg'
-import devLogo from '@/assets/images/dev-logo.png'
-import hashnodeLogo from '@/assets/images/hashnode-logo.png'
+import devLogo from '@/assets/images/dev-logo.svg'
+import hashnodeLogo from '@/assets/images/hashnode-logo.svg'
 import { useTranslation } from 'react-i18next'
 
 function Supports() {
