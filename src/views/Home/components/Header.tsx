@@ -12,7 +12,7 @@ function Header() {
         <h1 className="font-semibold md:text-xl text-lg font-Inter">CoverView</h1>
       </div>
       <a
-        className="hover:translate-x-2 duration-300 bg-gray-700 group rounded-xl md:px-4 text-white md:text-sm text-xs ml-auto mr-2 md:mr-4 font-Inter font-semibold p-2"
+        className="hover:translate-x-2 duration-300 md:px-4 md:text-sm text-xs ml-auto mr-2 md:mr-4 font-Nunito font-semibold p-2"
         href="https://github.com/Lruihao/CoverView"
         rel="noreferrer"
         target="_blank"

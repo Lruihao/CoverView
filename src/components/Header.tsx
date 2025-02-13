@@ -5,6 +5,8 @@ import SwitchLang from './SwitchLang'
 
 function Header() {
   const { t } = useTranslation()
+  const tweetText = encodeURIComponent(t('home.tweetText'))
+
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 text-xl md:px-2 flex border-b border-gray-100 p-2 w-full">
       <Link className="flex items-center" to="/">
@@ -12,14 +14,16 @@ function Header() {
         <h1 className="font-semibold">CoverView</h1>
       </Link>
 
-      <div className="flex items-center md:gap-8 gap-2 ml-auto md:mr-4">
+      <div className="flex items-center md:gap-4 gap-2 ml-auto md:mr-4">
+        {/*
         <Link className="text-gray-700 hover:text-gray-800 text-base font-Nunito" to="/faq">
           💡
           {' '}
           <span className="hidden md:inline-block">{t('common.howToUse')}</span>
         </Link>
+        */}
         <a
-          className="text-gray-700 hover:text-gray-800 text-base font-Nunito"
+          className="bg-gray-700 hover:bg-gray-800 px-4 rounded-full p-1 text-white md:text-sm flex items-center text-xs font-Nunito"
           href="https://github.com/Lruihao/CoverView"
           rel="noreferrer"
           target="_blank"
@@ -29,6 +33,14 @@ function Header() {
             {' '}
             {t('common.star')}
           </span>
+        </a>
+        <a
+          href={`https://x.com/intent/tweet?text=${tweetText}`}
+          className="bg-blue-400 hover:bg-blue-500 md:text-sm text-xs rounded-full px-4 font-semibold text-white p-1 hidden md:inline"
+          rel="noreferrer"
+          target="_blank"
+        >
+          {t('home.shareOnTwitter')}
         </a>
         <SwitchLang />
       </div>
