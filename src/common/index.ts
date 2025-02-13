@@ -1,12 +1,12 @@
+import type { ThemeConfig, ThemeFont, ThemePattern, ThemeType } from '@/types'
 import type { ColorId, Orientation } from 'unsplash-js'
-import type { ThemeConfig, ThemeFont, ThemePattern, ThemeType } from '../types'
-import theme1 from '../assets/images/theme1.webp'
-import theme2 from '../assets/images/theme2.webp'
-import theme3 from '../assets/images/theme3.webp'
-import theme4 from '../assets/images/theme4.webp'
-import theme5 from '../assets/images/theme5.webp'
-import theme6 from '../assets/images/theme6.webp'
-import theme7 from '../assets/images/theme7.webp'
+import theme1 from '@/assets/images/theme1.webp'
+import theme2 from '@/assets/images/theme2.webp'
+import theme3 from '@/assets/images/theme3.webp'
+import theme4 from '@/assets/images/theme4.webp'
+import theme5 from '@/assets/images/theme5.webp'
+import theme6 from '@/assets/images/theme6.webp'
+import theme7 from '@/assets/images/theme7.webp'
 
 export const defaultSettings: ThemeConfig = {
   title: 'A begineers guide to frontend development',

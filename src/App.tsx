@@ -1,7 +1,7 @@
+import Editor from '@/views/Editor'
+import Faq from '@/views/Faq'
+import Home from '@/views/Home'
 import { BrowserRouter, Route, Routes } from 'react-router'
-import Editor from './views/Editor'
-import Faq from './views/Faq'
-import Home from './views/Home'
 
 function App() {
   return (

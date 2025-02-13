@@ -1,8 +1,8 @@
 /* eslint-disable react-dom/no-dangerously-set-innerhtml */
+import Header from '@/components/Header'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
-import Header from '../components/Header'
 
 function Faq() {
   const [showMsg, setShowMsg] = useState(false)

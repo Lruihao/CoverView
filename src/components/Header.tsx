@@ -1,6 +1,6 @@
+import logo from '@/assets/icons/logo.png'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
-import logo from '../assets/icons/logo.png'
 import SwitchLang from './SwitchLang'
 
 function Header() {

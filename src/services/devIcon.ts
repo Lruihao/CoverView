@@ -1,4 +1,4 @@
-import type { ThemeIcon } from '../types'
+import type { ThemeIcon } from '@/types'
 
 const API_URL = 'https://raw.githubusercontent.com/devicons/devicon/master/devicon.json'
 
