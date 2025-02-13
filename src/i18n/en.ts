@@ -11,10 +11,10 @@ export default {
     reason2: 'A good cover image can lead to <b>higher conversion rate</b> than a random stock image.',
     step: {
       title: 'With CoverView, you can create cover images in <span class="text-indigo-400">seconds</span>.',
-      1: 'Add title and author of your blog post',
+      1: 'Add your blog title and author name',
       2: 'Customize with colors, fonts, icons and patterns',
       3: [
-        'Choose from different themes',
+        'Choose your style from different themes',
         'Unsplash integration, custom icon for personal branding and more.',
       ],
     },
@@ -26,7 +26,7 @@ export default {
     },
     tryItNow: 'It\'s Free! Try now',
     footer: {
-      copyright: 'Made with 💛 by <a href="https://github.com/Lruihao" class="font-semibold" target="_blank" rel="noreferrer">Lruihao</a>',
+      copyright: 'Made with 💛 by <a href="https://github.com/Lruihao" class="font-semibold underline decoration-wavy underline-offset-4" target="_blank" rel="noreferrer">Lruihao</a>',
       authorBlog: 'Checkout <a href="https://lruihao.cn/projects/" target="_blank" rel="noreferrer" class="text-purple-400 hover:text-pink-400">more cool stuff</a> I built',
       thanks: 'Thanks the original author',
     },
