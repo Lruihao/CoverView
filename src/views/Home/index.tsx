@@ -8,15 +8,14 @@ import WallOfLove from './components/WallOfLove'
 
 function Home() {
   return (
-    <div className="bg-gray-50">
+    <div>
       <Header />
       <Cover />
-      <div className="md:my-32 my-10 mx-auto">
-        <Importance />
-        <Usage />
-        <Supports />
-        <WallOfLove />
-      </div>
+      {/* <div className="md:my-32 my-10 mx-auto"> */}
+      <Importance />
+      <Usage />
+      <Supports />
+      <WallOfLove />
       <Footer />
     </div>
   )

@@ -8,7 +8,7 @@ function CoverSection() {
   const { t } = useTranslation()
 
   return (
-    <>
+    <div className="bg-indigo-50/80">
       <div className="mx-auto md:px-20 py-6 flex flex-col items-center">
         <h1 className="md:w-7/12 m-10 text-center md:text-5xl text-3xl font-extrabold text-gray-700 font-Anek">{t('home.description')}</h1>
         <Link className="hover:translate-x-2 duration-300 bg-gray-700 hover:bg-gray-800 group rounded-full px-4 md:px-8 text-white md:text-2xl text-lg mx-auto font-Inter font-semibold md:p-4 p-2" to="/editor">
@@ -19,7 +19,7 @@ function CoverSection() {
           </span>
         </Link>
       </div>
-      <div className="temple flex flex-row items-center justify-center mx-auto md:w-10/12">
+      <div className="temple flex flex-row items-center justify-center mx-auto md:w-10/12 py-10">
         <div className="m-4 transform -translate-y-20 border animate hover:scale-105 hover:-rotate-3 rotate-6 duration-100 bg-white p-2 shadow-sm w-1/5 rounded-lg flex flex-col">
           <img alt="cover1" className="border border-gray-100 rounded mb-2" src={cover2} />
           <p className="animate animate-pulse bg-gray-50 md:h-5 h-2 rounded mb-2" />
@@ -38,7 +38,7 @@ function CoverSection() {
           <p className="animate animate-pulse w-8/12 bg-gray-50 md:odd:h-5 h-2 rounded mb-2" />
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

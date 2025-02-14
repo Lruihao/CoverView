@@ -11,9 +11,9 @@ function Usage() {
   const { t } = useTranslation()
 
   return (
-    <>
-      <h2 className="md:text-5xl text-3xl md:w-7/12 md:mx-auto mt-12 md:mt-32 mx-10 font-bold font-Anek text-center text-gray-700" dangerouslySetInnerHTML={{ __html: t('home.step.title') }} />
-      <div className="md:w-8/12 my-20 flex md:flex-row flex-col mx-auto justify-between gap-20">
+    <div className="bg-violet-50/70">
+      <h2 className="md:text-5xl text-3xl md:w-7/12 md:mx-auto pt-20 mx-10 font-bold font-Anek text-center text-gray-700" dangerouslySetInnerHTML={{ __html: t('home.step.title') }} />
+      <div className="md:w-8/12 mt-10 mb-6 flex md:flex-row flex-col mx-auto justify-between gap-10">
         <div className="md:w-1/3 flex flex-col mx-10">
           <div className="text-center">
             <div className="text-xl w-max mx-auto text-white py-1 px-4 font-Anek font-semibold bg-indigo-400 rounded-full">Step 1</div>
@@ -31,7 +31,7 @@ function Usage() {
         </div>
       </div>
 
-      <div className="md:w-8/12 flex md:flex-row flex-col justify-center items-center mx-auto">
+      <div className="md:w-8/12 flex md:flex-row flex-col justify-center items-center mx-auto pb-10">
         <div className="text-center md:w-1/3 m-4">
           <div className="text-xl w-max mx-auto text-white py-1 px-4 font-Anek font-semibold bg-indigo-400 rounded-full">Step 3</div>
           <p className="md:text-3xl text-2xl p-4 text-center mx-auto my-2 font-semibold font-Inter text-gray-700">{t('home.step.3.0')}</p>
@@ -50,7 +50,7 @@ function Usage() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

@@ -5,9 +5,9 @@ function Importance() {
   const { t } = useTranslation()
 
   return (
-    <div className="md:w-10/12 mx-auto flex flex-col">
+    <div className="flex flex-col bg-orange-50">
       <div className="md:w-9/12 text-center mx-auto">
-        <h2 className="text-5xl py-4 font-bold font-Anek text-gray-700">{t('home.whyCoverImages')}</h2>
+        <h2 className="text-5xl pt-20 px-10 font-bold font-Anek text-gray-700">{t('home.whyCoverImages')}</h2>
       </div>
 
       <div className=" flex md:flex-row flex-col mx-auto justify-center my-10">
