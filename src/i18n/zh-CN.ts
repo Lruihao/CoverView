@@ -28,7 +28,6 @@ export default {
     footer: {
       copyright: '为爱发电 💛 <a href="https://github.com/Lruihao" class="font-semibold underline decoration-wavy underline-offset-4" target="_blank" rel="noreferrer">Lruihao</a>',
       authorBlog: '查看我的 <a href="https://lruihao.cn/projects/" target="_blank" rel="noreferrer" class="text-purple-400 hover:text-pink-400">其他作品</a>',
-      thanks: '感谢原作者 ',
     },
     tweetText: '在这里输入你的想法，试试 https://coverview.lruihao.cn by @Lruihao',
   },

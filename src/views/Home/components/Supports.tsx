@@ -7,7 +7,7 @@ function Supports() {
   const { t } = useTranslation()
 
   return (
-    <div className="md:w-6/12 my-20 mx-auto">
+    <div className="pt-20 mx-auto bg-blue-50">
       <div className="text-center m-4">
         <p className="text-2xl my-2 font-semibold font-Inter text-gray-600">{t('home.supportsPlatforms')}</p>
       </div>
