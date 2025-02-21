@@ -27,11 +27,11 @@ function EditorSettings({ settings, updateSettings, handleReset }: EditorSetting
     updateSettings({ pattern, bgColor: theme.bgColor, borderColor: theme.bdColor })
 
   return (
-    <div className="lg:w-1/3 p-4 border-dashed border-r-2 border-gray-200 bg-linear-to-r from-indigo-50/50 via-gray-100 to-indigo-50/50">
+    <div className="lg:w-1/3 p-4 border-dashed border-r-2 border-gray-300 bg-linear-to-r from-indigo-50/50 via-gray-100 to-indigo-50/50">
       <div className="m-2 flex flex-col">
         <span className="font-medium pb-1 text-sm">{t('editor.title')}</span>
         <textarea
-          className="focus:outline-hidden border text-gray-700 text-xl rounded-sm p-2 h-24"
+          className="focus:outline-hidden border border-gray-300/70 hover:border-gray-300 bg-white text-gray-700 text-xl rounded-sm p-2 h-24"
           placeholder={t('editor.title')}
           value={settings.title}
           onChange={e => updateSettings({ title: e.target.value })}
@@ -41,7 +41,7 @@ function EditorSettings({ settings, updateSettings, handleReset }: EditorSetting
       <div className="flex flex-col m-2">
         <span className="font-medium pb-1 text-sm">{t('editor.author')}</span>
         <input
-          className="focus:outline-hidden border text-gray-700 text-xl rounded-sm bg-white p-2"
+          className="focus:outline-hidden border border-gray-300/70 hover:border-gray-300 text-gray-700 text-xl rounded-sm bg-white p-2"
           placeholder={t('editor.author')}
           type="text"
           value={settings.author}
@@ -57,7 +57,7 @@ function EditorSettings({ settings, updateSettings, handleReset }: EditorSetting
       <div className="flex flex-col m-2">
         <span className="font-medium pb-1 text-sm">{t('editor.icon')}</span>
         <Select
-          className="outline-hidden focus:outline-hidden text-xl text-gray-700"
+          className="outline-hidden focus:outline-hidden text-xl text-gray-700 rounded-sm"
           formatOptionLabel={formatOptionLabel}
           options={devIconOptions}
           value={settings.icon}
@@ -72,7 +72,7 @@ function EditorSettings({ settings, updateSettings, handleReset }: EditorSetting
 
       <div className={`flex items-center justify-center ${settings.icon.value === 'custom' ? '' : 'hidden'}`}>
         <input
-          className="focus:outline-hidden text-base cursor-pointer bg-white rounded-sm border m-2 w-full"
+          className="focus:outline-hidden text-base cursor-pointer bg-white rounded-sm border border-gray-300/70 hover:border-gray-300 p-2 m-2 w-full"
           type="file"
           onChange={e => updateSettings({
             customIcon: e.target.files?.[0]
@@ -86,7 +86,7 @@ function EditorSettings({ settings, updateSettings, handleReset }: EditorSetting
         <div className="flex flex-col m-2 w-1/2">
           <span className="font-medium pb-1 text-sm">{t('editor.font')}</span>
           <select
-            className="focus:outline-hidden text-gray-700 text-xl p-2 rounded-sm border"
+            className="focus:outline-hidden text-gray-700 text-xl p-2 rounded-sm bg-white border border-gray-300/70 hover:border-gray-300"
             value={settings.font}
             onChange={e => updateSettings({ font: e.target.value as ThemeFont })}
           >
@@ -100,7 +100,7 @@ function EditorSettings({ settings, updateSettings, handleReset }: EditorSetting
         <div className="flex flex-col m-2 w-full">
           <span className="font-medium pb-1 text-sm">{t('editor.platform')}</span>
           <select
-            className="focus:outline-hidden text-gray-700 text-xl p-2 rounded-sm border"
+            className="focus:outline-hidden text-gray-700 text-xl p-2 rounded-sm bg-white border border-gray-300/70 hover:border-gray-300"
             value={settings.platform}
             onChange={handleSelectPlatform}
           >
@@ -145,7 +145,7 @@ function EditorSettings({ settings, updateSettings, handleReset }: EditorSetting
       <div className={`flex items-center ${settings.theme === 'background' ? 'hidden' : ''}`}>
         <div className="flex flex-col m-2 w-1/2">
           <span className="font-medium pb-1 text-sm">{t('editor.color')}</span>
-          <div className="border rounded-sm flex items-center p-2">
+          <div className="bg-white border border-gray-300/70 hover:border-gray-300 rounded-sm flex items-center p-2">
             <span className="text-xl text-gray-700 mx-2">{settings.bgColor}</span>
             <input
               className="h-8 w-8 ml-auto mr-1 rounded-sm"
@@ -158,7 +158,7 @@ function EditorSettings({ settings, updateSettings, handleReset }: EditorSetting
         <div className="flex flex-col m-2 w-1/2">
           <span className="font-medium pb-1 text-sm">{t('editor.pattern')}</span>
           <select
-            className="focus:outline-hidden border text-xl p-2 rounded-sm"
+            className="focus:outline-hidden bg-white border border-gray-300/70 hover:border-gray-300 text-xl p-2 rounded-sm"
             value={settings.pattern}
             onChange={e => updateSettings({ pattern: e.target.value })}
           >

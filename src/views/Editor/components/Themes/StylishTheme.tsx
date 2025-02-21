@@ -1,3 +1,4 @@
+import type { BasicPhoto, GetPhotosOptions } from '@/services/unsplash'
 import type { ColorId, Orientation } from 'unsplash-js'
 import type { ThemeProps } from './themeProps'
 import fixitIcon from '@/assets/icons/fixit.svg'
@@ -7,7 +8,7 @@ import { orientationOptions, resultColorOptions } from '@/common'
 import { ImgContext } from '@/components/ImgContext'
 import Pagination from '@/components/Pagination'
 import { downloadRawImage } from '@/services/downloadRawImage'
-import { type BasicPhoto, getPhotos, type GetPhotosOptions } from '@/services/unsplash'
+import { getPhotos } from '@/services/unsplash'
 import { useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -156,7 +157,7 @@ function StylishTheme({ config }: ThemeProps) {
           {/* 图片列表 */}
           <div className={`${unsplashImage ? 'hidden' : 'flex'} h-full flex-col p-1 md:p-4 bg-white items-center justify-around gap-1 md:gap-2 relative download-ignore`}>
             <form
-              className="flex bg-gray-50 rounded-full border"
+              className="flex bg-gray-50 rounded-full border border-gray-300/70 hover:border-gray-300"
               onSubmit={e => e.preventDefault()}
             >
               <select
