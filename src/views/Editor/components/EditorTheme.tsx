@@ -1,8 +1,6 @@
-import type { ColorTheme, ThemeConfig } from '@/types'
+import type { ThemeConfig } from '@/types'
 import { themeOptions } from '@/common'
-import { TabPanel } from '@headlessui/react'
 import { useTranslation } from 'react-i18next'
-import RandomTheme from './RandomTheme'
 
 export interface RandomThemeProps {
   settings: ThemeConfig
@@ -11,20 +9,22 @@ export interface RandomThemeProps {
 
 function EditorTheme({ settings, updateSettings }: RandomThemeProps) {
   const { t } = useTranslation()
-  const getRandomTheme = (theme: ColorTheme, pattern: string) =>
-    updateSettings({ pattern, bgColor: theme.bgColor, borderColor: theme.bdColor })
   return (
-    <TabPanel className="h-full flex flex-col">
-      <div className="flex items-center justify-between border rounded-xl border-gray-50 px-4 py-2">
-        <h2 className="text-lg font-inter font-semibold">{t('editor.themes')}</h2>
-        <RandomTheme onThemeChange={getRandomTheme} />
-      </div>
-
-      <div className="h-full flex flex-wrap overflow-y-scroll">
+    <div className="m-2 flex flex-col">
+      <span className="font-medium pb-1 text-sm">{t('editor.themes')}</span>
+      <div className="grid grid-cols-5 gap-2">
+        <div className="col-span-2 row-span-2">
+          <img
+            alt="background"
+            className={`${settings.theme === 'background' ? 'border-2 border-indigo-400 hover:border-indigo-500' : 'border border-gray-100 hover:border-gray-200'} cursor-pointer hover:scale-105 duration-300`}
+            src={themeOptions[0].src}
+            onClick={() => updateSettings({ theme: 'background' })}
+          />
+        </div>
         {
-          themeOptions.map(theme => (
+          themeOptions.slice(1).map(theme => (
             <div
-              className={`${theme.name === 'background' ? 'w-full' : 'w-1/2'} p-2`}
+              className="col-span-1"
               key={theme.name}
               title={theme.name}
             >
@@ -38,7 +38,7 @@ function EditorTheme({ settings, updateSettings }: RandomThemeProps) {
           ))
         }
       </div>
-    </TabPanel>
+    </div>
   )
 }
 

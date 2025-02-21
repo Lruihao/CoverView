@@ -3,12 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Anek+Latin:wght@400;500;600;700&display=swap?crossorigin=anonymous');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap');
 
-html,
-body,
-#root {
-  height: 100%;
-}
-
 ::-webkit-scrollbar {
   /* width: 8px; */
   display: none;
