@@ -62,7 +62,7 @@ function MobileMockupTheme({ config }: ThemeProps) {
           : (
               <div className="flex flex-col rounded-xl px-4 py-20 bg-white items-center justify-center">
                 <input
-                  className="text-sm flex flex-col cursor-pointer mb-2 bg-white rounded-sm border w-full"
+                  className="text-sm flex flex-col cursor-pointer mb-2 bg-white rounded-sm w-full p-2 border border-gray-400/70 hover:border-gray-400"
                   type="file"
                   onChange={e => e.target.files && setImage(URL.createObjectURL(e.target.files[0]))}
                 />

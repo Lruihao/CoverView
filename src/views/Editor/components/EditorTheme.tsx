@@ -16,7 +16,7 @@ function EditorTheme({ settings, updateSettings }: RandomThemeProps) {
         <div className="col-span-2 row-span-2">
           <img
             alt="background"
-            className={`${settings.theme === 'background' ? 'border-2 border-indigo-400 hover:border-indigo-500' : 'border border-gray-100 hover:border-gray-200'} cursor-pointer hover:scale-105 duration-300`}
+            className={`${settings.theme === 'background' ? 'border-2 border-indigo-400 hover:border-indigo-500' : 'border border-gray-100 hover:border-gray-200'} cursor-pointer hover:scale-105 duration-300 rounded-sm`}
             src={themeOptions[0].src}
             onClick={() => updateSettings({ theme: 'background' })}
           />
@@ -30,7 +30,7 @@ function EditorTheme({ settings, updateSettings }: RandomThemeProps) {
             >
               <img
                 alt={theme.name}
-                className={`${settings.theme === theme.name ? 'border-2 border-indigo-400 hover:border-indigo-500' : 'border border-gray-100 hover:border-gray-200'} cursor-pointer hover:scale-105 duration-300`}
+                className={`${settings.theme === theme.name ? 'border-2 border-indigo-400 hover:border-indigo-500' : 'border border-gray-100 hover:border-gray-200'} cursor-pointer hover:scale-105 duration-300 rounded-sm`}
                 src={theme.src}
                 onClick={() => updateSettings({ theme: theme.name })}
               />

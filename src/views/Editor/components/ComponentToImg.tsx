@@ -1,7 +1,9 @@
+import type { ToImageOptions } from '@/services/toImage'
 import type { DownloadFormat } from '@/types'
-import { toImage, type ToImageOptions } from '@/services/toImage'
+import type { PropsWithChildren } from 'react'
+import { toImage } from '@/services/toImage'
 import * as clipboard from 'clipboard-polyfill'
-import { type PropsWithChildren, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 const downloadFmtOptions: { label: string, value: DownloadFormat }[] = [
