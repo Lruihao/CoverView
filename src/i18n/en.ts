@@ -74,7 +74,7 @@ export default {
     pattern: 'Pattern',
     platform: 'Platform/Size',
     resetBtn: 'Reset All',
-    selectImgTips: 'Click on any image to select',
+    selectImgTips: 'Click to select',
     downloadBtn: 'Download',
     copyBtn: 'Copy',
     themes: 'Themes',

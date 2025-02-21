@@ -18,7 +18,7 @@ function Editor() {
       <Header />
 
       <ImgProvider>
-        <div className="flex flex-col lg:flex-row grow bg-gray-50">
+        <div className="flex flex-col lg:flex-row grow">
           <EditorSettings
             settings={settings}
             updateSettings={updateSettings}

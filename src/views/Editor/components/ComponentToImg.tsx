@@ -123,7 +123,7 @@ function ComponentToImg({ children }: PropsWithChildren) {
   }
 
   return (
-    <div className="lg:w-2/3 flex m-6 flex-col items-center justify-center">
+    <div className="lg:w-2/3 flex m-6 flex-col items-center justify-center bg-gray-100 rounded-sm shadow-md">
       <div className="md:w-full scale-50 md:scale-100" ref={componentRef}>{children}</div>
       <div className="flex items-center justify-center gap-4 m-6">
         <div className="flex items-center justify-center">

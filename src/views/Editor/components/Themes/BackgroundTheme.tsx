@@ -165,7 +165,7 @@ function BackgroundTheme({ config }: ThemeProps) {
         {/* 图片列表 */}
         <div className={`${unsplashImage ? 'hidden' : 'flex'} h-full flex-col p-1 md:p-4 bg-white items-center justify-around gap-1 md:gap-2 relative download-ignore`}>
           <div className="flex flex-wrap items-center justify-center md:justify-between w-full px-2">
-            <div className="text-lg font-semibold text-gray-700">
+            <div className="text-base font-semibold text-gray-700">
               {t('editor.selectImgTips')}
               {' '}
               👇

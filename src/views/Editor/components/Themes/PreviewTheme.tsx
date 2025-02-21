@@ -53,7 +53,7 @@ function PreviewTheme({ config }: ThemeProps) {
           : (
               <div className="flex flex-col p-20 bg-white items-center justify-center">
                 <input
-                  className="text-xl cursor-pointer mb-2 bg-white rounded-sm p-2 border border-gray-400/70 hover:border-gray-400"
+                  className="text-lg cursor-pointer mb-2 bg-white rounded-sm p-2 border border-gray-400/70 hover:border-gray-400"
                   type="file"
                   onChange={e => e.target.files && setImage(URL.createObjectURL(e.target.files[0]))}
                 />
