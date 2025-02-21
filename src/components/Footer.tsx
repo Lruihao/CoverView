@@ -38,7 +38,7 @@ function Footer() {
             </a>
           </div>
           <span
-            className="text-sm mx-2 md:text-left text-center text-gray-300 hidden md:inline"
+            className="text-xs mx-2 md:text-left text-center text-gray-300 hidden md:inline"
             dangerouslySetInnerHTML={{ __html: t('home.footer.authorBlog') }}
           />
         </div>

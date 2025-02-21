@@ -8,20 +8,13 @@ function Header() {
   const tweetText = encodeURIComponent(t('home.tweetText'))
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-xl bg-indigo-50/80 text-xl md:px-2 flex border-b border-gray-100 p-2 w-full">
+    <header className="sticky top-0 z-50 backdrop-blur-xl bg-indigo-50/80 text-xl px-4 py-2 flex border-b border-indigo-100 w-full">
       <Link className="flex items-center" to="/">
         <img alt="logo" className="w-8 h-8 mx-2" src={logo} />
         <h1 className="font-semibold">CoverView</h1>
       </Link>
 
       <div className="flex items-center md:gap-4 gap-2 ml-auto md:mr-4">
-        {/*
-        <Link className="text-gray-700 hover:text-gray-800 text-base font-Nunito" to="/faq">
-          💡
-          {' '}
-          <span className="hidden md:inline-block">{t('common.howToUse')}</span>
-        </Link>
-        */}
         <a
           className="bg-gray-700 hover:bg-gray-800 px-4 rounded-full p-1 text-white md:text-sm flex items-center text-xs font-Nunito"
           href="https://github.com/Lruihao/CoverView"
