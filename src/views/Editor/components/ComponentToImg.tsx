@@ -139,7 +139,7 @@ function ComponentToImg({ children }: PropsWithChildren) {
             />
           )}
           <select
-            className="h-10 px-1 focus:outline-none border-4 border-gray-700 rounded-lg rounded-r-none"
+            className="h-10 px-1 focus:outline-hidden border-4 border-gray-700 rounded-lg rounded-r-none"
             disabled={loading}
             value={downloadFmt}
             onChange={(e) => {

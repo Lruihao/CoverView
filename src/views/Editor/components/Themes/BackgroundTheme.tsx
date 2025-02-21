@@ -81,7 +81,7 @@ function BackgroundTheme({ config }: ThemeProps) {
   }
 
   return (
-    <div className="theme-background overflow-y-hidden flex flex-col rounded h-full">
+    <div className="theme-background overflow-y-hidden flex flex-col rounded-sm h-full">
       <div className="h-full bg-white">
         {/* 预览图片 */}
         <div className={`${unsplashImage ? 'flex' : 'hidden'} h-full relative group`}>
@@ -91,7 +91,7 @@ function BackgroundTheme({ config }: ThemeProps) {
             src={unsplashImage?.url}
           />
 
-          <div className="backdrop-blur-sm h-full w-full bg-gray-800/60 absolute">
+          <div className="backdrop-blur-xs h-full w-full bg-gray-800/60 absolute">
             <button type="button" className="absolute top-2 right-2 cursor-pointer download-ignore" onClick={() => setUnsplashImage(null)}>
               <svg
                 className="group-hover:inline-block hidden w-8 h-8 text-gray-800 bg-white p-2 rounded-full z-10"
@@ -174,7 +174,7 @@ function BackgroundTheme({ config }: ThemeProps) {
               onSubmit={e => e.preventDefault()}
             >
               <select
-                className="focus:outline-none bg-gray-50 py-1 px-2 md:px-4 rounded-l-full"
+                className="focus:outline-hidden bg-gray-50 py-1 px-2 md:px-4 rounded-l-full"
                 value={orientation}
                 onChange={e => setOrientation(e.target.value as Orientation)}
               >
@@ -183,7 +183,7 @@ function BackgroundTheme({ config }: ThemeProps) {
                 ))}
               </select>
               <select
-                className="focus:outline-none bg-gray-50 py-1 px-2 md:px-4 w-24"
+                className="focus:outline-hidden bg-gray-50 py-1 px-2 md:px-4 w-24"
                 value={resultColor}
                 onChange={e => setResultColor(e.target.value as ColorId)}
               >
@@ -192,7 +192,7 @@ function BackgroundTheme({ config }: ThemeProps) {
                 ))}
               </select>
               <input
-                className="focus:outline-none w-full text-lg bg-gray-50 py-1 px-2 md:px-4 rounded-full border border-gray-50"
+                className="focus:outline-hidden w-full text-lg bg-gray-50 py-1 px-2 md:px-4 rounded-full border border-gray-50"
                 placeholder={t('editor.searchPlaceholder')}
                 type="text"
                 value={searchText}

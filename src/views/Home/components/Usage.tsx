@@ -19,7 +19,7 @@ function Usage() {
             <div className="text-xl w-max mx-auto text-white py-1 px-4 font-Anek font-semibold bg-indigo-400 rounded-full">Step 1</div>
             <p className="md:text-3xl text-2xl p-4 text-center mx-auto my-2 font-semibold font-Inter text-gray-700">{t('home.step.1')}</p>
           </div>
-          <img alt="preview" className="mt-2 rounded-lg shadow-sm" src={step1} />
+          <img alt="preview" className="mt-2 rounded-lg shadow-xs" src={step1} />
         </div>
 
         <div className="flex flex-col md:w-1/3 mx-10">
@@ -27,7 +27,7 @@ function Usage() {
             <div className="text-xl w-max mx-auto text-white py-1 px-4 font-Anek font-semibold bg-indigo-400 rounded-full">Step 2</div>
             <p className="md:text-3xl text-2xl p-4 text-center mx-auto my-2 font-semibold font-Inter text-gray-700">{t('home.step.2')}</p>
           </div>
-          <img alt="preview" className="mt-2 rounded-lg shadow-sm" src={step2} />
+          <img alt="preview" className="mt-2 rounded-lg shadow-xs" src={step2} />
         </div>
       </div>
 
@@ -40,13 +40,13 @@ function Usage() {
 
         <div className="flex md:w-8/12 hideout p-6">
           <div className="flex flex-col w-1/2 ">
-            <img alt="preview" className="hover:scale-105 duration-300 m-2 rounded-lg shadow-sm" src={cover1} />
-            <img alt="preview" className="hover:scale-105 duration-300  m-2 rounded-lg shadow-sm" src={cover2} />
+            <img alt="preview" className="hover:scale-105 duration-300 m-2 rounded-lg shadow-xs" src={cover1} />
+            <img alt="preview" className="hover:scale-105 duration-300 m-2 rounded-lg shadow-xs" src={cover2} />
           </div>
 
           <div className="flex flex-col mt-4 w-1/2">
-            <img alt="preview" className="hover:scale-105 duration-300 m-2 rounded-lg shadow-sm" src={cover3} />
-            <img alt="preview" className="hover:scale-105 duration-300 m-2 rounded-lg shadow-sm" src={cover4} />
+            <img alt="preview" className="hover:scale-105 duration-300 m-2 rounded-lg shadow-xs" src={cover3} />
+            <img alt="preview" className="hover:scale-105 duration-300 m-2 rounded-lg shadow-xs" src={cover4} />
           </div>
         </div>
       </div>

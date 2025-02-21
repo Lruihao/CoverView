@@ -26,7 +26,7 @@ function MobileMockupTheme({ config }: ThemeProps) {
 
   return (
     <div
-      className="theme-mobile overflow-y-hidden flex flex-row items-center justify-center rounded h-full px-8 pt-4"
+      className="theme-mobile overflow-y-hidden flex flex-row items-center justify-center rounded-sm h-full px-8 pt-4"
       style={{ backgroundColor: bgColor }}
     >
       <h1 className={`whitespace-pre-wrap ${font} ${fontBold} text-2xl w-1/2 md:text-4xl px-4 text-white font-bold text-left`}>{title}</h1>
@@ -45,7 +45,7 @@ function MobileMockupTheme({ config }: ThemeProps) {
         {image
           ? (
               <div className="group relative">
-                <img alt="preview" className="object-cover rounded h-full" src={image} />
+                <img alt="preview" className="object-cover rounded-sm h-full" src={image} />
                 <button type="button" className="absolute top-2 right-2 cursor-pointer" onClick={() => setImage('')}>
                   <svg
                     className="group-hover:inline-block bg-gray-500 hidden w-8 h-8 p-2 text-white rounded-full z-10"
@@ -62,7 +62,7 @@ function MobileMockupTheme({ config }: ThemeProps) {
           : (
               <div className="flex flex-col rounded-xl px-4 py-20 bg-white items-center justify-center">
                 <input
-                  className="text-sm flex flex-col cursor-pointer mb-2 bg-white rounded border w-full"
+                  className="text-sm flex flex-col cursor-pointer mb-2 bg-white rounded-sm border w-full"
                   type="file"
                   onChange={e => e.target.files && setImage(URL.createObjectURL(e.target.files[0]))}
                 />

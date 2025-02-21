@@ -82,7 +82,7 @@ function StylishTheme({ config }: ThemeProps) {
 
   return (
     <div
-      className="theme-stylish overflow-y-hidden flex flex-col rounded p-4 h-full"
+      className="theme-stylish overflow-y-hidden flex flex-col rounded-sm p-4 h-full"
       style={{ backgroundColor: bgColor }}
     >
       <div className="flex flex-row items-center bg-white justify-center h-full">
@@ -160,7 +160,7 @@ function StylishTheme({ config }: ThemeProps) {
               onSubmit={e => e.preventDefault()}
             >
               <select
-                className="focus:outline-none bg-gray-50 py-1 px-2 md:px-4 rounded-l-full"
+                className="focus:outline-hidden bg-gray-50 py-1 px-2 md:px-4 rounded-l-full"
                 value={orientation}
                 onChange={e => setOrientation(e.target.value as Orientation)}
               >
@@ -169,7 +169,7 @@ function StylishTheme({ config }: ThemeProps) {
                 ))}
               </select>
               <select
-                className="focus:outline-none bg-gray-50 py-1 px-2 md:px-4 w-24"
+                className="focus:outline-hidden bg-gray-50 py-1 px-2 md:px-4 w-24"
                 value={resultColor}
                 onChange={e => setResultColor(e.target.value as ColorId)}
               >
@@ -178,7 +178,7 @@ function StylishTheme({ config }: ThemeProps) {
                 ))}
               </select>
               <input
-                className="focus:outline-none w-full text-lg bg-gray-50 p-1 px-4 rounded-full border border-gray-50"
+                className="focus:outline-hidden w-full text-lg bg-gray-50 p-1 px-4 rounded-full border border-gray-50"
                 placeholder={t('editor.searchPlaceholder')}
                 type="text"
                 value={searchText}
