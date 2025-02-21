@@ -8,7 +8,7 @@ function OutlineTheme({ config }: ThemeProps) {
 
   return (
     <div
-      className="theme-outline overflow-y-hidden rounded flex flex-col text-gray-800 px-10 h-full"
+      className="theme-outline overflow-y-hidden rounded-sm flex flex-col text-gray-800 px-10 h-full"
       style={{ backgroundColor: bgColor }}
     >
       <div className={`${font} rounded-2xl py-10 px-4 flex flex-col h-full justify-around`}>

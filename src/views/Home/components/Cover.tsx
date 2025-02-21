@@ -20,22 +20,22 @@ function CoverSection() {
         </Link>
       </div>
       <div className="temple flex flex-row items-center justify-center mx-auto md:w-10/12 py-10">
-        <div className="m-4 transform -translate-y-20 border animate hover:scale-105 hover:-rotate-3 rotate-6 duration-100 bg-white p-2 shadow-sm w-1/5 rounded-lg flex flex-col">
-          <img alt="cover1" className="border border-gray-100 rounded mb-2" src={cover2} />
-          <p className="animate animate-pulse bg-gray-50 md:h-5 h-2 rounded mb-2" />
-          <p className="animate animate-pulse w-8/12 bg-gray-50 md:h-5 h-2 rounded mb-2" />
+        <div className="m-4 transform -translate-y-20 border animate hover:scale-105 hover:-rotate-3 rotate-6 duration-100 bg-white p-2 shadow-xs w-1/5 rounded-lg flex flex-col">
+          <img alt="cover1" className="border border-gray-100 rounded-sm mb-2" src={cover2} />
+          <p className="animate animate-pulse bg-gray-50 md:h-5 h-2 rounded-sm mb-2" />
+          <p className="animate animate-pulse w-8/12 bg-gray-50 md:h-5 h-2 rounded-sm mb-2" />
         </div>
 
-        <div className="m-4 transform hover:scale-105 hover:rotate-3 -rotate-2 duration-300 bg-white p-4 shadow-sm w-1/3 rounded-lg flex flex-col">
-          <img alt="cover-2" className="rounded border border-gray-100 mb-2" src={cover1} />
-          <p className="animate animate-pulse bg-gray-50 md:h-6 h-3 rounded mb-2" />
-          <p className="animate animate-pulse w-8/12 bg-gray-50 md:h-6 h-3 rounded mb-2" />
+        <div className="m-4 transform hover:scale-105 hover:rotate-3 -rotate-2 duration-300 bg-white p-4 shadow-xs w-1/3 rounded-lg flex flex-col">
+          <img alt="cover-2" className="rounded-sm border border-gray-100 mb-2" src={cover1} />
+          <p className="animate animate-pulse bg-gray-50 md:h-6 h-3 rounded-sm mb-2" />
+          <p className="animate animate-pulse w-8/12 bg-gray-50 md:h-6 h-3 rounded-sm mb-2" />
         </div>
 
-        <div className="m-4 transform -translate-y-20 border animate hover:scale-105 hover:rotate-3 -rotate-6 duration-100 bg-white p-2 shadow-sm w-1/5 rounded-lg flex flex-col">
-          <img alt="cover3" className="rounded border border-gray-100 mb-2" src={cover3} />
-          <p className="animate animate-pulse bg-gray-50 md:h-5 h-2 rounded mb-2" />
-          <p className="animate animate-pulse w-8/12 bg-gray-50 md:odd:h-5 h-2 rounded mb-2" />
+        <div className="m-4 transform -translate-y-20 border animate hover:scale-105 hover:rotate-3 -rotate-6 duration-100 bg-white p-2 shadow-xs w-1/5 rounded-lg flex flex-col">
+          <img alt="cover3" className="rounded-sm border border-gray-100 mb-2" src={cover3} />
+          <p className="animate animate-pulse bg-gray-50 md:h-5 h-2 rounded-sm mb-2" />
+          <p className="animate animate-pulse w-8/12 bg-gray-50 md:odd:h-5 h-2 rounded-sm mb-2" />
         </div>
       </div>
     </div>

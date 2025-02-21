@@ -25,7 +25,7 @@ function PreviewTheme({ config }: ThemeProps) {
 
   return (
     <div
-      className="theme-preview overflow-y-hidden flex flex-col rounded p-4 pb-0 h-full"
+      className="theme-preview overflow-y-hidden flex flex-col rounded-sm p-4 pb-0 h-full"
       style={{ backgroundColor: bgColor }}
     >
       <h1 className={`${font} ${font !== 'font-Virgil' ? 'font-bold' : ''} text-2xl md:text-3xl p-10 text-white text-center my-auto whitespace-pre-wrap`}>{title}</h1>
@@ -53,7 +53,7 @@ function PreviewTheme({ config }: ThemeProps) {
           : (
               <div className="flex flex-col p-20 bg-white items-center justify-center">
                 <input
-                  className="text-xl cursor-pointer mb-2 bg-white rounded border"
+                  className="text-xl cursor-pointer mb-2 bg-white rounded-sm border"
                   type="file"
                   onChange={e => e.target.files && setImage(URL.createObjectURL(e.target.files[0]))}
                 />

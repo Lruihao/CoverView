@@ -7,7 +7,7 @@ function Footer() {
   const { t } = useTranslation()
 
   return (
-    <footer className="bg-gradient-to-tr from-gray-700 via-slate-900 to-gray-800 text-white p-2">
+    <footer className="bg-linear-to-tr from-gray-700 via-slate-900 to-gray-800 text-white p-2">
       <div className="md:w-8/12 mx-auto pt-32 p-6">
         <h2 className="md:text-6xl text-4xl text-center font-Anek font-bold mx-auto">{t('home.summary.title')}</h2>
         <p className="md:text-2xl text-lg font-Inter text-gray-300 text-center py-4 md:w-8/12 mx-auto">{t('home.summary.content')}</p>

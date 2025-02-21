@@ -1,5 +1,9 @@
-@import url("./tailwind.css");
-@import url("./basic.css");
-@import url("./coverImage.css");
-@import url("./randomTheme.css");
-@import url("./pattern.css");
+/* Import all css files here */
+@import url('./basic.css');
+@import url('./coverImage.css');
+@import url('./randomTheme.css');
+@import url('./pattern.css');
+
+/* Tailwind */
+@import 'tailwindcss';
+@config '../../tailwind.config.mjs';
