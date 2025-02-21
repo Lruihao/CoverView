@@ -1,4 +1,5 @@
 /* eslint-disable react-dom/no-dangerously-set-innerhtml */
+import { scrollToTop } from '@/common/utils'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
 
@@ -25,7 +26,7 @@ function Footer() {
 
         <div className="md:w-1/3 md:text-lg text-sm flex flex-col md:items-end items-center">
           <div className="flex md:justify-end justify-center">
-            <Link className="m-2 hover:underline" to="/faq">
+            <Link className="m-2 hover:underline" to="/faq" onClick={scrollToTop}>
               {t('common.howToUse')}
             </Link>
             <a
