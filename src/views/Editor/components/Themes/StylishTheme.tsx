@@ -219,6 +219,7 @@ function StylishTheme({ config }: ThemeProps) {
               </div>
             )}
 
+            {/* TODO 瀑布流图片布局 */}
             <div className="overflow-y-scroll overflow-x-hidden h-96 w-full">
               {imageList.map((image) => {
                 return (
@@ -229,6 +230,9 @@ function StylishTheme({ config }: ThemeProps) {
                       src={image.urls.small}
                       onClick={() => selectImage(image)}
                     />
+                    <span className="tips hidden absolute top-1/2 left-1/2 -translate-1/2 font-Inter font-semibold text-sm text-white opacity-90">
+                      {t('editor.selectImgTips')}
+                    </span>
                     <button
                       type="button"
                       className="hidden border p-1 bg-gray-700 hover:bg-gray-800 text-white rounded-lg absolute top-2 right-2"

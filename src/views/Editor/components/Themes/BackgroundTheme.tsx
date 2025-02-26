@@ -165,13 +165,8 @@ function BackgroundTheme({ config }: ThemeProps) {
         {/* 图片列表 */}
         <div className={`${unsplashImage ? 'hidden' : 'flex'} h-full flex-col p-1 md:p-4 bg-white items-center justify-around gap-1 md:gap-2 relative download-ignore`}>
           <div className="flex flex-wrap items-center justify-center md:justify-between w-full px-2">
-            <div className="text-base font-semibold text-gray-700">
-              {t('editor.selectImgTips')}
-              {' '}
-              👇
-            </div>
             <form
-              className="flex bg-gray-50 rounded-full border border-gray-300/70 hover:border-gray-300"
+              className="flex bg-gray-50 rounded-full border border-gray-300/70 hover:border-gray-300 flex-grow"
               onSubmit={e => e.preventDefault()}
             >
               <select
@@ -243,6 +238,9 @@ function BackgroundTheme({ config }: ThemeProps) {
                     src={image.urls.small}
                     onClick={() => selectImage(image)}
                   />
+                  <span className="tips hidden absolute top-1/2 left-1/2 -translate-1/2 font-Inter font-semibold text-sm text-white opacity-90">
+                    {t('editor.selectImgTips')}
+                  </span>
                   <button
                     type="button"
                     className="hidden border p-1 bg-gray-700 hover:bg-gray-800 text-white rounded-lg absolute bottom-2 right-2"
