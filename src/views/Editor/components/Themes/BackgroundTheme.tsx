@@ -164,13 +164,13 @@ function BackgroundTheme({ config }: ThemeProps) {
         </div>
         {/* 图片列表 */}
         <div className={`${unsplashImage ? 'hidden' : 'flex'} h-full flex-col p-1 md:p-4 bg-white items-center justify-around gap-1 md:gap-2 relative download-ignore`}>
-          <div className="flex flex-wrap items-center justify-center md:justify-between w-full px-2">
+          <div className="flex flex-wrap items-center justify-center md:justify-between w-full">
             <form
-              className="flex bg-gray-50 rounded-full border border-gray-300/70 hover:border-gray-300 flex-grow"
+              className="flex rounded-full border border-gray-300/70 hover:border-gray-300 flex-grow"
               onSubmit={e => e.preventDefault()}
             >
               <select
-                className="focus:outline-hidden bg-gray-50 py-1 px-2 md:px-4 rounded-l-full"
+                className="focus:outline-hidden py-1 px-2 md:px-4 rounded-l-full"
                 value={orientation}
                 onChange={e => setOrientation(e.target.value as Orientation)}
               >
@@ -179,7 +179,7 @@ function BackgroundTheme({ config }: ThemeProps) {
                 ))}
               </select>
               <select
-                className="focus:outline-hidden bg-gray-50 py-1 px-2 md:px-4 w-24"
+                className="focus:outline-hidden py-1 px-2 md:px-4 w-24"
                 value={resultColor}
                 onChange={e => setResultColor(e.target.value as ColorId)}
               >
@@ -188,7 +188,7 @@ function BackgroundTheme({ config }: ThemeProps) {
                 ))}
               </select>
               <input
-                className="focus:outline-hidden w-full text-lg bg-gray-50 py-1 px-2 md:px-4 rounded-full border border-gray-50"
+                className="focus:outline-hidden w-full text-lg py-1 px-2 md:px-4 rounded-full border border-gray-50"
                 placeholder={t('editor.searchPlaceholder')}
                 type="text"
                 value={searchText}
