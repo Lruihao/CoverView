@@ -238,7 +238,7 @@ function BackgroundTheme({ config }: ThemeProps) {
                     src={image.urls.small}
                     onClick={() => selectImage(image)}
                   />
-                  <span className="tips hidden absolute top-1/2 left-1/2 -translate-1/2 font-Inter font-semibold text-sm text-white opacity-90">
+                  <span className="tips hidden absolute top-1/2 left-1/2 -translate-1/2 font-Inter font-semibold text-sm text-white opacity-90 pointer-events-none">
                     {t('editor.selectImgTips')}
                   </span>
                   <button
