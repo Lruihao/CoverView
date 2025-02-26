@@ -18,10 +18,11 @@ function EditorSettings({ settings, updateSettings, handleReset }: EditorSetting
   const devIconOptions = useDevIcon()
 
   const handleSelectPlatform = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    updateSettings({ platform: e.target.value })
     if (e.target.value === 'hugo-fixit') {
-      updateSettings({ icon: { label: 'Hugo FixIt', value: 'hugo-fixit', opts: [] } })
+      updateSettings({ platform: e.target.value, icon: { label: 'Hugo FixIt', value: 'hugo-fixit', opts: [] } })
+      return
     }
+    updateSettings({ platform: e.target.value })
   }
   const getRandomTheme = (theme: ColorTheme, pattern: string) =>
     updateSettings({ pattern, bgColor: theme.bgColor, borderColor: theme.bdColor })
@@ -116,7 +117,7 @@ function EditorSettings({ settings, updateSettings, handleReset }: EditorSetting
 
       <div className={`flex items-center justify-center ${settings.platform === 'custom' ? '' : 'hidden'}`}>
         <input
-          className="w-1/3 focus:outline-hidden border text-gray-700 text-xl rounded-sm p-2 m-2"
+          className="w-1/3 focus:outline-hidden bg-white border border-gray-300/70 hover:border-gray-300 text-gray-700 text-xl rounded-sm p-2 m-2"
           min={500}
           placeholder="width"
           type="number"
@@ -124,7 +125,7 @@ function EditorSettings({ settings, updateSettings, handleReset }: EditorSetting
           onChange={e => updateSettings({ customPlatformWidth: Number(e.target.value) })}
         />
         <input
-          className="w-1/3 focus:outline-hidden border text-gray-700 text-xl rounded-sm p-2 m-2"
+          className="w-1/3 focus:outline-hidden bg-white border border-gray-300/70 hover:border-gray-300 text-gray-700 text-xl rounded-sm p-2 m-2"
           min={1}
           placeholder="x"
           type="number"
@@ -133,7 +134,7 @@ function EditorSettings({ settings, updateSettings, handleReset }: EditorSetting
         />
         :
         <input
-          className="w-1/3 focus:outline-hidden border text-gray-700 text-xl rounded-sm p-2 m-2"
+          className="w-1/3 focus:outline-hidden bg-white border border-gray-300/70 hover:border-gray-300 text-gray-700 text-xl rounded-sm p-2 m-2"
           min={1}
           placeholder="y"
           type="number"

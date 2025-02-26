@@ -20,7 +20,6 @@ export interface ThemeIcon {
   label: string
   value: string
   opts: string[]
-
 }
 
 export interface ThemeConfig {
