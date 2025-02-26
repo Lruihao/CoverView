@@ -27,7 +27,7 @@ function Faq() {
           <p className="text-xl font-Anek font-semibold text-gray-800">{t('faq.tips.title')}</p>
         </div>
         <div
-          className={`md:w-7/12 text-4xl border text-center mx-auto mt-10 p-10 rounded-xl shadow-md font-Nunito ${showMsg ? 'block' : 'hidden'}`}
+          className={`md:w-7/12 text-4xl border border-gray-200 text-center mx-auto mt-10 p-10 rounded-xl shadow-md font-Nunito ${showMsg ? 'block' : 'hidden'}`}
         >
           {t('faq.tips.content')}
         </div>
