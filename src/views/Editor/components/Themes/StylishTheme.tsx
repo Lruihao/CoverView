@@ -3,7 +3,6 @@ import type { ColorId, Orientation } from 'unsplash-js'
 import type { ThemeProps } from './themeProps'
 import fixitIcon from '@/assets/icons/fixit.svg'
 import hugoIcon from '@/assets/icons/hugo.svg'
-import emptyImg from '@/assets/images/empty.svg'
 import { orientationOptions, resultColorOptions } from '@/common'
 import { ImgContext } from '@/components/ImgContext'
 import Pagination from '@/components/Pagination'
@@ -11,6 +10,7 @@ import { downloadRawImage } from '@/services/downloadRawImage'
 import { getPhotos } from '@/services/unsplash'
 import { useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import SvgIcon from '@/components/SvgIcon'
 
 function StylishTheme({ config }: ThemeProps) {
   const { t } = useTranslation()
@@ -255,7 +255,7 @@ function StylishTheme({ config }: ThemeProps) {
               })}
               {imageList.length === 0 && (
                 <div className="text-sm text-gray-400 w-full h-60 flex flex-col items-center justify-center gap-2">
-                  <img alt="empty" className="w-16 h-16 md:w-24 md:h-24" src={emptyImg} />
+                  <SvgIcon name="empty" className="text-6xl md:text-8xl" />
                   <span>{t('editor.imageListEmpty')}</span>
                 </div>
               )}

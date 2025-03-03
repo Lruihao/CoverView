@@ -29,3 +29,12 @@ Track ::-webkit-scrollbar-track {
 .unsplash-image-container:hover .tips.hidden {
   display: inline;
 }
+
+/* Svg icons */
+.coverview-svg-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}

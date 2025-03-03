@@ -14,6 +14,9 @@
         "src/*"
       ]
     },
+    "types": [
+      "./node_modules/vite-plugin-svg-icons/client"
+    ],
     "allowImportingTsExtensions": true,
     "strict": true,
     "noFallthroughCasesInSwitch": true,
