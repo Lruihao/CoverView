@@ -1,6 +1,7 @@
 import type { ToImageOptions } from '@/services/toImage'
 import type { DownloadFormat } from '@/types'
 import type { PropsWithChildren } from 'react'
+import SvgIcon from '@/components/SvgIcon'
 import { toImage } from '@/services/toImage'
 import * as clipboard from 'clipboard-polyfill'
 import { useRef, useState } from 'react'
@@ -20,47 +21,12 @@ export interface DownloadIconProps {
 
 function DownloadIcon({ loading, downloadFmt }: DownloadIconProps) {
   if (loading) {
-    return (
-      <svg
-        aria-hidden="true"
-        className="w-6 h-6 text-white animate animate-spin"
-        fill="currentColor"
-        height="24"
-        viewBox="0 0 24 24"
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M12 22c5.421 0 10-4.579 10-10h-2c0 4.337-3.663 8-8 8s-8-3.663-8-8c0-4.336 3.663-8 8-8V2C6.579 2 2 6.58 2 12c0 5.421 4.579 10 10 10z" />
-      </svg>
-    )
+    return <SvgIcon name="loading" className="text-xl animate-spin" />
   }
   if (downloadFmt === 'blob') {
-    return (
-      <svg
-        aria-hidden="true"
-        className="w-6 h-6"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    )
+    return <SvgIcon name="copy" className="text-lg" />
   }
-  return (
-    <svg
-      aria-hidden="true"
-      className="w-6 h-6"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-    </svg>
-  )
+  return <SvgIcon name="download" className="text-xl" />
 }
 
 function ComponentToImg({ children }: PropsWithChildren) {

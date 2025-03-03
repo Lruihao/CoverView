@@ -1,22 +1,7 @@
 /* eslint-disable react-dom/no-dangerously-set-innerhtml */
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-
-function ArrowLeftIcon() {
-  return (
-    <svg aria-hidden="true" className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-      <path clipRule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" fillRule="evenodd" />
-    </svg>
-  )
-}
-
-function ArrowRightIcon() {
-  return (
-    <svg aria-hidden="true" className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-      <path clipRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" fillRule="evenodd" />
-    </svg>
-  )
-}
+import SvgIcon from './SvgIcon'
 
 interface PaginationProps {
   page: number
@@ -51,7 +36,7 @@ function Pagination({ page, pageSize, total, pagerCount, pagination, className }
           title={t('pagination.prev')}
           onClick={() => pagination(page - 1)}
         >
-          <ArrowLeftIcon />
+          <SvgIcon name="angle-left" className="text-xl" />
         </button>
         {Array.from({ length: pagerCountActual }, (_, i) => i + 1).map(item => (
           <button
@@ -82,7 +67,7 @@ function Pagination({ page, pageSize, total, pagerCount, pagination, className }
           title={t('pagination.next')}
           onClick={() => pagination(page + 1)}
         >
-          <ArrowRightIcon />
+          <SvgIcon name="angle-right" className="text-xl" />
         </button>
       </nav>
     </div>

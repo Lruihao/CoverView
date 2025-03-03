@@ -1,5 +1,5 @@
-import { useTranslation } from 'react-i18next'
 import SvgIcon from '@/components/SvgIcon'
+import { useTranslation } from 'react-i18next'
 
 function Supports() {
   const { t } = useTranslation()

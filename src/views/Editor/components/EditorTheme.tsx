@@ -13,7 +13,7 @@ function EditorTheme({ settings, updateSettings }: RandomThemeProps) {
     <div className="m-2 flex flex-col">
       <span className="font-medium pb-1 text-sm">{t('editor.themes')}</span>
       <div className="grid grid-cols-5 gap-2">
-        <div className="col-span-2 row-span-2">
+        <div className="col-span-2 row-span-2" title="background">
           <img
             alt="background"
             className={`${settings.theme === 'background' ? 'border-2 border-indigo-400 hover:border-indigo-500' : 'border border-gray-100 hover:border-gray-200'} cursor-pointer hover:scale-105 duration-300 rounded-sm`}

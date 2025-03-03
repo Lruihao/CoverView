@@ -1,4 +1,5 @@
 import type { ThemeProps } from './themeProps'
+import SvgIcon from '@/components/SvgIcon'
 import { getPasteImage } from '@/services/getPasteImage'
 import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -46,16 +47,12 @@ function MobileMockupTheme({ config }: ThemeProps) {
           ? (
               <div className="group relative">
                 <img alt="preview" className="object-cover rounded-sm h-full" src={image} />
-                <button type="button" className="absolute top-2 right-2 cursor-pointer" onClick={() => setImage('')}>
-                  <svg
-                    className="group-hover:inline-block bg-gray-500 hidden w-8 h-8 p-2 text-white rounded-full z-10"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M6 18L18 6M6 6l12 12" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-                  </svg>
+                <button
+                  type="button"
+                  className="group-hover:inline-block hidden absolute top-2 right-2 cursor-pointer p-2 text-white bg-gray-500 rounded-full z-10"
+                  onClick={() => setImage('')}
+                >
+                  <SvgIcon name="close" />
                 </button>
               </div>
             )

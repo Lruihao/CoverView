@@ -25,9 +25,9 @@ function ImgProvider({ children }: PropsWithChildren) {
   )
 
   return (
-    <ImgContext.Provider value={value}>
+    <ImgContext value={value}>
       {children}
-    </ImgContext.Provider>
+    </ImgContext>
   )
 }
 

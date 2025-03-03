@@ -1,4 +1,5 @@
 import type { ThemeProps } from './themeProps'
+import SvgIcon from '@/components/SvgIcon'
 import { getPasteImage } from '@/services/getPasteImage'
 import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -35,16 +36,12 @@ function PreviewTheme({ config }: ThemeProps) {
           <div className="bg-red-400 h-3 w-3 rounded-full mx-1" />
           <div className="bg-yellow-400 h-3 w-3 rounded-full mx-1" />
           <div className="bg-green-400 h-3 w-3 rounded-full mx-1" />
-          <button type="button" className={`ml-auto mr-2 cursor-pointer${!image ? ' hidden' : ''}`} onClick={() => setImage('')}>
-            <svg
-              className="group-hover:inline-block hidden w-4 h-4 text-white rounded-full z-10"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M6 18L18 6M6 6l12 12" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-            </svg>
+          <button
+            type="button"
+            className={`ml-auto mr-1 cursor-pointer text-white text-sm z-10${!image ? ' hidden' : ''}`}
+            onClick={() => setImage('')}
+          >
+            <SvgIcon name="close" className="group-hover:inline-block hidden" />
           </button>
         </div>
 

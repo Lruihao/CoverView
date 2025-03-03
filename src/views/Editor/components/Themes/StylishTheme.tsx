@@ -6,11 +6,11 @@ import hugoIcon from '@/assets/icons/hugo.svg'
 import { orientationOptions, resultColorOptions } from '@/common'
 import { ImgContext } from '@/components/ImgContext'
 import Pagination from '@/components/Pagination'
+import SvgIcon from '@/components/SvgIcon'
 import { downloadRawImage } from '@/services/downloadRawImage'
 import { getPhotos } from '@/services/unsplash'
 import { useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import SvgIcon from '@/components/SvgIcon'
 
 function StylishTheme({ config }: ThemeProps) {
   const { t } = useTranslation()
@@ -122,16 +122,12 @@ function StylishTheme({ config }: ThemeProps) {
               src={unsplashImage?.url}
             />
 
-            <button type="button" className="absolute top-2 right-2 cursor-pointer download-ignore" onClick={() => setUnsplashImage(null)}>
-              <svg
-                className="group-hover:inline-block hidden w-8 h-8 text-gray-800 bg-white p-2 rounded-full z-10"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M6 18L18 6M6 6l12 12" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-              </svg>
+            <button
+              type="button"
+              className="group-hover:inline-block hidden absolute top-2 right-2 cursor-pointer download-ignore text-gray-800 bg-white p-2 rounded-full z-10"
+              onClick={() => setUnsplashImage(null)}
+            >
+              <SvgIcon name="close" />
             </button>
 
             <div className="absolute bottom-2 right-2 opacity-80 download-ignore">
@@ -186,36 +182,18 @@ function StylishTheme({ config }: ThemeProps) {
                 onChange={e => setSearchText(e.target.value)}
               />
 
-              <button type="submit" onClick={() => searchImages(true)}>
-                <svg
-                  className="w-8 h-8 m-1 p-2 bg-gray-700 hover:bg-gray-800 text-white rounded-full"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                  />
-                </svg>
+              <button
+                type="submit"
+                onClick={() => searchImages(true)}
+                className="w-8 h-8 m-1 p-2 bg-gray-700 hover:bg-gray-800 text-white rounded-full"
+              >
+                <SvgIcon name="search" />
               </button>
             </form>
 
             {loading && (
               <div className="absolute h-full inset-0 flex items-center justify-center bg-white/50 z-10">
-                <svg
-                  className="w-14 h-14 text-indigo-400 animate-spin"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 22c5.421 0 10-4.579 10-10h-2c0 4.337-3.663 8-8 8s-8-3.663-8-8c0-4.336 3.663-8 8-8V2C6.579 2 2 6.58 2 12c0 5.421 4.579 10 10 10z"
-                  />
-                </svg>
+                <SvgIcon name="loading" className="text-indigo-400 animate-spin text-6xl" />
               </div>
             )}
 
@@ -235,20 +213,11 @@ function StylishTheme({ config }: ThemeProps) {
                     </span>
                     <button
                       type="button"
-                      className="hidden border p-1 bg-gray-700 hover:bg-gray-800 text-white rounded-lg absolute top-2 right-2"
+                      className="hidden border p-1 bg-gray-700 hover:bg-gray-800 text-white rounded-lg absolute top-2 right-2 text-lg"
                       disabled={downloading}
                       onClick={() => downloadImage(image)}
                     >
-                      <svg
-                        aria-hidden="true"
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-                      </svg>
+                      <SvgIcon name="download" />
                     </button>
                   </div>
                 )
