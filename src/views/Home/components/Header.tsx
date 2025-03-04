@@ -1,4 +1,4 @@
-import logo from '@/assets/icons/logo.png'
+import logo from '@/assets/images/logo.png'
 import SwitchLang from '@/components/SwitchLang'
 import { useTranslation } from 'react-i18next'
 
