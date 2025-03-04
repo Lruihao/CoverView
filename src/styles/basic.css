@@ -22,14 +22,6 @@ Track ::-webkit-scrollbar-track {
   background: #b3b3ff;
 }
 
-/* Common style for unsplash image and tips display */
-.unsplash-image-container:hover button.hidden {
-  display: inline-block;
-}
-.unsplash-image-container:hover .tips.hidden {
-  display: inline;
-}
-
 /* Svg icons */
 .coverview-svg-icon {
   width: 1em;

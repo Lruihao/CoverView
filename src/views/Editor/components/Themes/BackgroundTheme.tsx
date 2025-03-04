@@ -185,7 +185,6 @@ function BackgroundTheme({ config }: ThemeProps) {
                 value={searchText}
                 onChange={e => setSearchText(e.target.value)}
               />
-
               <button
                 type="submit"
                 onClick={() => searchImages(true)}
@@ -194,6 +193,13 @@ function BackgroundTheme({ config }: ThemeProps) {
                 <SvgIcon name="search" />
               </button>
             </form>
+            <button
+              type="submit"
+              onClick={() => searchImages(true)}
+              className="w-8 h-8 m-1 p-2 bg-indigo-400 hover:bg-gray-800 text-white rounded-full"
+            >
+              <SvgIcon name="upload" />
+            </button>
           </div>
           {loading && (
             <div className="absolute h-full inset-0 flex items-center justify-center bg-white/50 z-10">
@@ -204,19 +210,19 @@ function BackgroundTheme({ config }: ThemeProps) {
           <div className="overflow-y-scroll overflow-x-hidden h-96 justify-center flex flex-wrap w-full">
             {imageList.map((image) => {
               return (
-                <div className="unsplash-image-container w-1/3 h-40 cursor-pointer relative" key={image.id}>
+                <div className="group w-1/3 h-40 cursor-pointer relative" key={image.id}>
                   <img
                     alt={image.alt_description!}
                     className="w-full h-full object-cover p-1 rounded-xl"
                     src={image.urls.small}
                     onClick={() => selectImage(image)}
                   />
-                  <span className="tips hidden absolute top-1/2 left-1/2 -translate-1/2 font-Inter font-semibold text-sm text-white opacity-90 pointer-events-none">
+                  <span className="group-hover:inline hidden absolute top-1/2 left-1/2 -translate-1/2 font-Inter font-semibold text-sm text-white opacity-90 pointer-events-none">
                     {t('editor.selectImgTips')}
                   </span>
                   <button
                     type="button"
-                    className="hidden border p-1 bg-gray-700 hover:bg-gray-800 text-white rounded-lg absolute bottom-2 right-2 text-lg"
+                    className="group-hover:inline hidden border p-1 bg-gray-700 hover:bg-gray-800 text-white rounded-lg absolute bottom-2 right-2 text-lg"
                     disabled={downloading}
                     onClick={() => downloadImage(image)}
                   >

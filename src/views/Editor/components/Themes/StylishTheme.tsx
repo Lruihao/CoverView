@@ -201,19 +201,19 @@ function StylishTheme({ config }: ThemeProps) {
             <div className="overflow-y-scroll overflow-x-hidden h-96 w-full">
               {imageList.map((image) => {
                 return (
-                  <div className="unsplash-image-container cursor-pointer relative" key={image.id}>
+                  <div className="group cursor-pointer relative" key={image.id}>
                     <img
                       alt={image.alt_description!}
                       className="rounded-lg p-1 w-full"
                       src={image.urls.small}
                       onClick={() => selectImage(image)}
                     />
-                    <span className="tips hidden absolute top-1/2 left-1/2 -translate-1/2 font-Inter font-semibold text-sm text-white opacity-90 pointer-events-none">
+                    <span className="group-hover:inline hidden absolute top-1/2 left-1/2 -translate-1/2 font-Inter font-semibold text-sm text-white opacity-90 pointer-events-none">
                       {t('editor.selectImgTips')}
                     </span>
                     <button
                       type="button"
-                      className="hidden border p-1 bg-gray-700 hover:bg-gray-800 text-white rounded-lg absolute top-2 right-2 text-lg"
+                      className="group-hover:inline hidden border p-1 bg-gray-700 hover:bg-gray-800 text-white rounded-lg absolute top-2 right-2 text-lg"
                       disabled={downloading}
                       onClick={() => downloadImage(image)}
                     >
