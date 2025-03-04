@@ -12,6 +12,41 @@ import { getPhotos } from '@/services/unsplash'
 import { useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
+function UnsplashCopyright() {
+  const { unsplashImage } = useContext(ImgContext)
+  if (!unsplashImage?.downloadLink) {
+    return null
+  }
+  return (
+    <div className="absolute bottom-2 right-2 opacity-80 download-ignore">
+      <div className="group-hover:flex hidden items-center">
+        <span className="text-sm text-white mx-2">Photo by</span>
+        <a
+          className="cursor-pointer flex items-center bg-gray-300 rounded-full text-sm"
+          href={unsplashImage?.profile}
+          rel="noreferrer"
+          target="_blank"
+        >
+          <img
+            alt={unsplashImage?.name}
+            className="h-6 w-6 rounded-full mr-2"
+            src={unsplashImage?.avatar}
+          />
+          <span className="pr-2">{unsplashImage?.name}</span>
+        </a>
+        <a
+          className="text-sm text-white mx-2"
+          href="https://unsplash.com/?utm_source=https://coverview.lruihao.cn&utm_medium=referral"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Unsplash
+        </a>
+      </div>
+    </div>
+  )
+}
+
 function BackgroundTheme({ config }: ThemeProps) {
   const { t } = useTranslation()
   const { title, author, font, icon, customIcon } = config
@@ -72,6 +107,25 @@ function BackgroundTheme({ config }: ThemeProps) {
     })
   }
 
+  const uploadImage = () => {
+    const input = document.createElement('input')
+    input.type = 'file'
+    input.accept = 'image/*'
+    input.onchange = (e) => {
+      const file = (e.target as HTMLInputElement).files?.[0]
+      if (file) {
+        setUnsplashImage({
+          url: URL.createObjectURL(file),
+          name: 'Custom Image',
+          avatar: '',
+          profile: '',
+          downloadLink: '',
+        })
+      }
+    }
+    input.click()
+  }
+
   const downloadImage = (image: BasicPhoto) => {
     setDownloading(true)
     downloadRawImage(image.urls.raw, image.id).then(() => {
@@ -125,33 +179,7 @@ function BackgroundTheme({ config }: ThemeProps) {
               </div>
             </div>
           </div>
-
-          <div className="absolute bottom-2 right-2 opacity-80 download-ignore">
-            <div className="group-hover:flex hidden items-center">
-              <span className="text-sm text-white mx-2">Photo by</span>
-              <a
-                className="cursor-pointer flex items-center bg-gray-300 rounded-full text-sm"
-                href={unsplashImage?.profile}
-                rel="noreferrer"
-                target="_blank"
-              >
-                <img
-                  alt={unsplashImage?.name}
-                  className="h-6 w-6 rounded-full mr-2"
-                  src={unsplashImage?.avatar}
-                />
-                <span className="pr-2">{unsplashImage?.name}</span>
-              </a>
-              <a
-                className="text-sm text-white mx-2"
-                href="https://unsplash.com/?utm_source=https://coverview.lruihao.cn&utm_medium=referral"
-                rel="noreferrer"
-                target="_blank"
-              >
-                Unsplash
-              </a>
-            </div>
-          </div>
+          <UnsplashCopyright />
         </div>
         {/* 图片列表 */}
         <div className={`${unsplashImage ? 'hidden' : 'flex'} h-full flex-col p-1 md:p-4 bg-white items-center justify-around gap-1 md:gap-2 relative download-ignore`}>
@@ -170,7 +198,7 @@ function BackgroundTheme({ config }: ThemeProps) {
                 ))}
               </select>
               <select
-                className="focus:outline-hidden py-1 px-2 md:px-4 w-24"
+                className="focus:outline-hidden py-1 px-2 md:px-4"
                 value={resultColor}
                 onChange={e => setResultColor(e.target.value as ColorId)}
               >
@@ -179,7 +207,7 @@ function BackgroundTheme({ config }: ThemeProps) {
                 ))}
               </select>
               <input
-                className="focus:outline-hidden w-full text-lg py-1 px-2 md:px-4 rounded-full border border-gray-50"
+                className="focus:outline-hidden w-full py-1 md:px-4 rounded-full"
                 placeholder={t('editor.searchPlaceholder')}
                 type="text"
                 value={searchText}
@@ -195,12 +223,13 @@ function BackgroundTheme({ config }: ThemeProps) {
             </form>
             <button
               type="submit"
-              onClick={() => searchImages(true)}
-              className="w-8 h-8 m-1 p-2 bg-indigo-400 hover:bg-gray-800 text-white rounded-full"
+              onClick={() => uploadImage()}
+              className="w-8 h-8 m-1 p-2 bg-indigo-400 hover:bg-indigo-500 text-white rounded-full"
             >
               <SvgIcon name="upload" />
             </button>
           </div>
+
           {loading && (
             <div className="absolute h-full inset-0 flex items-center justify-center bg-white/50 z-10">
               <SvgIcon name="loading" className="text-indigo-400 animate-spin text-6xl" />
