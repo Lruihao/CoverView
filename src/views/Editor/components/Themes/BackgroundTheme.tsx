@@ -185,7 +185,7 @@ function BackgroundTheme({ config }: ThemeProps) {
         <div className={`${unsplashImage ? 'hidden' : 'flex'} h-full flex-col p-1 md:p-4 bg-white items-center justify-around gap-1 md:gap-2 relative download-ignore`}>
           <div className="flex flex-wrap items-center justify-center md:justify-between w-full">
             <form
-              className="flex rounded-full border border-gray-300/70 hover:border-gray-300 flex-grow"
+              className="flex rounded-full border border-gray-300/70 hover:border-gray-300 flex-grow bg-gray-50"
               onSubmit={e => e.preventDefault()}
             >
               <select

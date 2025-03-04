@@ -123,9 +123,7 @@ function ComponentToImg({ children }: PropsWithChildren) {
             disabled={loading}
             onClick={() => downloadImage()}
           >
-            <span>
-              <DownloadIcon loading={loading} downloadFmt={downloadFmt} />
-            </span>
+            <DownloadIcon loading={loading} downloadFmt={downloadFmt} />
             <span className="mx-2">{t(downloadFmt === 'blob' ? 'editor.copyBtn' : 'editor.downloadBtn')}</span>
           </button>
         </div>

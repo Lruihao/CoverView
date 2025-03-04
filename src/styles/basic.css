@@ -22,6 +22,11 @@ Track ::-webkit-scrollbar-track {
   background: #b3b3ff;
 }
 
+[role='button'],
+button {
+  cursor: pointer;
+}
+
 /* Svg icons */
 .coverview-svg-icon {
   width: 1em;
