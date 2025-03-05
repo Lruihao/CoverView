@@ -26,6 +26,10 @@ Track ::-webkit-scrollbar-track {
 button {
   cursor: pointer;
 }
+[role='button'][disabled],
+button[disabled] {
+  cursor: not-allowed;
+}
 
 /* Svg icons */
 .coverview-svg-icon {
