@@ -8,7 +8,7 @@
 
 Creating cover images for your blogs is now super easy.
 
-![cover_852562](https://github.com/Lruihao/CoverView/assets/33419593/f61407eb-fcba-4e78-8ee1-abd633f4c5a0)
+![cover_169570](https://github.com/user-attachments/assets/8032fecb-4ae4-45b9-9af7-dbed801651d1)
 
 ## 💥 Change Notice
 
@@ -41,6 +41,12 @@ Moved the original CoverView to my repositories since 2024-03-28, and made the f
   - [稀土掘金](https://juejin.cn/)
 
 ## 👩‍💻 Developing
+
+This project mainly uses the following technology stack:
+
+- [React 19](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vite](https://vite.dev/)
 
 1. Clone the project and install dependencies:
 
