@@ -6,6 +6,7 @@ import { useState } from 'react'
 import ComponentToImg from './components/ComponentToImg'
 import CoverImage from './components/CoverImage'
 import EditorSettings from './components/EditorSettings'
+import 'mmt-webfont/dist/result.css'
 
 function Editor() {
   const [settings, setSettings] = useState({ ...defaultSettings })
@@ -70,16 +71,6 @@ function FontStyle({ font }: { font: ThemeFont }) {
           font-family: 'Virgil';
           font-display: swap;
           src: url(https://excalidraw.nyc3.cdn.digitaloceanspaces.com/fonts/Excalifont-Regular.woff2) format('woff2');
-        }
-      `
-      break
-    case 'font-MMT':
-      fontStyle
-      = `
-        @font-face {
-          font-family: 'MMT';
-          font-display: swap;
-          src: url(https://lruihao.cn/fonts/mmt_1.5.ttf) format('woff2');
         }
       `
       break
