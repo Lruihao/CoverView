@@ -79,7 +79,7 @@ export default {
     copyBtn: 'Copy',
     themes: 'Themes',
     imageListEmpty: 'No images found',
-    uploadScreenshot: 'Click to upload a screenshot or Ctrl+V to paste',
+    uploadScreenshot: 'Click to upload a screenshot or {{symbol}}+V to paste',
     searchPlaceholder: 'Search for images',
     fonts: {
       'font-Virgil': 'Virgil',

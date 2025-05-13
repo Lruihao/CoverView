@@ -80,7 +80,7 @@ export default {
     copyBtn: '复制',
     themes: '主题',
     imageListEmpty: '暂无图片',
-    uploadScreenshot: '点击上传截图或按 Ctrl+V 粘贴',
+    uploadScreenshot: '点击上传截图或按 {{symbol}}+V 粘贴',
     searchPlaceholder: '搜索图片',
     fonts: {
       'font-Virgil': 'Virgil',

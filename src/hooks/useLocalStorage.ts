@@ -21,6 +21,7 @@ export function useLocalStorage<T>(
   const [value, setValue] = useState(getValue)
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks-extra/no-direct-set-state-in-use-effect
     setValue(getValue())
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key])

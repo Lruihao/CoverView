@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks-extra/no-direct-set-state-in-use-effect */
 import type { BasicPhoto, GetPhotosOptions } from '@/services/unsplash'
 import type { ColorId, Orientation } from 'unsplash-js'
 import type { ThemeProps } from './themeProps'
@@ -8,12 +9,13 @@ import { ImgContext } from '@/components/ImgContext'
 import Pagination from '@/components/Pagination'
 import SvgIcon from '@/components/SvgIcon'
 import { downloadRawImage } from '@/services/downloadRawImage'
+import { getPasteImage } from '@/services/getPasteImage'
 import { getPhotos } from '@/services/unsplash'
-import { useContext, useEffect, useState } from 'react'
+import { use, useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 function UnsplashCopyright() {
-  const { unsplashImage } = useContext(ImgContext)
+  const { unsplashImage } = use(ImgContext)
   if (!unsplashImage?.downloadLink) {
     return null
   }
@@ -60,7 +62,8 @@ function BackgroundTheme({ config }: ThemeProps) {
   const [searchText, setSearchText] = useState('setup')
   const [orientation, setOrientation] = useState<Orientation | 'all'>('all')
   const [resultColor, setResultColor] = useState<ColorId | 'all'>('all')
-  const { unsplashImage, setUnsplashImage } = useContext(ImgContext)
+  const { unsplashImage, setUnsplashImage } = use(ImgContext)
+  const isMac = window.navigator.userAgent.toUpperCase().includes('MAC')
 
   const searchImages = (resetPage = false) => {
     // 重置页码
@@ -96,6 +99,28 @@ function BackgroundTheme({ config }: ThemeProps) {
     searchImages()
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page])
+
+  const handlePaste = useCallback(async (e: ClipboardEvent) =>
+    getPasteImage(e).then(url => setUnsplashImage({
+      url,
+      name: 'Custom Image',
+      avatar: '',
+      profile: '',
+      downloadLink: '',
+    })), [setUnsplashImage])
+
+  useEffect(() => {
+    /**
+     * 监控粘贴事件
+     * Windows: Ctrl + V
+     * Mac: Command + V
+     */
+    document.addEventListener('paste', handlePaste)
+    return () => {
+      // 组件销毁时移除事件监听
+      document.removeEventListener('paste', handlePaste)
+    }
+  }, [handlePaste])
 
   const selectImage = (image: BasicPhoto) => {
     setUnsplashImage({
@@ -224,6 +249,7 @@ function BackgroundTheme({ config }: ThemeProps) {
             <button
               type="submit"
               onClick={() => uploadImage()}
+              title={t('editor.uploadScreenshot', { symbol: isMac ? '⌘' : 'Ctrl' })}
               className="w-8 h-8 m-1 p-2 bg-indigo-400 hover:bg-indigo-500 text-white rounded-full"
             >
               <SvgIcon name="upload" />

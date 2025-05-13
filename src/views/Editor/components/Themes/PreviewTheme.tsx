@@ -8,6 +8,7 @@ function PreviewTheme({ config }: ThemeProps) {
   const { t } = useTranslation()
   const { bgColor, title, font } = config
   const [image, setImage] = useState<string>()
+  const isMac = window.navigator.userAgent.toUpperCase().includes('MAC')
 
   const handlePaste = useCallback(async (e: ClipboardEvent) => getPasteImage(e).then(url => setImage(url)), [])
 
@@ -54,7 +55,7 @@ function PreviewTheme({ config }: ThemeProps) {
                   type="file"
                   onChange={e => e.target.files && setImage(URL.createObjectURL(e.target.files[0]))}
                 />
-                <span className="text-center italic text-sm">{t('editor.uploadScreenshot')}</span>
+                <span className="text-center italic text-sm">{t('editor.uploadScreenshot', { symbol: isMac ? '⌘' : 'Ctrl' })}</span>
               </div>
             )}
       </div>

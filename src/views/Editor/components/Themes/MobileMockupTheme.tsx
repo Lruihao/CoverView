@@ -9,6 +9,7 @@ function MobileMockupTheme({ config }: ThemeProps) {
   const { bgColor, title, font } = config
   const fontBold = font !== 'font-Virgil' ? 'font-bold' : ''
   const [image, setImage] = useState<string | undefined>()
+  const isMac = window.navigator.userAgent.toUpperCase().includes('MAC')
 
   const handlePaste = useCallback(async (e: ClipboardEvent) => getPasteImage(e).then(url => setImage(url)), [])
 
@@ -63,7 +64,7 @@ function MobileMockupTheme({ config }: ThemeProps) {
                   type="file"
                   onChange={e => e.target.files && setImage(URL.createObjectURL(e.target.files[0]))}
                 />
-                <span className="text-center italic text-sm">{t('editor.uploadScreenshot')}</span>
+                <span className="text-center italic text-sm">{t('editor.uploadScreenshot', { symbol: isMac ? '⌘' : 'Ctrl' })}</span>
               </div>
             )}
       </div>
