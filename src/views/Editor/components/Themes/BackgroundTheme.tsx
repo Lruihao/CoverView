@@ -1,7 +1,9 @@
 /* eslint-disable react-hooks-extra/no-direct-set-state-in-use-effect */
-import type { BasicPhoto, GetPhotosOptions } from '@/services/unsplash'
 import type { ColorId, Orientation } from 'unsplash-js'
 import type { ThemeProps } from './themeProps'
+import type { BasicPhoto, GetPhotosOptions } from '@/services/unsplash'
+import { use, useCallback, useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import fixitIcon from '@/assets/icons/fixit.svg'
 import hugoIcon from '@/assets/icons/hugo.svg'
 import { orientationOptions, resultColorOptions } from '@/common'
@@ -11,8 +13,6 @@ import SvgIcon from '@/components/SvgIcon'
 import { downloadRawImage } from '@/services/downloadRawImage'
 import { getPasteImage } from '@/services/getPasteImage'
 import { getPhotos } from '@/services/unsplash'
-import { use, useCallback, useEffect, useState } from 'react'
-import { useTranslation } from 'react-i18next'
 
 function UnsplashCopyright() {
   const { unsplashImage } = use(ImgContext)

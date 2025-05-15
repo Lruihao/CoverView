@@ -1,11 +1,11 @@
+import type { PropsWithChildren } from 'react'
 import type { ToImageOptions } from '@/services/toImage'
 import type { DownloadFormat } from '@/types'
-import type { PropsWithChildren } from 'react'
-import SvgIcon from '@/components/SvgIcon'
-import { toImage } from '@/services/toImage'
 import * as clipboard from 'clipboard-polyfill'
 import { useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import SvgIcon from '@/components/SvgIcon'
+import { toImage } from '@/services/toImage'
 
 const downloadFmtOptions: { label: string, value: DownloadFormat }[] = [
   { label: 'PNG', value: 'png' },

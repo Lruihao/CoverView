@@ -1,8 +1,8 @@
 import type { ThemeIcon } from '@/types'
-import { fetcher } from '@/common/utils'
 import { useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import useSWR from 'swr'
+import { fetcher } from '@/common/utils'
 import { useLocalStorage } from './useLocalStorage'
 
 const API_URL = 'https://raw.githubusercontent.com/devicons/devicon/master/devicon.json'

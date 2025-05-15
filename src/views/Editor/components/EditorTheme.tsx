@@ -1,6 +1,6 @@
 import type { ThemeConfig } from '@/types'
-import { themeOptions } from '@/common'
 import { useTranslation } from 'react-i18next'
+import { themeOptions } from '@/common'
 
 export interface RandomThemeProps {
   settings: ThemeConfig

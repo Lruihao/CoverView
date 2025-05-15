@@ -1,7 +1,7 @@
-import logo from '@/assets/images/logo.png'
-import { scrollToTop } from '@/common/utils'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
+import logo from '@/assets/images/logo.png'
+import { scrollToTop } from '@/common/utils'
 import SwitchLang from './SwitchLang'
 
 function Header() {

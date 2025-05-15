@@ -1,11 +1,11 @@
 /* eslint-disable react-dom/no-dangerously-set-innerhtml */
+import { useTranslation } from 'react-i18next'
 import cover1 from '@/assets/images/cover1.webp'
 import cover2 from '@/assets/images/cover2.webp'
 import cover3 from '@/assets/images/cover3.webp'
 import cover4 from '@/assets/images/cover4.webp'
 import step1 from '@/assets/images/step1.png'
 import step2 from '@/assets/images/step2.png'
-import { useTranslation } from 'react-i18next'
 
 function Usage() {
   const { t } = useTranslation()

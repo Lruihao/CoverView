@@ -1,5 +1,5 @@
-import type { ThemeConfig, ThemeFont, ThemePattern, ThemeType } from '@/types'
 import type { ColorId, Orientation } from 'unsplash-js'
+import type { ThemeConfig, ThemeFont, ThemePattern, ThemeType } from '@/types'
 import theme1 from '@/assets/images/theme1.webp'
 import theme2 from '@/assets/images/theme2.webp'
 import theme3 from '@/assets/images/theme3.webp'

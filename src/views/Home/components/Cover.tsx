@@ -1,8 +1,8 @@
+import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router'
 import cover1 from '@/assets/images/cover1.webp'
 import cover2 from '@/assets/images/cover2.webp'
 import cover3 from '@/assets/images/cover3.webp'
-import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router'
 
 function CoverSection() {
   const { t } = useTranslation()

@@ -1,6 +1,6 @@
+import { useTranslation } from 'react-i18next'
 import logo from '@/assets/images/logo.png'
 import SwitchLang from '@/components/SwitchLang'
-import { useTranslation } from 'react-i18next'
 
 function Header() {
   const { t } = useTranslation()

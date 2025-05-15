@@ -1,8 +1,8 @@
 import type { ThemeProps } from './themeProps'
-import SvgIcon from '@/components/SvgIcon'
-import { getPasteImage } from '@/services/getPasteImage'
 import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import SvgIcon from '@/components/SvgIcon'
+import { getPasteImage } from '@/services/getPasteImage'
 
 function PreviewTheme({ config }: ThemeProps) {
   const { t } = useTranslation()

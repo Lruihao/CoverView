@@ -1,5 +1,5 @@
-import type { DownloadFormat } from '@/types'
 import type { Options } from 'dom-to-image-more'
+import type { DownloadFormat } from '@/types'
 import domtoimage from 'dom-to-image-more'
 
 export type ToImageOptions = Options

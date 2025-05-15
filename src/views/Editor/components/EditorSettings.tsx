@@ -1,10 +1,10 @@
 import type { ColorTheme, ThemeConfig, ThemeFont, ThemeIcon } from '@/types'
+import { useTranslation } from 'react-i18next'
+import Select from 'react-select'
 import fixitIcon from '@/assets/icons/fixit.svg'
 import { fontOptions, patternOptions, platformOptions } from '@/common'
 import SvgIcon from '@/components/SvgIcon'
 import { useDevIcon } from '@/hooks/useDevIcon'
-import { useTranslation } from 'react-i18next'
-import Select from 'react-select'
 import EditorTheme from './EditorTheme'
 import RandomTheme from './RandomTheme'
 
