@@ -31,11 +31,11 @@ function Footer() {
             </Link>
             <a
               className="m-2 hover:underline"
-              href="https://github.com/Lruihao/CoverView"
+              href="https://nav8.top"
               rel="noreferrer"
               target="_blank"
             >
-              GitHub
+              外贸驿站网址导航
             </a>
           </div>
           <span
