@@ -12,7 +12,7 @@ Creating cover images for your blogs is now super easy.
 
 ## 💥 Change Notice
 
-Moved the original CoverView to my repositories since 2024-03-28, and made the following changes and enhancements:
+Forked the original CoverView to my repositories since 2024-03-28, and made the following changes and enhancements:
 
 - Fixed the problem that images with patterns background cannot be downloaded
 - Fixed the problem of being unable to download and upload images with SVG format icons
@@ -87,6 +87,6 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 - [Hero Patterns](https://www.heropatterns.com/)
 - [Devicons](https://github.com/devicons/devicon)
 - [Font Virgil](https://github.com/excalidraw/virgil)
-- [Font MMT](https://github.com/Lruihao/MMT)
+- [Font MMT](https://github.com/Lruihao/mmt-webfont)
 
 Don't forget to leave a ⭐ if you found this useful.
